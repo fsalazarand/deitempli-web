@@ -1,0 +1,133 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+locale: es
+
+collections:
+  - name: "fotos"
+    label: "📸 Fotos del Hotel"
+    files:
+      - name: "fotos"
+        label: "Gestionar todas las fotos"
+        file: "data/fotos.json"
+        fields:
+          - label: "🌅 Foto principal — Hero (balcón al amanecer, vista frontal Pacífico)"
+            name: hero
+            widget: image
+            required: false
+            hint: "Foto horizontal. Ocupa toda la pantalla de inicio."
+
+          - label: "🏨 Sobre nosotros — Foto grande (vista o fachada del hotel)"
+            name: about_big
+            widget: image
+            required: false
+            hint: "Foto grande de la sección 'Sobre nosotros'. Ideal: vista aérea o fachada."
+
+          - label: "🍳 Sobre nosotros — Foto pequeña (desayuno en balcón)"
+            name: about_small
+            widget: image
+            required: false
+            hint: "Foto pequeña debajo de la anterior. Ideal: desayuno o detalle del hotel."
+
+          - label: "🛏️ Habitación Deluxe (ventanal panorámico con vista al mar)"
+            name: hab_deluxe
+            widget: image
+            required: false
+            hint: "Foto principal de la Habitación Deluxe."
+
+          - label: "🛏️ Habitación Estándar (balcón con vista al mar)"
+            name: hab_estandar
+            widget: image
+            required: false
+            hint: "Foto de la Habitación Estándar."
+
+          - label: "🏠 Departamento (kitchenette + balcón)"
+            name: hab_depto
+            widget: image
+            required: false
+            hint: "Foto del Departamento familiar."
+
+          - label: "⛵ Departamento Carabela (balcón panorámico, Playa El Encanto)"
+            name: carabela
+            widget: image
+            required: false
+            hint: "Foto del Departamento Carabela. Ideal con vista a la playa."
+
+          - label: "🍹 Dei Bar — Cócteles en balcón al atardecer"
+            name: bar_coctel
+            widget: image
+            required: false
+            hint: "Foto del Dei Bar. Ideal: bebidas con el Pacífico de fondo."
+
+          - label: "🥐 Dei Bar — Desayuno completo en bandeja"
+            name: bar_desayuno
+            widget: image
+            required: false
+            hint: "Foto del desayuno servido en balcón o bandeja."
+
+          - label: "📷 Galería 1 — Vista panorámica desde balcón Deluxe"
+            name: galeria_1
+            widget: image
+            required: false
+
+          - label: "📷 Galería 2 — Piscina exterior con el mar de fondo"
+            name: galeria_2
+            widget: image
+            required: false
+
+          - label: "📷 Galería 3 — Pareja en balcón con cócteles, atardecer"
+            name: galeria_3
+            widget: image
+            required: false
+
+          - label: "📷 Galería 4 — Desayuno en bandeja sobre la cama"
+            name: galeria_4
+            widget: image
+            required: false
+
+          - label: "📷 Galería 5 — Carabela, vista a Playa El Encanto"
+            name: galeria_5
+            widget: image
+            required: false
+
+          - label: "📷 Galería 6 — Pizza casera Dei Bar, balcón de noche"
+            name: galeria_6
+            widget: image
+            required: false
+
+  - name: "contenido"
+    label: "✏️ Textos y datos del Hotel"
+    files:
+      - name: "general"
+        label: "Información general"
+        file: "data/contenido.json"
+        fields:
+          - label: "Teléfono WhatsApp"
+            name: telefono
+            widget: string
+            default: "+56966130676"
+            hint: "Sin espacios ni guiones. Ej: +56966130676"
+
+          - label: "Código de descuento"
+            name: codigo_descuento
+            widget: string
+            default: "DEITEMPLI"
+
+          - label: "Porcentaje de descuento"
+            name: pct_descuento
+            widget: string
+            default: "10%"
+
+          - label: "Email de contacto"
+            name: email
+            widget: string
+            default: ""
+
+          - label: "Horario desayuno"
+            name: horario_desayuno
+            widget: string
+            default: "8:00 a 11:30"
