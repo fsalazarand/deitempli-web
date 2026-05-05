@@ -1,17 +1,17 @@
 {
-  "hero": "",
-  "about_big": "",
-  "about_small": "",
-  "hab_deluxe": "",
-  "hab_estandar": "",
-  "hab_depto": "",
   "carabela": "",
-  "bar_coctel": "",
-  "bar_desayuno": "",
   "galeria_1": "",
   "galeria_2": "",
   "galeria_3": "",
   "galeria_4": "",
+  "hab_deluxe": "",
   "galeria_5": "",
-  "galeria_6": ""
+  "about_big": "",
+  "galeria_6": "",
+  "bar_coctel": "",
+  "hab_depto": "",
+  "about_small": "",
+  "hab_estandar": "",
+  "bar_desayuno": "",
+  "hero": "/images/habitacion-deluxe.png"
 }
