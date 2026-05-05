@@ -4,14 +4,14 @@
   "galeria_2": "",
   "galeria_3": "",
   "galeria_4": "",
-  "hab_deluxe": "/images/port.jpg",
+  "hab_deluxe": "/images/habitacion-deluxe.png",
   "galeria_5": "",
-  "about_big": "",
+  "about_big": "/images/port.jpg",
   "galeria_6": "",
   "bar_coctel": "",
-  "hab_depto": "/images/img_5351.jpg",
+  "hab_depto": "/images/deptoweb.jpg",
   "about_small": "/images/desayuno.png",
-  "hab_estandar": "/images/img_5351.jpeg",
+  "hab_estandar": "",
   "bar_desayuno": "",
   "hero": "/images/habitacion-deluxe.png"
 }
