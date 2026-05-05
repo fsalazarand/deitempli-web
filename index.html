@@ -1288,6 +1288,12 @@
       overflow-x: clip;
     }
     .reviews-strip { will-change: transform; }
+
+    /* 10. Fotos flotantes — ocultar en móvil para evitar desborde */
+    @media (max-width: 1024px) {
+      .bar-img-float { display: none; }
+      .statement-img-float { display: none; }
+    }
   </style>
   <!-- Netlify Identity Widget — para acceso al panel /admin -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
@@ -1309,7 +1315,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <nav class="nav-inner">
       <a href="#hero" class="nav-logo" id="nav-logo-link">
-        <img src="uploads/logohotel.png" alt="Hotel Dei Templi Reñaca" id="nav-logo-img" style="height:38px;width:auto;transition:filter .3s;" />
+        <img src="/logohotel.png" alt="Hotel Dei Templi Reñaca" id="nav-logo-img" style="height:38px;width:auto;transition:filter .3s;" />
       </a>
       <ul class="nav-links">
         <li><a href="#habitaciones">Habitaciones</a></li>
@@ -1940,7 +1946,7 @@ esperando.</h2>
     <div class="footer-top">
       <div class="f-brand">
         <div style="margin-bottom:16px;">
-          <img src="uploads/logohotel.png" alt="Hotel Dei Templi Reñaca" style="height:44px;width:auto;filter:brightness(0) invert(1);opacity:.85;" />
+          <img src="/logohotel.png" alt="Hotel Dei Templi Reñaca" style="height:44px;width:auto;filter:brightness(0) invert(1);opacity:.85;" />
         </div>
         <div class="f-brand-name" style="display:none;">Dei Templi <em class="f-brand-tagline">— Reñaca</em></div>
         <p>Hotel boutique en Reñaca alto, Viña del Mar. Habitaciones y departamentos con balcón privado frente al Pacífico. Desayuno a la cama, Dei Bar 24/7, piscina exterior y parking gratis.</p>
