@@ -1193,6 +1193,92 @@
       .gm-1,.gm-2,.gm-3,.gm-4,.gm-5,.gm-6 { grid-column: auto; grid-row: auto; }
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
     }
+
+    /* ═══════════════ RESPONSIVE FIX — mobile & in-app browsers ═══════════════ */
+
+    /* 1. html overflow — crítico para Instagram / Facebook in-app browser */
+    html {
+      overflow-x: hidden;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /* 2. iOS momentum scroll */
+    body { -webkit-overflow-scrolling: touch; }
+
+    /* 3. Hero height — fallback para in-app browsers (Instagram/Facebook/TikTok)
+          que recortan el viewport con barras de UI propias */
+    #hero {
+      min-height: 100vh; /* fallback */
+      min-height: 100dvh; /* dynamic viewport — modern */
+    }
+    @supports (min-height: 100svh) {
+      #hero { min-height: 100svh; }
+    }
+
+    /* 4. Marquee — en mobile el margin negativo puede escapar del clip */
+    @media (max-width: 768px) {
+      .reviews-track { margin: 0; }
+      .reviews-strip { padding: 0 20px; }
+    }
+
+    /* 5. Room cards — stack vertical en pantallas < 600px */
+    @media (max-width: 600px) {
+      .room-card { flex-direction: column; }
+      .room-card-img { width: 100%; height: 200px; }
+      .room-card-img .ph,
+      .room-card-img img { height: 200px; }
+    }
+
+    /* 6. Breakpoint 480px — teléfonos medianos */
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+      .hero-left { padding: 80px 16px 44px; }
+      .hero-proof { flex-direction: column; gap: 2px; align-items: flex-start; }
+      .carabela-text-side { padding: 36px 16px; }
+      .bs-promo { padding: 10px 16px; flex-wrap: wrap; font-size: 11px; }
+      .stat-n { font-size: 40px; }
+      .rv-card { width: 260px; padding: 20px 20px; }
+      .directo-left > p { font-size: 15px; }
+      .gallery-mosaic {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 160px 160px 160px;
+      }
+      #cta-final { padding: 80px 0; }
+      #cta-final h2 { font-size: clamp(34px, 9vw, 52px); }
+      .f-social-row { justify-content: flex-start; }
+    }
+
+    /* 7. Breakpoint 360px — teléfonos pequeños (Samsung Galaxy S, etc.) */
+    @media (max-width: 380px) {
+      .container { padding: 0 14px; }
+      .hero-left { padding: 76px 14px 40px; }
+      #hero h1 { font-size: 34px; letter-spacing: -.02em; }
+      .stat-grid { grid-template-columns: 1fr 1fr; }
+      .stat-n { font-size: 36px; }
+      .stat-cell { padding: 20px 14px; }
+      .rv-card { width: 240px; }
+      .gallery-mosaic {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 200px);
+      }
+      .gm-1,.gm-2,.gm-3,.gm-4,.gm-5,.gm-6 { grid-column: 1; grid-row: auto; }
+      .btn { font-size: 12px; padding: 14px 20px; }
+      #wa-float { bottom: 16px; right: 12px; width: 48px; height: 48px; }
+      #wa-float svg { width: 22px; height: 22px; }
+    }
+
+    /* 8. Landscape en móvil — evitar hero demasiado corto */
+    @media (max-width: 768px) and (orientation: landscape) {
+      #hero { min-height: auto; padding: 80px 0 60px; }
+      .hero-left { padding: 20px 24px 20px; }
+    }
+
+    /* 9. Fix general para evitar cualquier elemento que desborde horizontalmente */
+    section, header, footer, nav, main {
+      max-width: 100%;
+      overflow-x: clip;
+    }
+    .reviews-strip { will-change: transform; }
   </style>
   <!-- Netlify Identity Widget — para acceso al panel /admin -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
