@@ -1330,9 +1330,9 @@
       .hero-left { padding: 100px 24px 60px; }
       .dt-picker-wrap { padding: 12px 16px; }
       .carabela-wrap { grid-template-columns: 1fr; }
-      .carabela-img-side { aspect-ratio: 4 / 3; overflow: hidden; background: oklch(14% 0.06 222); }
-      .carabela-img-side .ph { min-height: 0; height: 100%; background: oklch(14% 0.06 222); }
-      .carabela-img-side img { object-fit: contain !important; }
+      .carabela-img-side { aspect-ratio: 4 / 3; min-height: 0; overflow: hidden; }
+      .carabela-img-side .ph { height: 100%; min-height: 0; }
+      .carabela-img-side img { object-fit: cover !important; }
       .carabela-text-side { padding: 48px 28px; }
       .ubicacion-layout { grid-template-columns: 1fr; }
       .faq-layout { grid-template-columns: 1fr; }
@@ -1369,24 +1369,21 @@
       .reviews-strip { padding: 0 20px; }
     }
 
-    /* 5. Room cards — stack vertical en pantallas < 600px, imagen completa sin recorte */
+    /* 5. Room cards — stack vertical en pantallas < 600px
+          Las fotos son 9:16 portrait → container 9:16 = imagen completa sin recorte ni barras blancas */
     @media (max-width: 600px) {
       .room-card { flex-direction: column; }
       .room-card-img {
         width: 100%;
-        height: auto;
-        aspect-ratio: 4 / 3;
+        aspect-ratio: 9 / 16;
         min-height: 0;
-        background: oklch(96% 0.01 87);
-      }
-      .room-card-img .ph {
-        background: oklch(96% 0.01 87);
+        overflow: hidden;
       }
       .room-card-img .ph,
       .room-card-img img {
         width: 100%;
         height: 100%;
-        object-fit: contain !important;
+        object-fit: cover !important;
       }
     }
 
