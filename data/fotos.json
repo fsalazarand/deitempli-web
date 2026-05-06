@@ -1,17 +1,17 @@
 {
-  "hero": "/images/habitacion-deluxe.jpg",
-  "about_big": "/images/vista.jpg",
-  "about_small": "/images/desayuno.jpg",
-  "hab_deluxe": "/images/habitacion-deluxe.jpg",
-  "hab_estandar": "/images/habweb.jpg",
-  "hab_depto": "/images/deptoweb.jpg",
-  "carabela": "",
-  "bar_coctel": "/images/tabla.jpg",
-  "bar_desayuno": "/images/desayuno.jpg",
+  "carabela": "/images/carabela.jpg",
   "galeria_1": "/images/vistahab.jpg",
   "galeria_2": "/images/piscina.jpg",
   "galeria_3": "/images/pareja.jpg",
   "galeria_4": "",
+  "hab_deluxe": "/images/habitacion-deluxe.jpg",
   "galeria_5": "",
-  "galeria_6": ""
+  "about_big": "/images/vista.jpg",
+  "galeria_6": "",
+  "bar_coctel": "/images/tabla.jpg",
+  "hab_depto": "/images/deptoweb.jpg",
+  "about_small": "/images/desayuno.jpg",
+  "hab_estandar": "/images/habweb.jpg",
+  "bar_desayuno": "/images/desayuno.jpg",
+  "hero": "/images/habitacion-deluxe.jpg"
 }
