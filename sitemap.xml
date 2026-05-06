@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.deitempli.cl/</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.deitempli.cl/images/habitacion-deluxe.jpg</image:loc>
+      <image:title>Hotel Dei Templi Reñaca — Habitación Deluxe con vista al Pacífico</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.deitempli.cl/images/vista.jpg</image:loc>
+      <image:title>Vista panorámica al Pacífico desde Hotel Dei Templi Reñaca</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.deitempli.cl/images/carabela.jpg</image:loc>
+      <image:title>Departamento Carabela — Hotel Dei Templi Reñaca</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.deitempli.cl/images/piscina.jpg</image:loc>
+      <image:title>Piscina exterior Hotel Dei Templi Reñaca con vista al mar</image:title>
+    </image:image>
+  </url>
+</urlset>
