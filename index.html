@@ -404,6 +404,8 @@
       padding: 9px 28px;
       display: flex;
       align-items: center;
+      justify-content: center;
+      text-align: center;
       gap: 8px;
       font-size: 12px;
       color: oklch(45% 0.12 75);
@@ -1221,13 +1223,13 @@
       .reviews-strip { padding: 0 20px; }
     }
 
-    /* 5. Room cards — stack vertical en pantallas < 600px, proporción 16:9 */
+    /* 5. Room cards — stack vertical en pantallas < 600px, proporción retrato 3:4 */
     @media (max-width: 600px) {
       .room-card { flex-direction: column; }
       .room-card-img {
         width: 100%;
         height: auto;
-        aspect-ratio: 16 / 9;
+        aspect-ratio: 3 / 4;
         min-height: 0;
       }
       .room-card-img .ph,
@@ -1561,7 +1563,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h2>El Dei Bar<br>está <em>encendido.</em></h2>
         <div class="bar-big">24h</div>
         <p>A las 2 AM, cuando en la ciudad todo está cerrado y tú sigues en ese balcón mirando las luces sobre el mar, el Dei Bar sigue contigo. Un mensaje y en minutos está en tu puerta.</p>
-        <p>No bajas,  No haces fila. No sales al frío. Lo que quieras, cuando quieras, directo a tu balcón. REVISA LA CARTA</p>
+        <p>No bajas, no haces fila, no sales al frío. Lo que quieras, cuando quieras, directo a tu balcón.</p>
+        <a href="https://menu.fu.do/deibar/qr-menu" target="_blank" rel="noopener" class="btn btn-gold btn-arrow" style="margin-bottom:24px;align-self:flex-start;">Ver menú online →</a>
         <div class="bar-24">
           <div class="bar-24-num">24h</div>
           <div class="bar-24-text">
@@ -1614,7 +1617,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div style="display:flex;gap:12px;flex-wrap:wrap;">
           <a href="https://www.booking.com/hotel/cl/dei-templi-apart.html" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:11px;padding:10px 18px;">Booking.com</a>
           <a href="https://maps.google.com/?cid=13955628741804259447" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:11px;padding:10px 18px;">Google Reviews</a>
-          <a href="https://www.tripadvisor.com" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:11px;padding:10px 18px;">TripAdvisor</a>
+          <a href="https://www.tripadvisor.cl/Hotel_Review-g294297-d15048893-Reviews-Dei_Templi_Apart_Hotel-Vina_del_Mar_Valparaiso_Region.html" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:11px;padding:10px 18px;">TripAdvisor</a>
         </div>
       </div>
     </div>
@@ -1824,7 +1827,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <div class="info-pill">
             <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07"/></svg>
-            +56 9 6613 0676
+            <a href="tel:+56966130676" style="color:inherit;text-decoration:none;">+56 9 6613 0676</a>
           </div>
         </div>
         <div style="display:flex;gap:10px;flex-wrap:wrap;">
@@ -1835,7 +1838,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="map-block">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.512!2d-71.5371!3d-32.9648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689dfb9cbffffff%3A0xc1b9c5f4db1a5b77!2sDei%20Templi%20Apart%20Hotel!5e0!3m2!1ses!2scl!4v1"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d415!2d-71.53938!3d-32.96482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f17!3m3!1m2!1s0x9689dfb9cbffffff%3A0xc1b9c5f4db1a5b77!2sDei%20Templi%20Apart%20Hotel!5e0!3m2!1ses!2scl!4v1715900000000!5m2!1ses!2scl"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           title="Ubicación Hotel Dei Templi Reñaca"
@@ -1988,7 +1991,7 @@ esperando.</h2>
         </div>
         <div class="f-contact-row">
           <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 01.04 2.82 2 2 0 012 .65h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.41a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          <span>+56 9 6613 0676</span>
+          <a href="tel:+56966130676" style="color:inherit;text-decoration:none;">+56 9 6613 0676</a>
         </div>
         <div class="f-contact-row">
           <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
