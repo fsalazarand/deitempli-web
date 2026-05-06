@@ -1030,56 +1030,173 @@
     .faq-a p { font-size: 15px; color: var(--ink-50); }
 
     /* ────────────── CTA FINAL ────────────── */
+    /* ────────────── CTA FINAL ────────────── */
     #cta-final {
       position: relative;
       overflow: hidden;
-      /* Degradado atardecer Pacífico: azul profundo → naranja → dorado */
-      background: linear-gradient(135deg,
-        oklch(28% 0.08 222) 0%,
-        oklch(38% 0.12 35) 45%,
-        oklch(55% 0.15 62) 100%
+      background: oklch(14% 0.06 222);
+      padding: 0;
+    }
+    .cta-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .cta-bg .ph, .cta-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.45) brightness(0.35);
+    }
+    .cta-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(
+        110deg,
+        oklch(14% 0.06 222 / 0.96) 0%,
+        oklch(14% 0.06 222 / 0.80) 60%,
+        oklch(14% 0.06 222 / 0.55) 100%
       );
-      padding: 140px 0;
-      text-align: center;
     }
-    #cta-final::before {
-      content: 'Reñaca';
-      font-family: var(--fh);
-      font-style: italic;
-      font-size: 280px;
-      font-weight: 300;
-      color: rgba(255,255,255,.04);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-      white-space: nowrap;
-      pointer-events: none;
-      user-select: none;
+    #cta-final > .container {
+      position: relative;
+      z-index: 2;
+      padding-top: 110px;
+      padding-bottom: 110px;
     }
-    /* Pincelada decorativa dorada — como el logo */
-    #cta-final::after {
-      content: '';
-      position: absolute;
-      bottom: 60px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 180px;
-      height: 6px;
-      background: var(--gold);
-      border-radius: 3px;
-      opacity: .5;
+    .cta-split {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 80px;
+      align-items: center;
     }
-    .cta-inner { position: relative; z-index: 2; }
-    #cta-final .eyebrow { color: var(--gold); margin-bottom: 20px; }
-    #cta-final h2 {
-      font-size: clamp(44px, 6vw, 80px);
+    .cta-left .eyebrow { color: var(--gold); margin-bottom: 18px; }
+    .cta-left h2 {
+      font-size: clamp(36px, 4.2vw, 60px);
       color: var(--w);
+      line-height: 1.1;
       margin-bottom: 20px;
     }
-    #cta-final h2 em { font-style: italic; color: var(--gold); }
-    #cta-final p { font-size: 18px; color: rgba(255,255,255,.55); max-width: 540px; margin: 0 auto 44px; }
-    .cta-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+    .cta-left h2 em { color: var(--gold); font-style: italic; }
+    .cta-left > p {
+      font-size: 17px;
+      color: rgba(255,255,255,.52);
+      max-width: 440px;
+      line-height: 1.7;
+      margin-bottom: 48px;
+    }
+    .cta-trust {
+      display: flex;
+      gap: 0;
+      border-top: 1px solid rgba(255,255,255,.1);
+      padding-top: 32px;
+    }
+    .cta-trust-item {
+      flex: 1;
+      padding-right: 20px;
+      margin-right: 20px;
+      border-right: 1px solid rgba(255,255,255,.1);
+    }
+    .cta-trust-item:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+    .cta-trust-item strong {
+      display: block;
+      font-family: var(--fh);
+      font-size: 26px;
+      font-weight: 400;
+      color: var(--w);
+      margin-bottom: 2px;
+    }
+    .cta-trust-item span {
+      font-size: 11px;
+      color: rgba(255,255,255,.38);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    /* Booking card */
+    .cta-card {
+      background: var(--w);
+      border-radius: 20px;
+      padding: 40px 36px;
+      box-shadow: 0 40px 100px rgba(0,0,0,.45);
+    }
+    .cta-card-badge {
+      display: inline-block;
+      background: oklch(94% 0.09 87);
+      color: oklch(40% 0.09 87);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+    .cta-card h3 {
+      font-family: var(--fh);
+      font-size: 26px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .cta-card .cta-sub {
+      font-size: 13px;
+      color: var(--ink-50);
+      margin-bottom: 28px;
+    }
+    .btn-primary-book {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      background: var(--sea);
+      color: white;
+      padding: 18px 20px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-bottom: 12px;
+      transition: background .2s;
+      box-sizing: border-box;
+    }
+    .btn-primary-book:hover { background: oklch(36% 0.1 222); }
+    .btn-wa {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      background: #25D366;
+      color: white;
+      padding: 16px 20px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity .2s;
+      box-sizing: border-box;
+    }
+    .btn-wa:hover { opacity: .88; }
+    .cta-fine {
+      text-align: center;
+      font-size: 11px;
+      color: var(--ink-50);
+      margin-top: 16px;
+      line-height: 1.65;
+    }
+    @media (max-width: 960px) {
+      .cta-split { grid-template-columns: 1fr; gap: 52px; }
+      .cta-left > p { max-width: 100%; }
+      #cta-final > .container { padding-top: 80px; padding-bottom: 80px; }
+    }
+    @media (max-width: 480px) {
+      #cta-final > .container { padding-top: 64px; padding-bottom: 64px; }
+      .cta-left h2 { font-size: clamp(30px, 9vw, 44px); }
+      .cta-trust { gap: 0; }
+      .cta-trust-item strong { font-size: 22px; }
+      .cta-card { padding: 28px 22px; }
+    }
 
     /* ────────────── FOOTER ────────────── */
     footer {
@@ -1199,7 +1316,9 @@
       .hero-left { padding: 100px 24px 60px; }
       .dt-picker-wrap { padding: 12px 16px; }
       .carabela-wrap { grid-template-columns: 1fr; }
-      .carabela-img-side .ph { min-height: 320px; }
+      .carabela-img-side { aspect-ratio: 4 / 3; overflow: hidden; background: oklch(14% 0.06 222); }
+      .carabela-img-side .ph { min-height: 0; height: 100%; background: oklch(14% 0.06 222); }
+      .carabela-img-side img { object-fit: contain !important; }
       .carabela-text-side { padding: 48px 28px; }
       .ubicacion-layout { grid-template-columns: 1fr; }
       .faq-layout { grid-template-columns: 1fr; }
@@ -1236,20 +1355,24 @@
       .reviews-strip { padding: 0 20px; }
     }
 
-    /* 5. Room cards — stack vertical en pantallas < 600px, proporción retrato 3:4 */
+    /* 5. Room cards — stack vertical en pantallas < 600px, imagen completa sin recorte */
     @media (max-width: 600px) {
       .room-card { flex-direction: column; }
       .room-card-img {
         width: 100%;
         height: auto;
-        aspect-ratio: 3 / 4;
+        aspect-ratio: 4 / 3;
         min-height: 0;
+        background: oklch(96% 0.01 87);
+      }
+      .room-card-img .ph {
+        background: oklch(96% 0.01 87);
       }
       .room-card-img .ph,
       .room-card-img img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain !important;
       }
     }
 
@@ -1267,8 +1390,6 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 160px 160px 160px;
       }
-      #cta-final { padding: 80px 0; }
-      #cta-final h2 { font-size: clamp(34px, 9vw, 52px); }
       .f-social-row { justify-content: flex-start; }
     }
 
@@ -1940,15 +2061,50 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ═══════════════ CTA FINAL ═══════════════ -->
 <section id="cta-final">
+  <!-- Foto de fondo: vista panorámica Pacífico -->
+  <div class="cta-bg">
+    <div class="ph" data-foto="about_big" style="width:100%;height:100%;"></div>
+  </div>
+  <div class="cta-overlay"></div>
   <div class="container">
-    <div class="cta-inner">
-      <span class="eyebrow">Reñaca · Viña del Mar</span>
-      <h2>Tu balcón<br>al <em>Pacífico.</em></h2>
-      <div class="cta-btns">
-        <a href="https://hotels.cloudbeds.com/reservation/YQa8ck" target="_blank" rel="noopener" class="btn btn-coral btn-arrow" style="font-size:14px;padding:18px 36px;">Reservar directo — 10% descuento</a>
-        <a href="https://wa.me/56966130676?text=Hola!%20Quiero%20reservar%20en%20Dei%20Templi" target="_blank" rel="noopener" class="btn btn-outline-w" style="font-size:14px;padding:18px 36px;">Preguntar por WhatsApp</a>
+    <div class="cta-split">
+
+      <!-- Izquierda: titular + trust stats -->
+      <div class="cta-left">
+        <span class="eyebrow">Reserva directa · Mejor precio garantizado</span>
+        <h2>Sin Booking.<br>Sin comisiones.<br><em>Solo tú y el mar.</em></h2>
+        <p>Al reservar aquí tienes el precio más bajo garantizado, más 10% de descuento adicional. Confirmación inmediata, atención directa desde el primer mensaje.</p>
+        <div class="cta-trust">
+          <div class="cta-trust-item">
+            <strong>4.6 ★</strong>
+            <span>532 reseñas</span>
+          </div>
+          <div class="cta-trust-item">
+            <strong>−10%</strong>
+            <span>reserva directa</span>
+          </div>
+          <div class="cta-trust-item">
+            <strong>24/7</strong>
+            <span>atención directa</span>
+          </div>
+        </div>
       </div>
-      <p style="margin-top:32px;font-size:12px;color:rgba(255,255,255,.3);">4.6★ en Google · 532 reseñas verificadas · Cancela sin cargo en tarifas flexibles</p>
+
+      <!-- Derecha: tarjeta de reserva -->
+      <div class="cta-right">
+        <div class="cta-card">
+          <div class="cta-card-badge">✦ Precio directo — 10% off</div>
+          <h3>¿Cuándo nos visitas?</h3>
+          <p class="cta-sub">Habitaciones con balcón al Pacífico · Reñaca</p>
+          <a href="https://hotels.cloudbeds.com/reservation/YQa8ck" target="_blank" rel="noopener" class="btn-primary-book">Ver disponibilidad y reservar →</a>
+          <a href="https://wa.me/56966130676?text=Hola!%20Quiero%20reservar%20en%20Dei%20Templi" target="_blank" rel="noopener" class="btn-wa">
+            <svg viewBox="0 0 24 24" style="width:17px;height:17px;fill:white;flex-shrink:0;" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Consultar por WhatsApp
+          </a>
+          <p class="cta-fine">Cancelación sin cargo · Confirmación inmediata<br>Pet friendly · Check-in express sin fila</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
