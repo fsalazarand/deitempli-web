@@ -1293,9 +1293,23 @@
 
     /* ────────────── RESPONSIVE ────────────── */
     @media (max-width: 1024px) {
-      #hero { grid-template-columns: 1fr; }
-      .hero-right { display: none; }
-      .hero-left { padding: 120px 40px 80px; }
+      #hero { grid-template-columns: 1fr; position: relative; }
+      /* Foto de fondo en mobile — posicionada detrás del texto */
+      .hero-right {
+        display: block;
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+      }
+      .hero-right .ph { height: 100%; min-height: 0; }
+      .hero-right img { object-fit: cover !important; }
+      /* Texto sobre la foto con overlay oscuro semitransparente */
+      .hero-left {
+        position: relative;
+        z-index: 2;
+        background: linear-gradient(160deg, oklch(22% 0.07 222 / 0.90) 0%, oklch(18% 0.05 235 / 0.78) 100%);
+        padding: 120px 40px 80px;
+      }
       .hero-left::after { display: none; }
       .statement-inner { grid-template-columns: 1fr; gap: 60px; }
       .statement-img-block { display: none; }
@@ -1972,7 +1986,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="map-block">
         <iframe
-          src="https://maps.google.com/maps?q=Dei+Templi+Apart+Hotel,+Av.+Edmundo+Eluchans+1475,+Re%C3%B1aca&t=&z=17&ie=UTF8&iwloc=B&output=embed"
+          src="https://maps.google.com/maps?q=Dei+Templi+Apart+Hotel,+Av.+Edmundo+Eluchans+1475,+Re%C3%B1aca&t=k&z=17&ie=UTF8&iwloc=B&output=embed"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           title="Ubicación Hotel Dei Templi Reñaca"
