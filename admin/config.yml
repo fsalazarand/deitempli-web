@@ -101,34 +101,505 @@ collections:
             required: false
 
   - name: "contenido"
-    label: "✏️ Textos y datos del Hotel"
+    label: "✏️ Textos del Hotel"
     files:
+
+      # ─── DATOS DE CONTACTO ───────────────────────────────────
       - name: "general"
-        label: "Información general"
+        label: "📞 Contacto y datos generales"
         file: "data/contenido.json"
         fields:
-          - label: "Teléfono WhatsApp"
+          - label: "Teléfono WhatsApp (sin espacios)"
             name: telefono
             widget: string
-            default: "+56966130676"
-            hint: "Sin espacios ni guiones. Ej: +56966130676"
+            hint: "Ej: +56966130676"
 
-          - label: "Código de descuento"
-            name: codigo_descuento
+          - label: "Teléfono (cómo se muestra en la web)"
+            name: telefono_display
             widget: string
-            default: "DEITEMPLI"
-
-          - label: "Porcentaje de descuento"
-            name: pct_descuento
-            widget: string
-            default: "10%"
+            hint: "Ej: +56 9 6613 0676"
 
           - label: "Email de contacto"
             name: email
             widget: string
-            default: ""
+
+          - label: "Código de descuento"
+            name: codigo_descuento
+            widget: string
+
+          - label: "Porcentaje de descuento"
+            name: pct_descuento
+            widget: string
+            hint: "Ej: 10%"
 
           - label: "Horario desayuno"
             name: horario_desayuno
             widget: string
-            default: "8:00 a 11:30"
+            hint: "Ej: 8:00 a 11:30"
+
+          - label: "Check-in hora"
+            name: checkin_hora
+            widget: string
+            hint: "Ej: 16:00"
+
+          - label: "Check-out hora"
+            name: checkout_hora
+            widget: string
+            hint: "Ej: 12:00"
+
+          - label: "─────────── 🌊 HERO (inicio de página) ───────────"
+            name: _sep_hero
+            widget: hidden
+
+          - label: "Hero — Etiqueta superior (ej: REÑACA · VIÑA DEL MAR)"
+            name: hero_tag
+            widget: string
+
+          - label: "Hero — Título principal"
+            name: hero_h1
+            widget: text
+            hint: "Usa <br> para salto de línea. Usa <em>palabra</em> para texto dorado en cursiva."
+
+          - label: "Hero — Subtítulo / descripción"
+            name: hero_sub
+            widget: text
+
+          - label: "Hero — Texto de reseñas (ej: 4.6 en Google · 532 reseñas)"
+            name: hero_proof
+            widget: string
+            hint: "Usa <strong>texto</strong> para negrita."
+
+          - label: "Barra de promoción (bajo el buscador de fechas)"
+            name: promo_strip
+            widget: string
+            hint: "Usa <strong>texto</strong> para negrita."
+
+          - label: "─────────── 🏨 SOBRE NOSOTROS ───────────"
+            name: _sep_about
+            widget: hidden
+
+          - label: "Sobre nosotros — Eyebrow (ej: Por qué Dei Templi)"
+            name: about_eyebrow
+            widget: string
+
+          - label: "Sobre nosotros — Título"
+            name: about_h2
+            widget: text
+            hint: "Usa <br> para salto de línea. Usa <em>palabra</em> para dorado."
+
+          - label: "Sobre nosotros — Párrafo 1"
+            name: about_p1
+            widget: text
+
+          - label: "Sobre nosotros — Párrafo 2"
+            name: about_p2
+            widget: text
+
+          - label: "─────────── 🛏️ HABITACIONES ───────────"
+            name: _sep_rooms
+            widget: hidden
+
+          - label: "Habitaciones — Eyebrow"
+            name: rooms_eyebrow
+            widget: string
+
+          - label: "Habitaciones — Título"
+            name: rooms_h2
+            widget: text
+            hint: "Usa <br> para salto de línea. Usa <em>palabra</em> para dorado."
+
+          - label: "Habitaciones — Descripción general"
+            name: rooms_intro
+            widget: text
+
+          - label: "Habitación Deluxe — Badge (ej: La más pedida)"
+            name: deluxe_badge
+            widget: string
+
+          - label: "Habitación Deluxe — Nombre"
+            name: deluxe_nombre
+            widget: string
+
+          - label: "Habitación Deluxe — Tagline"
+            name: deluxe_tagline
+            widget: string
+
+          - label: "Habitación Deluxe — Descripción"
+            name: deluxe_descripcion
+            widget: text
+
+          - label: "Habitación Estándar — Nombre"
+            name: estandar_nombre
+            widget: string
+
+          - label: "Habitación Estándar — Tagline"
+            name: estandar_tagline
+            widget: string
+
+          - label: "Habitación Estándar — Descripción"
+            name: estandar_descripcion
+            widget: text
+
+          - label: "Departamento — Nombre"
+            name: depto_nombre
+            widget: string
+
+          - label: "Departamento — Tagline"
+            name: depto_tagline
+            widget: string
+
+          - label: "Departamento — Descripción"
+            name: depto_descripcion
+            widget: text
+
+          - label: "─────────── ⛵ CARABELA ───────────"
+            name: _sep_carabela
+            widget: hidden
+
+          - label: "Carabela — Eyebrow (ej: Solo para dos)"
+            name: carabela_eyebrow
+            widget: string
+
+          - label: "Carabela — Título"
+            name: carabela_h2
+            widget: text
+            hint: "Usa <br> y <em>palabra</em> para dorado."
+
+          - label: "Carabela — Párrafo 1"
+            name: carabela_p1
+            widget: text
+
+          - label: "Carabela — Párrafo 2"
+            name: carabela_p2
+            widget: text
+
+          - label: "─────────── 🍹 DEI BAR ───────────"
+            name: _sep_bar
+            widget: hidden
+
+          - label: "Dei Bar — Eyebrow"
+            name: bar_eyebrow
+            widget: string
+
+          - label: "Dei Bar — Título"
+            name: bar_h2
+            widget: text
+            hint: "Usa <br> y <em>palabra</em> para dorado."
+
+          - label: "Dei Bar — Párrafo 1"
+            name: bar_p1
+            widget: text
+
+          - label: "Dei Bar — Párrafo 2"
+            name: bar_p2
+            widget: text
+
+          - label: "Dei Bar — Caption de la foto"
+            name: bar_caption
+            widget: string
+
+          - label: "Dei Bar — Room service título"
+            name: bar_rs_titulo
+            widget: string
+
+          - label: "Dei Bar — Room service subtítulo"
+            name: bar_rs_sub
+            widget: string
+
+          - label: "─────────── ⭐ RESEÑAS ───────────"
+            name: _sep_reviews
+            widget: hidden
+
+          - label: "Reseñas — Eyebrow"
+            name: reviews_eyebrow
+            widget: string
+
+          - label: "Reseñas — Título"
+            name: reviews_h2
+            widget: text
+            hint: "Usa <br> y <em>palabra</em> para dorado."
+
+          - label: "Reseñas — Párrafo intro"
+            name: reviews_p
+            widget: text
+
+          - label: "Reseñas — Texto bajo puntaje (ej: Promedio de 532 reseñas...)"
+            name: reviews_score_p
+            widget: string
+
+          - label: "Reseña 1 — Texto"
+            name: rv1_texto
+            widget: text
+
+          - label: "Reseña 1 — Nombre"
+            name: rv1_nombre
+            widget: string
+
+          - label: "Reseña 1 — Fuente (Google / Booking.com)"
+            name: rv1_fuente
+            widget: string
+
+          - label: "Reseña 2 — Texto"
+            name: rv2_texto
+            widget: text
+
+          - label: "Reseña 2 — Nombre"
+            name: rv2_nombre
+            widget: string
+
+          - label: "Reseña 2 — Fuente"
+            name: rv2_fuente
+            widget: string
+
+          - label: "Reseña 3 — Texto"
+            name: rv3_texto
+            widget: text
+
+          - label: "Reseña 3 — Nombre"
+            name: rv3_nombre
+            widget: string
+
+          - label: "Reseña 3 — Fuente"
+            name: rv3_fuente
+            widget: string
+
+          - label: "Reseña 4 — Texto"
+            name: rv4_texto
+            widget: text
+
+          - label: "Reseña 4 — Nombre"
+            name: rv4_nombre
+            widget: string
+
+          - label: "Reseña 4 — Fuente"
+            name: rv4_fuente
+            widget: string
+
+          - label: "Reseña 5 — Texto"
+            name: rv5_texto
+            widget: text
+
+          - label: "Reseña 5 — Nombre"
+            name: rv5_nombre
+            widget: string
+
+          - label: "Reseña 5 — Fuente"
+            name: rv5_fuente
+            widget: string
+
+          - label: "Reseña 6 — Texto"
+            name: rv6_texto
+            widget: text
+
+          - label: "Reseña 6 — Nombre"
+            name: rv6_nombre
+            widget: string
+
+          - label: "Reseña 6 — Fuente"
+            name: rv6_fuente
+            widget: string
+
+          - label: "Reseña 7 — Texto"
+            name: rv7_texto
+            widget: text
+
+          - label: "Reseña 7 — Nombre"
+            name: rv7_nombre
+            widget: string
+
+          - label: "Reseña 7 — Fuente"
+            name: rv7_fuente
+            widget: string
+
+          - label: "─────────── 💰 RESERVA DIRECTA ───────────"
+            name: _sep_directo
+            widget: hidden
+
+          - label: "Reserva directa — Eyebrow"
+            name: directo_eyebrow
+            widget: string
+
+          - label: "Reserva directa — Título"
+            name: directo_h2
+            widget: text
+            hint: "Usa <br> y <em>palabra</em> para dorado."
+
+          - label: "Reserva directa — Párrafo"
+            name: directo_p
+            widget: text
+
+          - label: "Ventaja 01 — Título"
+            name: directo_01_titulo
+            widget: string
+
+          - label: "Ventaja 01 — Descripción"
+            name: directo_01_sub
+            widget: text
+
+          - label: "Ventaja 02 — Título"
+            name: directo_02_titulo
+            widget: string
+
+          - label: "Ventaja 02 — Descripción"
+            name: directo_02_sub
+            widget: text
+
+          - label: "Ventaja 03 — Título"
+            name: directo_03_titulo
+            widget: string
+
+          - label: "Ventaja 03 — Descripción"
+            name: directo_03_sub
+            widget: text
+
+          - label: "Ventaja 04 — Título"
+            name: directo_04_titulo
+            widget: string
+
+          - label: "Ventaja 04 — Descripción"
+            name: directo_04_sub
+            widget: text
+
+          - label: "Tarjeta promo — % grande (ej: 10%)"
+            name: promo_percent
+            widget: string
+
+          - label: "Tarjeta promo — Etiqueta"
+            name: promo_label
+            widget: string
+
+          - label: "Tarjeta promo — Título"
+            name: promo_titulo
+            widget: string
+
+          - label: "Tarjeta promo — Descripción"
+            name: promo_sub
+            widget: text
+
+          - label: "Tarjeta promo — Condiciones (letra chica)"
+            name: promo_condiciones
+            widget: text
+
+          - label: "─────────── 📍 UBICACIÓN ───────────"
+            name: _sep_ubicacion
+            widget: hidden
+
+          - label: "Ubicación — Eyebrow"
+            name: ubicacion_eyebrow
+            widget: string
+
+          - label: "Ubicación — Título"
+            name: ubicacion_h2
+            widget: text
+            hint: "Usa <br> y <em>palabra</em> para dorado."
+
+          - label: "Ubicación — Párrafo"
+            name: ubicacion_p
+            widget: text
+
+          - label: "Check-in / Check-out (texto informativo)"
+            name: checkin_info
+            widget: string
+            hint: "Ej: Check-in 16:00 · Check-out 12:00"
+
+          - label: "─────────── ❓ PREGUNTAS FRECUENTES ───────────"
+            name: _sep_faq
+            widget: hidden
+
+          - label: "FAQ — Eyebrow"
+            name: faq_eyebrow
+            widget: string
+
+          - label: "FAQ — Título"
+            name: faq_h2
+            widget: text
+            hint: "Usa <br> y <em>palabra</em> para dorado."
+
+          - label: "FAQ — Texto introductorio"
+            name: faq_intro
+            widget: text
+
+          - label: "Pregunta 1"
+            name: faq_1_q
+            widget: string
+
+          - label: "Respuesta 1"
+            name: faq_1_a
+            widget: text
+
+          - label: "Pregunta 2"
+            name: faq_2_q
+            widget: string
+
+          - label: "Respuesta 2"
+            name: faq_2_a
+            widget: text
+
+          - label: "Pregunta 3"
+            name: faq_3_q
+            widget: string
+
+          - label: "Respuesta 3"
+            name: faq_3_a
+            widget: text
+
+          - label: "Pregunta 4"
+            name: faq_4_q
+            widget: string
+
+          - label: "Respuesta 4"
+            name: faq_4_a
+            widget: text
+
+          - label: "Pregunta 5"
+            name: faq_5_q
+            widget: string
+
+          - label: "Respuesta 5"
+            name: faq_5_a
+            widget: text
+
+          - label: "Pregunta 6"
+            name: faq_6_q
+            widget: string
+
+          - label: "Respuesta 6"
+            name: faq_6_a
+            widget: text
+
+          - label: "Pregunta 7"
+            name: faq_7_q
+            widget: string
+
+          - label: "Respuesta 7"
+            name: faq_7_a
+            widget: text
+
+          - label: "─────────── 🎯 CTA FINAL ───────────"
+            name: _sep_cta
+            widget: hidden
+
+          - label: "CTA — Eyebrow"
+            name: cta_eyebrow
+            widget: string
+
+          - label: "CTA — Título"
+            name: cta_h2
+            widget: text
+            hint: "Usa <br> y <em>palabra</em> para dorado."
+
+          - label: "CTA — Párrafo"
+            name: cta_p
+            widget: text
+
+          - label: "Tarjeta reserva — Título (ej: ¿Cuándo nos visitas?)"
+            name: cta_card_h3
+            widget: string
+
+          - label: "Tarjeta reserva — Subtítulo"
+            name: cta_card_sub
+            widget: string
+
+          - label: "Tarjeta reserva — Letra chica"
+            name: cta_card_fine
+            widget: string
