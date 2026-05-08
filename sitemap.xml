@@ -3,24 +3,48 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.deitempli.cl/</loc>
-    <lastmod>2026-05-06</lastmod>
+    <lastmod>2026-05-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://www.deitempli.cl/images/habitacion-deluxe.jpg</image:loc>
-      <image:title>Hotel Dei Templi Reñaca — Habitación Deluxe con vista al Pacífico</image:title>
+      <image:title>Habitación Deluxe con balcón vista al Pacífico — Hotel Dei Templi Reñaca</image:title>
+      <image:caption>Habitación Deluxe con balcón privado y vista panorámica al mar, Hotel Dei Templi Reñaca</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://www.deitempli.cl/images/vista.jpg</image:loc>
-      <image:title>Vista panorámica al Pacífico desde Hotel Dei Templi Reñaca</image:title>
+      <image:title>Vista panorámica al Pacífico desde Reñaca alto — Hotel Dei Templi</image:title>
+      <image:caption>Vista al horizonte del Océano Pacífico desde Hotel Dei Templi, a 90 minutos de Santiago</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://www.deitempli.cl/images/carabela.jpg</image:loc>
-      <image:title>Departamento Carabela — Hotel Dei Templi Reñaca</image:title>
+      <image:title>Departamento Carabela frente a Playa El Encanto — Hotel Dei Templi Reñaca</image:title>
+      <image:caption>Departamento Carabela con bajada directa a la playa, sector 5 de Reñaca</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://www.deitempli.cl/images/piscina.jpg</image:loc>
-      <image:title>Piscina exterior Hotel Dei Templi Reñaca con vista al mar</image:title>
+      <image:title>Piscina exterior con vista al mar — Hotel Dei Templi Reñaca</image:title>
+      <image:caption>Piscina exterior del hotel con vistas panorámicas al Pacífico, Reñaca Viña del Mar</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.deitempli.cl/images/desayuno.jpg</image:loc>
+      <image:title>Desayuno incluido servido en habitación — Hotel Dei Templi Reñaca</image:title>
+      <image:caption>Desayuno completo servido directamente en tu habitación con vista al mar</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.deitempli.cl/images/pareja.jpg</image:loc>
+      <image:title>Escapada romántica desde Santiago — Hotel Dei Templi Reñaca</image:title>
+      <image:caption>Escapada romántica de fin de semana desde Santiago, Hotel Dei Templi Reñaca</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.deitempli.cl/images/habweb.jpg</image:loc>
+      <image:title>Habitación Estándar Hotel Dei Templi con vista al Pacífico</image:title>
+      <image:caption>Habitación Estándar con balcón privado y vista al mar, Hotel Dei Templi Reñaca</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.deitempli.cl/images/coctel.jpg</image:loc>
+      <image:title>Dei Bar cócteles room service 24 horas — Hotel Dei Templi Reñaca</image:title>
+      <image:caption>Cócteles del Dei Bar con servicio a habitación las 24 horas, Hotel Dei Templi</image:caption>
     </image:image>
   </url>
 </urlset>
