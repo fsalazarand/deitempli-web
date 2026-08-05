@@ -403,6 +403,53 @@
       background: rgba(255,255,255,.3);
     }
 
+    /* ────────────── BOOKING STRIP — Pxsol Search Widget ────────────── */
+    #booking-strip {
+      background: var(--w);
+      border-bottom: 1px solid var(--ink-15);
+      position: relative;
+      z-index: 10;
+    }
+    /* Wrapper del buscador — padding y centrado */
+    .dt-picker-wrap {
+      padding: 12px 28px;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+    }
+    /* El widget ocupa todo el ancho y hereda la paleta dorada de la marca */
+    .pxsol-search-widget {
+      width: 100%;
+      max-width: none;
+      --pxsol-search-dark:        oklch(62% 0.155 87);   /* dorado oscuro */
+      --pxsol-search-active:      oklch(62% 0.155 87);
+      --pxsol-search-border:      oklch(88% 0.02 87);
+      --pxsol-search-border-strong: oklch(62% 0.155 87);
+      --pxsol-search-radius:      2px;
+      --pxsol-search-panel-radius: 8px;
+      --pxsol-search-text:        #3D3B38;
+      --pxsol-search-muted:       oklch(45% 0.02 87);
+    }
+    /* Barra de promo bajo el buscador */
+    .bs-promo {
+      background: oklch(97% 0.05 85);
+      border-top: 1px solid oklch(90% 0.07 85);
+      padding: 9px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 8px;
+      font-size: 12px;
+      color: oklch(45% 0.12 75);
+    }
+    .bs-promo strong { font-weight: 600; }
+    .bs-promo::before { content: '⚡'; font-size: 13px; }
+    /* Responsive — en mobile el buscador se ajusta solo */
+    @media (max-width: 768px) {
+      .dt-picker-wrap { padding: 12px 20px; }
+    }
+
     /* ────────────── STATEMENT ────────────── */
     #statement {
       padding: 120px 0;
@@ -1485,6 +1532,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <span class="hero-scroll-hint">Desliza</span>
   </div>
+</section>
+
+<!-- ═══════════════ BOOKING STRIP — Pxsol Search Widget ═══════════════ -->
+<section id="booking-strip">
+  <div class="dt-picker-wrap" id="dt-picker-trigger">
+    <div id="buscador-pxsol"></div>
+    <script
+      src="https://pxsol-search-insert-widget.pages.dev/pxsol-search-widget.iife.js"
+      data-target="#buscador-pxsol"
+      data-pos="DeiTempliHotelVinadelMar"
+      data-product-id="27181"
+      data-lng="es"
+      data-currency="CLP"
+      data-redirect="true"
+    ></script>
+  </div>
+  <div class="bs-promo" data-texto="promo_strip"><strong>10% de descuento</strong> reservando directo · Código <strong>DEITEMPLI</strong> · Válido domingo a jueves</div>
 </section>
 
 <!-- ═══════════════ STATEMENT ═══════════════ -->
