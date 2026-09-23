@@ -252,7 +252,7 @@
       --white:    #FFFFFF;
       --ink:      #1D2A2F;   /* texto principal */
       --ink-2:    #4B585D;   /* texto secundario (7:1 sobre blanco) */
-      --ink-3:    #6B777B;
+      --ink-3:    #5E6A6E;   /* 5:1 sobre crema */
       --line:     #E6DDCC;
       --gold:     #D9A93F;   /* dorado del logo — fondos, íconos, botones */
       --gold-2:   #C4932A;
@@ -271,6 +271,11 @@
       --shadow-2: 0 10px 30px rgba(14,47,61,.12);
       --shadow-3: 0 24px 60px rgba(14,47,61,.20);
       --ease: cubic-bezier(.22,.61,.36,1);
+      --ease-out: cubic-bezier(.16,1,.3,1);   /* llegada segura, sin rebote */
+      --ease-in: cubic-bezier(.4,0,1,1);      /* salidas */
+      --dur-fast: 150ms;
+      --dur: 260ms;
+      --dur-slow: 480ms;
       --container: 1180px;
       --gutter: 24px;
     }
@@ -285,6 +290,7 @@
       color: var(--ink);
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
+      overflow-x: clip;
     }
     img { display: block; max-width: 100%; height: auto; }
     a { color: inherit; }
@@ -298,6 +304,10 @@
     .skip-link { position: absolute; left: 16px; top: -60px; z-index: 1000; background: var(--navy); color: #fff; padding: 12px 18px; border-radius: var(--r-sm); text-decoration: none; }
     .skip-link:focus { top: 16px; }
     :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+    ::selection { background: var(--gold-lt); color: var(--navy); }
+    html { scrollbar-color: var(--gold-2) var(--sand); accent-color: var(--gold-2); }
+    a { text-underline-offset: .2em; }
+    input, textarea { caret-color: var(--gold-2); }
 
     .container { width: 100%; max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); }
     section { position: relative; }
@@ -335,16 +345,16 @@
     .btn .icon { width: 18px; height: 18px; transition: transform .2s var(--ease); }
     .btn:hover .icon-arrow { transform: translateX(3px); }
     .btn:active { transform: scale(.98); }
-    .btn-gold { background: var(--gold); color: var(--navy); box-shadow: 0 6px 18px rgba(217,169,63,.35); }
-    .btn-gold:hover { background: #E3B64F; box-shadow: 0 10px 24px rgba(217,169,63,.45); }
+    .btn-gold { background: var(--gold); color: var(--navy); box-shadow: 0 6px 16px rgba(14,47,61,.16); }
+    .btn-gold:hover { background: #E3B64F; box-shadow: 0 10px 22px rgba(14,47,61,.22); }
     .btn-navy { background: var(--navy); color: #fff; }
     .btn-navy:hover { background: var(--navy-3); }
     .btn-ghost { background: transparent; color: var(--navy); border-color: rgba(14,47,61,.25); }
     .btn-ghost:hover { border-color: var(--navy); background: rgba(14,47,61,.04); }
     .btn-ghost-light { background: rgba(255,255,255,.08); color: #fff; border-color: rgba(255,255,255,.45); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
     .btn-ghost-light:hover { background: rgba(255,255,255,.16); border-color: #fff; }
-    .btn-wa { background: #1F9D55; color: #fff; }
-    .btn-wa:hover { background: #188647; }
+    .btn-wa { background: #167D43; color: #fff; }   /* verde WhatsApp oscurecido: texto blanco 5:1 */
+    .btn-wa:hover { background: #11683A; }
     .btn-block { width: 100%; }
     .link-arrow { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: var(--navy); text-decoration: none; border-bottom: 1.5px solid var(--gold); padding-bottom: 2px; }
     .link-arrow:hover { color: var(--gold-ink); }
@@ -352,11 +362,11 @@
     /* ────────────── NAV ────────────── */
     #nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      transition: background .3s var(--ease), box-shadow .3s var(--ease), padding .3s var(--ease);
-      padding: 18px 0;
+      transition: background var(--dur-slow) var(--ease-out), box-shadow var(--dur-slow) var(--ease-out);
+      padding: 14px 0;
     }
     #nav .container { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .nav-logo img { height: 46px; width: auto; transition: height .3s var(--ease); }
+    .nav-logo img { height: 44px; width: auto; }
     .nav-logo .logo-dark { display: none; }
     .nav-links { display: flex; align-items: center; gap: 30px; list-style: none; }
     .nav-links a { color: #fff; text-decoration: none; font-size: 14px; font-weight: 600; letter-spacing: .02em; opacity: .92; padding: 8px 0; position: relative; }
@@ -366,18 +376,21 @@
     .nav-cta { display: flex; align-items: center; gap: 12px; }
     .nav-cta .btn { min-height: 44px; padding: 10px 20px; font-size: 14px; }
     .hamburger { display: none; width: 46px; height: 46px; border-radius: 12px; border: 1px solid rgba(255,255,255,.4); background: rgba(14,47,61,.25); color: #fff; align-items: center; justify-content: center; cursor: pointer; }
-    #nav.scrolled { background: rgba(255,255,255,.96); box-shadow: 0 1px 0 var(--line), 0 6px 24px rgba(14,47,61,.06); padding: 10px 0; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+    #nav.scrolled { background: rgba(255,255,255,.96); box-shadow: 0 1px 0 var(--line), 0 6px 24px rgba(14,47,61,.06); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
     #nav.scrolled .nav-links a { color: var(--ink); }
     #nav.scrolled .logo-light { display: none; }
     #nav.scrolled .logo-dark { display: block; }
-    #nav.scrolled .nav-logo img { height: 40px; }
     #nav.scrolled .hamburger { color: var(--navy); border-color: var(--line); background: #fff; }
 
     #mob-menu {
       position: fixed; inset: 0; z-index: 200; background: var(--navy);
-      display: none; flex-direction: column; padding: 24px var(--gutter) 32px;
+      display: flex; flex-direction: column; padding: 24px var(--gutter) 32px;
+      visibility: hidden; clip-path: circle(0px at calc(100% - 39px) 35px);
+      transition: clip-path 320ms var(--ease-in), visibility 0s linear 320ms;
     }
-    #mob-menu.open { display: flex; }
+    #mob-menu.open { visibility: visible; clip-path: circle(150% at calc(100% - 39px) 35px); transition: clip-path 560ms var(--ease-out), visibility 0s; }
+    #mob-menu .mob-link, #mob-menu .mob-actions { opacity: 0; transform: translateY(10px); transition: opacity 200ms var(--ease-in), transform 200ms var(--ease-in); }
+    #mob-menu.open .mob-link, #mob-menu.open .mob-actions { opacity: 1; transform: none; transition: opacity 420ms var(--ease-out), transform 420ms var(--ease-out); transition-delay: calc(140ms + var(--i, 0) * 45ms); }
     .mob-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 36px; }
     .mob-top img { height: 42px; width: auto; }
     .mob-close { width: 46px; height: 46px; border-radius: 12px; border: 1px solid rgba(255,255,255,.3); background: transparent; color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; }
@@ -395,7 +408,7 @@
         linear-gradient(180deg, rgba(8,28,37,.62) 0%, rgba(8,28,37,.18) 28%, rgba(8,28,37,.10) 45%, rgba(8,28,37,.70) 78%, rgba(8,28,37,.88) 100%);
     }
     .hero-content { position: relative; z-index: 1; padding-top: 150px; padding-bottom: 36px; }
-    .hero-tag { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #fff; background: rgba(14,47,61,.45); border: 1px solid rgba(255,255,255,.25); padding: 8px 14px; border-radius: 999px; margin-bottom: 26px; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+    .hero-tag { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; letter-spacing: .02em; color: #fff; background: rgba(14,47,61,.45); border: 1px solid rgba(255,255,255,.25); padding: 8px 14px; border-radius: 999px; margin-bottom: 26px; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
     .hero-tag .icon { width: 16px; height: 16px; color: var(--gold); }
     .hero-h1 { font-size: clamp(46px, 7.4vw, 96px); color: #fff; font-weight: 400; line-height: 1.02; letter-spacing: -.025em; max-width: 12ch; text-shadow: 0 2px 30px rgba(0,0,0,.25); }
     .hero-h1 em { color: var(--gold); font-style: italic; }
@@ -518,6 +531,12 @@
     .exp-layout { display: grid; grid-template-columns: 1fr 1.05fr; gap: 64px; align-items: center; }
     .timeline { list-style: none; position: relative; display: grid; gap: 30px; }
     .timeline::before { content: ''; position: absolute; left: 23px; top: 10px; bottom: 10px; width: 1.5px; background: linear-gradient(var(--gold), rgba(217,169,63,.15)); }
+    @supports (animation-timeline: view()) {
+      .timeline::before { background: rgba(217,169,63,.22); }
+      .timeline::after { content: ''; position: absolute; left: 23px; top: 10px; bottom: 10px; width: 1.5px; background: var(--gold); transform-origin: top; transform: scaleY(0);
+        animation: dia linear both; animation-timeline: view(); animation-range: entry 35% cover 62%; }
+      @keyframes dia { to { transform: scaleY(1); } }
+    }
     .tl-item { display: grid; grid-template-columns: 48px 1fr; gap: 20px; position: relative; }
     .tl-dot { width: 48px; height: 48px; border-radius: 50%; background: var(--navy); color: var(--gold); display: flex; align-items: center; justify-content: center; border: 4px solid #fff; box-shadow: 0 0 0 1.5px var(--gold); position: relative; z-index: 1; }
     .tl-dot .icon { width: 20px; height: 20px; }
@@ -628,6 +647,11 @@
     .faq-list summary::-webkit-details-marker { display: none; }
     .faq-list summary .icon { color: var(--gold-ink); transition: transform .25s var(--ease); }
     .faq-list details[open] summary .icon { transform: rotate(45deg); }
+    @supports (interpolate-size: allow-keywords) {
+      .faq-list { interpolate-size: allow-keywords; }
+      .faq-list details::details-content { height: 0; overflow: clip; opacity: 0; transition: height var(--dur-slow) var(--ease-out), opacity var(--dur) var(--ease-out), content-visibility var(--dur-slow) allow-discrete; }
+      .faq-list details[open]::details-content { height: auto; opacity: 1; }
+    }
     .faq-list .ans { padding: 0 22px 22px; font-size: 15.5px; color: var(--ink-2); }
 
     /* ────────────── CTA FINAL ────────────── */
@@ -647,7 +671,7 @@
     .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 40px; margin-bottom: 48px; }
     .foot-brand img { height: 50px; width: auto; margin-bottom: 18px; }
     .foot-brand p { color: rgba(255,255,255,.65); font-size: 14.5px; max-width: 320px; }
-    footer.site h4 { font-family: var(--fb); font-size: 13px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+    footer.site .foot-h { font-family: var(--fb); line-height: 1.4; letter-spacing: .12em; font-size: 13px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
     footer.site ul { list-style: none; display: grid; gap: 10px; }
     footer.site a { color: rgba(255,255,255,.78); text-decoration: none; font-size: 14.5px; }
     footer.site a:hover { color: #fff; }
@@ -659,19 +683,54 @@
     .foot-keywords a { font-size: 13px; color: rgba(255,255,255,.45); }
 
     /* ────────────── FLOTANTES ────────────── */
-    #wa-float { position: fixed; right: 24px; bottom: 24px; z-index: 90; width: 60px; height: 60px; border-radius: 50%; background: #1F9D55; color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 28px rgba(31,157,85,.45); transition: transform .2s var(--ease); }
+    #wa-float { position: fixed; right: 24px; bottom: 24px; z-index: 90; width: 60px; height: 60px; border-radius: 50%; background: #167D43; color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px rgba(14,47,61,.25); transition: transform .2s var(--ease); }
     #wa-float:hover { transform: scale(1.06); }
     #wa-float .icon { width: 30px; height: 30px; }
     .mobile-bar { display: none; }
 
-    /* ────────────── REVEAL (solo con JS, respeta reduced motion) ────────────── */
-    .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
-    .js .reveal.in { opacity: 1; transform: none; }
+    /* ────────────── MOVIMIENTO ──────────────
+       Tesis: "abrir el ventanal". Un momento principal al llegar
+       (la foto del mar se abre desde el centro, el título sube
+       desde el horizonte) y, después, solo movimiento que explica:
+       listas que entran en orden, la línea del día, estados.
+       Sin JavaScript todo queda visible. */
+    /* Listas: entrada en cascada (tarifas, habitaciones, reseñas, pasos) */
+    .js .reveal { opacity: 0; transform: translateY(16px); filter: blur(4px);
+      transition: opacity 640ms var(--ease-out), transform 640ms var(--ease-out), filter 640ms var(--ease-out); transition-delay: var(--d, 0ms); }
+    .js .reveal.in { opacity: 1; transform: none; filter: none; }
+
+    /* Momento principal: el ventanal se abre */
+    @keyframes ventanal { from { clip-path: inset(0 42% 0 42%); } to { clip-path: inset(0 0 0 0); } }
+    @keyframes respira { from { transform: scale(1.12); } to { transform: scale(1); } }
+    @keyframes horizonte { from { opacity: 0; transform: translateY(.45em); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: none; clip-path: inset(0 0 -20% 0); } }
+    @keyframes aparece { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    .hero-media img { animation: ventanal 1100ms var(--ease-out) both, respira 2400ms var(--ease-out) both; }
+    .hero-tag { animation: aparece 600ms var(--ease-out) 380ms both; }
+    .hero-h1 { animation: horizonte 900ms var(--ease-out) 480ms both; }
+    .hero-h1 em { display: inline-block; animation: horizonte 900ms var(--ease-out) 700ms both; }
+    .hero-sub { animation: aparece 700ms var(--ease-out) 820ms both; }
+    .hero-ctas, .hero-proof { animation: aparece 700ms var(--ease-out) 920ms both; }
+    #buscar .search-card { animation: aparece 800ms var(--ease-out) 1000ms both; }
+
+    /* Estados: respuesta inmediata al tocar */
+    .room-card, .rate-card, .score, .faq-list details { will-change: auto; }
+    .btn { transition-duration: var(--dur); }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .js .reveal { opacity: 1; transform: none; transition: none; }
-      *, *::before, *::after { animation: none !important; transition: none !important; }
+      /* Menos movimiento, no cero: se conservan los fundidos que confirman estados */
+      .hero-media img { animation: none; }
+      .hero-tag, .hero-h1, .hero-h1 em, .hero-sub, .hero-ctas, .hero-proof, #buscar .search-card { animation: fundido 400ms ease-out both; }
+      @keyframes fundido { from { opacity: 0; } to { opacity: 1; } }
+      .js .reveal { transform: none; filter: none; transition: opacity 300ms ease-out; transition-delay: 0ms; }
+      #mob-menu, #mob-menu.open { clip-path: none; transition: opacity 200ms ease-out, visibility 0s linear 200ms; opacity: 0; }
+      #mob-menu.open { opacity: 1; transition: opacity 200ms ease-out, visibility 0s; }
+      #mob-menu .mob-link, #mob-menu .mob-actions { transform: none !important; }
+      .timeline::after { display: none; }
+      .rate-card:hover, .room-card:hover { transform: none; }
+      .gallery figure:hover img { transform: none; }
     }
+    @media print { .js .reveal { opacity: 1; transform: none; filter: none; } .hero-media img, .hero-h1, .hero-sub, #buscar .search-card { animation: none; } }
 
     /* ────────────── RESPONSIVE ────────────── */
     @media (max-width: 1080px) {
@@ -708,10 +767,9 @@
       :root { --gutter: 16px; }
       body { padding-bottom: 76px; }
       .nav-logo img { height: 40px; }
-      #nav { padding: 12px 0; }
       .nav-cta .btn-wa-nav { display: none; }
       .hero-content { padding-top: 112px; padding-bottom: 24px; }
-      .hero-tag { font-size: 11px; letter-spacing: .08em; padding: 7px 12px; margin-bottom: 20px; }
+      .hero-tag { font-size: 13px; padding: 7px 12px; margin-bottom: 20px; }
       .hero-h1 { font-size: 48px; }
       .hero-sub { margin: 18px 0 22px; font-size: 16.5px; }
       .hero-ctas { display: none; }
@@ -740,7 +798,9 @@
         display: flex; gap: 10px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 95;
         padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); background: rgba(255,255,255,.97);
         box-shadow: 0 -6px 24px rgba(14,47,61,.12); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+        transition: transform var(--dur-slow) var(--ease-out), opacity var(--dur-slow) var(--ease-out);
       }
+      .js .mobile-bar.oculta { transform: translateY(110%); opacity: 0; transition-duration: 280ms; transition-timing-function: var(--ease-in); }
       .mobile-bar .btn { flex: 1 1 0; min-width: 0; min-height: 52px; padding: 0 16px; }
       .mobile-bar .btn-wa { flex: 0 0 56px; padding: 0; border-radius: 16px; }
       .mobile-bar .btn-gold { border-radius: 16px; }
@@ -821,13 +881,13 @@
     <img src="/logohotel.png" alt="Hotel Dei Templi" width="146" height="42" style="filter:brightness(0) invert(1);" />
     <button class="mob-close" id="mob-close" aria-label="Cerrar menú"><svg class="icon"><use href="#i-x"/></svg></button>
   </div>
-  <a class="mob-link" href="#tarifas">Tarifas</a>
-  <a class="mob-link" href="#habitaciones">Habitaciones</a>
-  <a class="mob-link" href="#experiencia">La estadía</a>
-  <a class="mob-link" href="#resenas">Reseñas</a>
-  <a class="mob-link" href="#ubicacion">Cómo llegar</a>
-  <a class="mob-link" href="#faq">Preguntas frecuentes</a>
-  <div class="mob-actions">
+  <a class="mob-link" style="--i:0" href="#tarifas">Tarifas</a>
+  <a class="mob-link" style="--i:1" href="#habitaciones">Habitaciones</a>
+  <a class="mob-link" style="--i:2" href="#experiencia">La estadía</a>
+  <a class="mob-link" style="--i:3" href="#resenas">Reseñas</a>
+  <a class="mob-link" style="--i:4" href="#ubicacion">Cómo llegar</a>
+  <a class="mob-link" style="--i:5" href="#faq">Preguntas frecuentes</a>
+  <div class="mob-actions" style="--i:6">
     <a href="https://deitemplihotelvinadelmar.reservadirecto.com/lp.html?pos=DeiTempliHotelVinadelMar&amp;webcache=off&amp;tag=PmsLink" target="_blank" rel="noopener" class="btn btn-gold btn-block">Ver disponibilidad <svg class="icon icon-arrow"><use href="#i-arrow"/></svg></a>
     <a href="https://wa.me/56966130676?text=Hola%20Dei%20Templi%2C%20quiero%20consultar%20disponibilidad" target="_blank" rel="noopener" class="btn btn-wa btn-block"><svg class="icon icon-fill"><use href="#i-whatsapp"/></svg> Escribir por WhatsApp</a>
   </div>
@@ -880,7 +940,8 @@
 </section>
 
 <!-- ═══════════════ STRIP DE VALOR ═══════════════ -->
-<section id="precio-directo" aria-label="Beneficios de reservar directo">
+<section id="precio-directo" aria-labelledby="strip-titulo">
+  <h2 id="strip-titulo" class="sr-only">Beneficios de reservar directo</h2>
   <div class="container strip-grid">
     <div class="strip-item reveal">
       <span class="strip-icon"><svg class="icon"><use href="#i-tag"/></svg></span>
@@ -900,7 +961,7 @@
 <!-- ═══════════════ TARIFAS (ANTES: decisión) ═══════════════ -->
 <section id="tarifas" class="section section--cream">
   <div class="container">
-    <div class="section-head section-head--center reveal">
+    <div class="section-head section-head--center">
       <span class="eyebrow" data-texto="tarifas_eyebrow">Nuestras tarifas</span>
       <h2 data-texto="tarifas_h2">Misma habitación, mismo desayuno.<br><em>Tú eliges cómo pagar.</em></h2>
       <p data-texto="tarifas_intro">Cada habitación tiene siempre dos precios. La estadía es exactamente la misma: lo único que cambia es cuánto pagas al reservar y si puedes cancelar o cambiar tus fechas.</p>
@@ -910,7 +971,6 @@
       <article class="rate-card rate-card--best reveal" aria-labelledby="rate-nr">
         <span class="rate-badge"><svg class="icon"><use href="#i-tag"/></svg><span data-texto="nr_badge">Mejor precio · 10% menos</span></span>
         <div class="rate-top">
-          <span class="rate-icon"><svg class="icon"><use href="#i-lock"/></svg></span>
           <h3 id="rate-nr" data-texto="nr_titulo">No reembolsable</h3>
         </div>
         <p class="rate-lead" data-texto="nr_lead">Para cuando tus fechas ya están decididas.</p>
@@ -927,7 +987,6 @@
       <article class="rate-card rate-card--flex reveal" aria-labelledby="rate-flex">
         <span class="rate-badge"><svg class="icon"><use href="#i-shield"/></svg><span data-texto="flex_badge">Más tranquilidad</span></span>
         <div class="rate-top">
-          <span class="rate-icon"><svg class="icon"><use href="#i-refresh"/></svg></span>
           <h3 id="rate-flex" data-texto="flex_titulo">Flexible</h3>
         </div>
         <p class="rate-lead" data-texto="flex_lead">Para cuando todavía puede cambiar algo.</p>
@@ -943,23 +1002,23 @@
     </div>
 
     <div class="rates-bottom">
-      <div class="rates-note reveal">
+      <div class="rates-note">
         <p class="rates-example"><svg class="icon"><use href="#i-tag"/></svg><span data-texto="tarifas_ejemplo"><strong>Ejemplo real</strong> · Habitación Estándar con balcón, 1 noche: No reembolsable <strong>$62.991</strong> · Flexible <strong>$69.990</strong>. Precios referenciales de octubre 2026, impuestos incluidos; varían según la fecha.</span></p>
         <p data-texto="tarifas_como">En el motor de reservas verás las dos opciones debajo de cada habitación, con el precio final y los impuestos incluidos.</p>
       </div>
-      <div class="rates-tip reveal">
+      <div class="rates-tip">
         <span class="tip-icon"><svg class="icon"><use href="#i-lightbulb"/></svg></span>
         <div><h3 data-texto="tarifas_tip_titulo">¿Viajas en menos de 3 días?</h3><p data-texto="tarifas_tip">Elige No reembolsable. Como faltan menos de 72 horas para tu llegada, la Flexible ya no permite cancelar sin costo: pagarías 10% más por el mismo resultado.</p></div>
       </div>
     </div>
-    <p class="rates-includes reveal"><svg class="icon"><use href="#i-check"/></svg><span data-texto="tarifas_incluye">Ambas tarifas incluyen desayuno para dos servido en tu habitación, estacionamiento gratis frente al hotel, WiFi y acceso al room service 24 horas del Dei Bar.</span></p>
+    <p class="rates-includes"><svg class="icon"><use href="#i-check"/></svg><span data-texto="tarifas_incluye">Ambas tarifas incluyen desayuno para dos servido en tu habitación, estacionamiento gratis frente al hotel, WiFi y acceso al room service 24 horas del Dei Bar.</span></p>
   </div>
 </section>
 
 <!-- ═══════════════ HABITACIONES ═══════════════ -->
 <section id="habitaciones" class="section">
   <div class="container">
-    <div class="section-head reveal">
+    <div class="section-head">
       <span class="eyebrow" data-texto="rooms_eyebrow">Habitaciones</span>
       <h2 data-texto="rooms_h2">Todas miran<br><em>al Pacífico.</em></h2>
       <p data-texto="rooms_intro">Todas nuestras habitaciones tienen vista al mar y desayuno incluido. La mayoría suma balcón privado: te lo indicamos claro en cada una para que elijas sin sorpresas.</p>
@@ -1035,7 +1094,7 @@
 <section id="experiencia" class="section section--sand">
   <div class="container exp-layout">
     <div>
-      <div class="section-head reveal" style="margin-bottom:40px;">
+      <div class="section-head" style="margin-bottom:40px;">
         <span class="eyebrow" data-texto="exp_eyebrow">Tu estadía</span>
         <h2 data-texto="exp_h2">Así se vive<br><em>Dei Templi.</em></h2>
         <p data-texto="exp_intro">Lo que nuestros huéspedes más destacan no es un servicio en particular: es no tener que preocuparse de nada.</p>
@@ -1059,7 +1118,7 @@
         </li>
       </ol>
     </div>
-    <div class="exp-media reveal" id="dei-bar">
+    <div class="exp-media" id="dei-bar">
       <div class="m1"><img data-foto="bar_coctel" src="/images/tabla.jpg" alt="Tabla y cócteles del Dei Bar servidos en el balcón frente al mar" width="1600" height="900" loading="lazy" /></div>
       <div class="m2"><img data-foto="bar_desayuno" src="/images/desayuno.jpg" alt="Desayuno servido en el balcón con vista a la bahía de Reñaca" width="1600" height="1120" loading="lazy" /></div>
       <div class="bar-card">
@@ -1074,12 +1133,12 @@
 <!-- ═══════════════ RESEÑAS ═══════════════ -->
 <section id="resenas" class="section">
   <div class="container">
-    <div class="section-head reveal">
+    <div class="section-head">
       <span class="eyebrow" data-texto="reviews_eyebrow">Opiniones reales</span>
       <h2 data-texto="reviews_h2">Lo dicen ellos,<br><em>no nosotros.</em></h2>
       <p data-texto="reviews_p">Más de 1.800 huéspedes han opinado sobre Dei Templi en Booking.com, Google y TripAdvisor. Estas son reseñas reales, con nombre y fecha: puedes verificarlas en cada plataforma.</p>
     </div>
-    <div class="score-row reveal">
+    <div class="score-row">
       <a class="score" href="https://www.booking.com/hotel/cl/dei-templi-apart.html" target="_blank" rel="noopener">
         <span class="score-num">9,1<small>/10</small></span>
         <span class="score-txt"><strong>Booking.com</strong><span>934 opiniones</span></span>
@@ -1131,13 +1190,13 @@
 <!-- ═══════════════ RESERVA DIRECTA vs BOOKING ═══════════════ -->
 <section id="reserva-directa" class="section section--cream">
   <div class="container direct-layout">
-    <div class="direct-copy reveal">
+    <div class="direct-copy">
       <span class="eyebrow" data-texto="directo_eyebrow">¿Por qué reservar aquí?</span>
       <h2 style="font-size:clamp(32px,4.2vw,50px);margin-bottom:20px;" data-texto="directo_h2">Nos encontraste en Booking.<br><em>Reserva directo y gana tú.</em></h2>
       <p data-texto="directo_p">Muchos huéspedes nos conocen por Booking.com, y nos encanta. Pero cuando reservas directo, la comisión que cobra el intermediario se queda contigo en forma de mejor precio, y tu relación es con nosotros, no con una plataforma.</p>
       <a href="https://deitemplihotelvinadelmar.reservadirecto.com/lp.html?pos=DeiTempliHotelVinadelMar&amp;webcache=off&amp;tag=PmsLink" target="_blank" rel="noopener" class="btn btn-gold">Ver mi precio directo <svg class="icon icon-arrow"><use href="#i-arrow"/></svg></a>
     </div>
-    <div class="reveal">
+    <div>
       <div class="cmp-wrap">
         <table class="cmp">
           <caption class="sr-only">Comparación entre reservar en deitempli.cl y en otras plataformas</caption>
@@ -1161,7 +1220,7 @@
 <!-- ═══════════════ DESPUÉS DE RESERVAR ═══════════════ -->
 <section id="despues" class="section section--navy">
   <div class="container">
-    <div class="section-head reveal">
+    <div class="section-head">
       <span class="eyebrow" data-texto="despues_eyebrow">Después de reservar</span>
       <h2 data-texto="despues_h2">Sin incertidumbre,<br><em>de principio a fin.</em></h2>
     </div>
@@ -1177,10 +1236,10 @@
 <!-- ═══════════════ CARABELA ═══════════════ -->
 <section id="carabela" class="section section--sand">
   <div class="container">
-    <div class="carabela reveal">
+    <div class="carabela">
       <div class="carabela-media"><img data-foto="carabela" src="/images/carabela.jpg" alt="Departamento Carabela: vista a Playa El Encanto, living y dormitorio" width="1400" height="980" loading="lazy" /></div>
       <div class="carabela-body">
-        <span class="eyebrow" data-texto="carabela_eyebrow">Solo para dos · fuera del hotel</span>
+        <span class="eyebrow" data-texto="carabela_eyebrow">Solo para dos</span>
         <h2 data-texto="carabela_h2">Carabela:<br><em>a pasos de la arena.</em></h2>
         <p data-texto="carabela_p1">Carabela es un departamento aparte, en el sector 5 de Reñaca, frente a Playa El Encanto. Es tu refugio privado, lejos del ruido.</p>
         <p data-texto="carabela_p2">El condominio tiene bajada directa a la playa: caminas por la orilla, vuelves y descorchas un vino en el balcón panorámico mientras se esconde el sol. El ritmo del fin de semana lo ponen ustedes.</p>
@@ -1197,11 +1256,11 @@
 <!-- ═══════════════ GALERÍA ═══════════════ -->
 <section id="galeria" class="section">
   <div class="container">
-    <div class="section-head reveal">
+    <div class="section-head">
       <span class="eyebrow" data-texto="galeria_eyebrow">Galería</span>
       <h2 data-texto="galeria_h2">Fotos que no<br><em>necesitan filtro.</em></h2>
     </div>
-    <div class="gallery reveal">
+    <div class="gallery">
       <figure><img data-foto="galeria_1" src="/images/vista.jpg" alt="Atardecer sobre el Pacífico visto desde Hotel Dei Templi, con la piscina iluminada" width="1600" height="1120" loading="lazy" /></figure>
       <figure><img data-foto="galeria_2" src="/images/piscina.jpg" alt="Piscina exterior del hotel rodeada de jardín" width="1400" height="857" loading="lazy" /></figure>
       <figure><img data-foto="galeria_3" src="/images/pareja.jpg" alt="Pareja brindando en el balcón con vista al mar" width="1400" height="791" loading="lazy" /></figure>
@@ -1215,7 +1274,7 @@
 <!-- ═══════════════ UBICACIÓN ═══════════════ -->
 <section id="ubicacion" class="section section--cream">
   <div class="container loc-layout">
-    <div class="reveal">
+    <div>
       <span class="eyebrow" data-texto="ubicacion_eyebrow">Cómo llegar</span>
       <h2 style="font-size:clamp(32px,4.2vw,50px);margin-bottom:18px;" data-texto="ubicacion_h2">En lo alto de<br><em>Reñaca.</em></h2>
       <p style="font-size:17px;" data-texto="ubicacion_p">Av. Edmundo Eluchans 1475, Reñaca, Viña del Mar. Estamos en la parte alta, con la mejor vista del sector y sin edificios enfrente. A 90 minutos de Santiago por la Ruta 68.</p>
@@ -1236,7 +1295,7 @@
         <a href="https://maps.google.com/?cid=13955628741804259447" target="_blank" rel="noopener" class="btn btn-ghost">Abrir en Google Maps</a>
       </div>
     </div>
-    <a class="map-card reveal" href="https://maps.google.com/?cid=13955628741804259447" target="_blank" rel="noopener" aria-label="Ver Hotel Dei Templi en Google Maps">
+    <a class="map-card" href="https://maps.google.com/?cid=13955628741804259447" target="_blank" rel="noopener" aria-label="Ver Hotel Dei Templi en Google Maps">
       <img src="/images/vista.jpg" alt="" width="1600" height="1120" loading="lazy" />
       <div class="map-card-body">
         <h3>Av. Edmundo Eluchans 1475</h3>
@@ -1250,13 +1309,13 @@
 <!-- ═══════════════ FAQ ═══════════════ -->
 <section id="faq" class="section">
   <div class="container faq-layout">
-    <div class="faq-side reveal">
+    <div class="faq-side">
       <span class="eyebrow" data-texto="faq_eyebrow">Preguntas frecuentes</span>
       <h2 style="font-size:clamp(32px,4vw,48px);margin-bottom:18px;" data-texto="faq_h2">Todo lo que quieres<br><em>saber antes de venir.</em></h2>
       <p data-texto="faq_intro">Si tu pregunta no está aquí, escríbenos. Respondemos en minutos, no en horas.</p>
       <a href="https://wa.me/56966130676?text=Hola%20Dei%20Templi%2C%20tengo%20una%20consulta%20antes%20de%20reservar" target="_blank" rel="noopener" class="btn btn-wa"><svg class="icon icon-fill"><use href="#i-whatsapp"/></svg> Preguntar por WhatsApp</a>
     </div>
-    <div class="faq-list reveal">
+    <div class="faq-list">
       <details open>
         <summary><span data-texto="faq_1_q">¿Cuál es la diferencia entre la tarifa Flexible y la No reembolsable?</span><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <p class="ans" data-texto="faq_1_a">La habitación, el desayuno y todos los servicios son exactamente iguales. La No reembolsable es 10% más económica, se paga completa al reservar y no admite cancelaciones ni cambios. La Flexible cuesta un poco más, pagas solo el 50% al reservar y puedes cancelar o cambiar tus fechas sin costo hasta 72 horas antes de llegar.</p>
@@ -1331,7 +1390,7 @@
         </div>
       </div>
       <div>
-        <h4>El hotel</h4>
+        <h2 class="foot-h">El hotel</h2>
         <ul>
           <li><a href="#tarifas">Tarifas Flexible y No reembolsable</a></li>
           <li><a href="#habitaciones">Habitaciones</a></li>
@@ -1341,7 +1400,7 @@
         </ul>
       </div>
       <div>
-        <h4>Reserva</h4>
+        <h2 class="foot-h">Reserva</h2>
         <ul>
           <li><a href="https://deitemplihotelvinadelmar.reservadirecto.com/lp.html?pos=DeiTempliHotelVinadelMar&amp;webcache=off&amp;tag=PmsLink" target="_blank" rel="noopener">Ver disponibilidad</a></li>
           <li><a href="#reserva-directa">Por qué reservar directo</a></li>
@@ -1350,7 +1409,7 @@
         </ul>
       </div>
       <div>
-        <h4>Contacto</h4>
+        <h2 class="foot-h">Contacto</h2>
         <ul>
           <li><a href="https://maps.google.com/?cid=13955628741804259447" target="_blank" rel="noopener">Av. Edmundo Eluchans 1475, Reñaca, Viña del Mar</a></li>
           <li><a href="tel:+56966130676">+56 9 6613 0676</a></li>
@@ -1467,15 +1526,31 @@
   /* ── APARICIÓN SUAVE AL HACER SCROLL ── */
   (function reveal() {
     const els = document.querySelectorAll('.reveal');
-    if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      els.forEach(el => el.classList.add('in')); return;
-    }
+    if (!('IntersectionObserver' in window)) { els.forEach(el => el.classList.add('in')); return; }
+    /* Los elementos de una misma lista que entran juntos lo hacen en orden (máx. 3 pasos de 90 ms) */
     const io = new IntersectionObserver(entries => {
-      entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+      entries.filter(en => en.isIntersecting).forEach((en, n) => {
+        en.target.style.setProperty('--d', Math.min(n, 3) * 90 + 'ms');
+        en.target.classList.add('in');
+        io.unobserve(en.target);
+      });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.12 });
     els.forEach(el => io.observe(el));
-    /* Red de seguridad: si algo no se observó (p. ej. impresión o capturas), mostrarlo igual */
-    setTimeout(() => els.forEach(el => el.classList.add('in')), 3500);
+  })();
+
+  /* ── BARRA INFERIOR (celular): aparece cuando el buscador ya no está a la vista ── */
+  (function mobileBar() {
+    const bar = document.querySelector('.mobile-bar');
+    const search = document.getElementById('buscar');
+    if (!bar || !search) return;
+    /* Cálculo directo en cada scroll: no depende de APIs que algunos navegadores internos pausan */
+    const update = () => {
+      const r = search.getBoundingClientRect();
+      bar.classList.toggle('oculta', r.bottom > 0 && r.top < window.innerHeight);
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update, { passive: true });
+    update();
   })();
 
   /* ════════════════════════════════════════════════════════

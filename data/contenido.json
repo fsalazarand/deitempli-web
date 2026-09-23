@@ -5,20 +5,17 @@
   "horario_desayuno": "8:00 a 11:30",
   "checkin_hora": "16:00",
   "checkout_hora": "12:00",
-
   "hero_tag": "Reñaca · Viña del Mar · a 90 min de Santiago",
   "hero_h1": "El mar te está<br><em>esperando.</em>",
   "hero_sub": "Despierta con el Pacífico frente a tu cama, con el desayuno servido en tu habitación y el Dei Bar abierto las 24 horas. Reserva directo aquí y paga menos que en Booking.",
   "buscador_titulo": "Elige tus fechas y mira el precio al instante",
   "buscador_nota": "Precio directo más bajo que en Booking.com y Expedia · Tarifa Flexible o No reembolsable: tú eliges",
-
   "strip_1_titulo": "El mejor precio está aquí",
   "strip_1_texto": "Nuestro motor de reservas compara en vivo: reservando directo pagas menos que en Booking.com, Despegar o Expedia.",
   "strip_2_titulo": "Dos tarifas, tú eliges",
   "strip_2_texto": "Flexible, para cambiar o cancelar gratis hasta 72 horas antes. O No reembolsable, 10% más económica.",
   "strip_3_titulo": "Hablas con el hotel",
   "strip_3_texto": "Tu reserva la recibe nuestro equipo, no un intermediario. Cualquier duda, te respondemos por WhatsApp.",
-
   "tarifas_eyebrow": "Nuestras tarifas",
   "tarifas_h2": "Misma habitación, mismo desayuno.<br><em>Tú eliges cómo pagar.</em>",
   "tarifas_intro": "Cada habitación tiene siempre dos precios. La estadía es exactamente la misma: lo único que cambia es cuánto pagas al reservar y si puedes cancelar o cambiar tus fechas.",
@@ -43,7 +40,6 @@
   "tarifas_tip": "Elige No reembolsable. Como faltan menos de 72 horas para tu llegada, la Flexible ya no permite cancelar sin costo: pagarías 10% más por el mismo resultado.",
   "tarifas_incluye": "Ambas tarifas incluyen desayuno para dos servido en tu habitación, estacionamiento gratis frente al hotel, WiFi y acceso al room service 24 horas del Dei Bar.",
   "tarifas_como": "En el motor de reservas verás las dos opciones debajo de cada habitación, con el precio final y los impuestos incluidos.",
-
   "rooms_eyebrow": "Habitaciones",
   "rooms_h2": "Todas miran<br><em>al Pacífico.</em>",
   "rooms_intro": "Todas nuestras habitaciones tienen vista al mar y desayuno incluido. La mayoría suma balcón privado: te lo indicamos claro en cada una para que elijas sin sorpresas.",
@@ -61,7 +57,6 @@
   "superior_descripcion": "Jacuzzi privado y vista panorámica al mar desde el ventanal. No tiene balcón.",
   "basica_nombre": "Básica vista al mar",
   "basica_descripcion": "Nuestra opción más económica: compacta, con vista al mar desde el interior y sin balcón. Hay una sola.",
-
   "exp_eyebrow": "Tu estadía",
   "exp_h2": "Así se vive<br><em>Dei Templi.</em>",
   "exp_intro": "Lo que nuestros huéspedes más destacan no es un servicio en particular: es no tener que preocuparse de nada.",
@@ -79,7 +74,6 @@
   "exp_4_texto": "Check-out a mediodía. Antes, date una vuelta por la piscina con vista al mar.",
   "bar_titulo": "Dei Bar · room service 24 horas",
   "bar_texto": "A las 2 de la mañana, cuando todo está cerrado y tú sigues en el balcón mirando las luces sobre el mar, el Dei Bar sigue abierto. Un mensaje y en minutos está en tu puerta.",
-
   "reviews_eyebrow": "Opiniones reales",
   "reviews_h2": "Lo dicen ellos,<br><em>no nosotros.</em>",
   "reviews_p": "Más de 1.800 huéspedes han opinado sobre Dei Templi en Booking.com, Google y TripAdvisor. Estas son reseñas reales, con nombre y fecha: puedes verificarlas en cada plataforma.",
@@ -101,12 +95,10 @@
   "rv6_texto": "Fui con mi pareja y nos encantó el lugar. Todos muy agradables y dispuestos para ayudar... El unico punto a mejorar seria el lugar (solo porque queda algo lejos de la playa), pero sinceramente es lo de menos considerando las vistas de las habitaciones",
   "rv6_nombre": "Gustavo Palma Guerra",
   "rv6_fuente": "Google · 5/5 · febrero 2026",
-
   "directo_eyebrow": "¿Por qué reservar aquí?",
   "directo_h2": "Nos encontraste en Booking.<br><em>Reserva directo y gana tú.</em>",
   "directo_p": "Muchos huéspedes nos conocen por Booking.com, y nos encanta. Pero cuando reservas directo, la comisión que cobra el intermediario se queda contigo en forma de mejor precio, y tu relación es con nosotros, no con una plataforma.",
   "directo_nota": "Comparación de precios según el comparador en vivo de nuestro motor de reservas. Las condiciones de otras plataformas dependen de cada una.",
-
   "despues_eyebrow": "Después de reservar",
   "despues_h2": "Sin incertidumbre,<br><em>de principio a fin.</em>",
   "despues_1_titulo": "Recibes tu reserva por correo",
@@ -117,19 +109,15 @@
   "despues_3_texto": "Antes de tu viaje puedes escribirnos por WhatsApp: hora de llegada, un aniversario, una sorpresa o cualquier detalle.",
   "despues_4_titulo": "¿Cambió algo?",
   "despues_4_texto": "Con tarifa Flexible, cancelas o cambias tus fechas sin costo hasta 72 horas antes. Escríbenos por WhatsApp o a info@deitempli.cl y lo resolvemos.",
-
-  "carabela_eyebrow": "Solo para dos · fuera del hotel",
+  "carabela_eyebrow": "Solo para dos",
   "carabela_h2": "Carabela:<br><em>a pasos de la arena.</em>",
   "carabela_p1": "Carabela es un departamento aparte, en el sector 5 de Reñaca, frente a Playa El Encanto. Es tu refugio privado, lejos del ruido.",
   "carabela_p2": "El condominio tiene bajada directa a la playa: caminas por la orilla, vuelves y descorchas un vino en el balcón panorámico mientras se esconde el sol. El ritmo del fin de semana lo ponen ustedes.",
-
   "galeria_eyebrow": "Galería",
   "galeria_h2": "Fotos que no<br><em>necesitan filtro.</em>",
-
   "ubicacion_eyebrow": "Cómo llegar",
   "ubicacion_h2": "En lo alto de<br><em>Reñaca.</em>",
   "ubicacion_p": "Av. Edmundo Eluchans 1475, Reñaca, Viña del Mar. Estamos en la parte alta, con la mejor vista del sector y sin edificios enfrente. A 90 minutos de Santiago por la Ruta 68.",
-
   "faq_eyebrow": "Preguntas frecuentes",
   "faq_h2": "Todo lo que quieres<br><em>saber antes de venir.</em>",
   "faq_intro": "Si tu pregunta no está aquí, escríbenos. Respondemos en minutos, no en horas.",
@@ -153,7 +141,6 @@
   "faq_9_a": "Sí. Los turistas extranjeros no residentes en Chile quedan exentos del IVA (19%) pagando en dólares y presentando pasaporte y tarjeta de inmigración al hacer check-in. Si pagas en pesos, el IVA aplica independiente de la nacionalidad.",
   "faq_10_q": "¿A qué distancia están de Santiago?",
   "faq_10_a": "A 90 minutos por la Ruta 68. Sales después del trabajo el viernes y a las 10 de la noche ya estás en el balcón mirando el mar.",
-
   "cta_h2": "Tu balcón frente al mar<br><em>te está esperando.</em>",
   "cta_p": "Elige tus fechas, compara las dos tarifas y quédate con la que más te acomode. Si tienes cualquier duda, te respondemos por WhatsApp.",
   "cta_fine": "Precio directo más bajo que en Booking.com · Flexible: cancela gratis hasta 72 h antes · Pet friendly"
