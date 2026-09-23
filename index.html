@@ -21,16 +21,23 @@
   <!-- Google Search Console ✅ VERIFICADO -->
   <meta name="google-site-verification" content="7T6Lfvjc3OODjiqWnbS6fohkPtar40_myIqleLTgvoM" />
 
+  <!-- Medición SOLO en el dominio real: vistas previas (pages.dev) y pruebas locales no ensucian GA4 ni el Pixel -->
+  <script>window.DT_MEDIR = /(^|\.)deitempli\.cl$/.test(location.hostname);</script>
+
   <!-- Google Analytics 4 — G-F8YFE92R3J ✅ ACTIVO -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F8YFE92R3J"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-F8YFE92R3J', {
-      'send_page_view': true,
-      'cookie_flags': 'SameSite=None;Secure'
-    });
+    if (window.DT_MEDIR) {
+      var ga = document.createElement('script'); ga.async = true;
+      ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-F8YFE92R3J';
+      document.head.appendChild(ga);
+      gtag('js', new Date());
+      gtag('config', 'G-F8YFE92R3J', {
+        'send_page_view': true,
+        'cookie_flags': 'SameSite=None;Secure'
+      });
+    }
   </script>
 
   <!-- ════════════════════════════════════════════════
@@ -39,7 +46,7 @@
        consent mode y server-side tracking.
        GA4: G-F8YFE92R3J (directo, ver arriba)
   ════════════════════════════════════════════════ -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  <script>if (window.DT_MEDIR) (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -1003,8 +1010,9 @@
 
     <div class="rates-bottom">
       <div class="rates-note">
-        <p class="rates-example"><svg class="icon"><use href="#i-tag"/></svg><span data-texto="tarifas_ejemplo"><strong>Ejemplo real</strong> · Habitación Estándar con balcón, 1 noche: No reembolsable <strong>$62.991</strong> · Flexible <strong>$69.990</strong>. Precios referenciales de octubre 2026, impuestos incluidos; varían según la fecha.</span></p>
+        <p class="rates-example"><svg class="icon"><use href="#i-tag"/></svg><span data-texto="tarifas_ejemplo"><strong>¿Cuánto cuesta?</strong> Nuestros precios cambian según la fecha y la disponibilidad. Elige tus fechas en el buscador y verás al instante el precio final de ambas tarifas, con impuestos incluidos.</span></p>
         <p data-texto="tarifas_como">En el motor de reservas verás las dos opciones debajo de cada habitación, con el precio final y los impuestos incluidos.</p>
+        <p><a class="link-arrow" href="#buscar">Elegir mis fechas <svg class="icon"><use href="#i-arrow"/></svg></a></p>
       </div>
       <div class="rates-tip">
         <span class="tip-icon"><svg class="icon"><use href="#i-lightbulb"/></svg></span>
@@ -1204,7 +1212,7 @@
             <tr><th scope="col"><span class="sr-only">Aspecto</span></th><th scope="col" class="us">deitempli.cl</th><th scope="col">Booking y otras</th></tr>
           </thead>
           <tbody>
-            <tr><th scope="row">Precio por la misma habitación</th><td class="us"><span class="cell"><svg class="icon"><use href="#i-check"/></svg>El más bajo</span></td><td class="them"><span class="cell">Hasta 15% más caro</span></td></tr>
+            <tr><th scope="row">Precio por la misma habitación</th><td class="us"><span class="cell"><svg class="icon"><use href="#i-check"/></svg>El más bajo</span></td><td class="them"><span class="cell">Más caro (compáralo en el motor)</span></td></tr>
             <tr><th scope="row">Tarifa Flexible pagando solo el 50%</th><td class="us"><span class="cell"><svg class="icon"><use href="#i-check"/></svg>Siempre disponible</span></td><td class="them"><span class="cell">Según cada plataforma</span></td></tr>
             <tr><th scope="row">Contacto directo con el hotel</th><td class="us"><span class="cell"><svg class="icon"><use href="#i-check"/></svg>WhatsApp con nuestro equipo</span></td><td class="them"><span class="cell">A través de la plataforma</span></td></tr>
             <tr><th scope="row">Aniversarios y pedidos especiales</th><td class="us"><span class="cell"><svg class="icon"><use href="#i-check"/></svg>Los coordinas con nosotros</span></td><td class="them"><span class="cell">Pasan por un intermediario</span></td></tr>
@@ -1212,7 +1220,7 @@
           </tbody>
         </table>
       </div>
-      <p class="cmp-note" data-texto="directo_nota">Comparación de precios según el comparador en vivo de nuestro motor de reservas. Las condiciones de otras plataformas dependen de cada una.</p>
+      <p class="cmp-note" data-texto="directo_nota">Nuestro motor de reservas compara en vivo el precio directo con Booking.com, Despegar y Expedia para tus fechas. Las condiciones de otras plataformas dependen de cada una.</p>
     </div>
   </div>
 </section>
@@ -1466,7 +1474,7 @@
     if (tries < 40) setTimeout(() => flushMetaQueue(tries + 1), 500);
   })(0);
   function ga4Track(eventName, params) {
-    if (typeof window.gtag === 'function') window.gtag('event', eventName, params || {});
+    if (window.DT_MEDIR && typeof window.gtag === 'function') window.gtag('event', eventName, params || {});
   }
   /* Un evento de negocio → dataLayer + Meta + GA4 */
   function track(dlName, metaName, ga4Name, params) {
