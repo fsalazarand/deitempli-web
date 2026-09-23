@@ -233,7 +233,7 @@ collections:
 
           - label: "flex b1"
             name: flex_b1
-            widget: string
+            widget: text
             hint: "Puedes usar <strong>negrita</strong>, <em>dorado en cursiva</em> y <br> para salto de línea."
 
           - label: "flex b2"
@@ -247,7 +247,7 @@ collections:
 
           - label: "flex b4"
             name: flex_b4
-            widget: text
+            widget: string
 
           - label: "flex ideal"
             name: flex_ideal
@@ -273,7 +273,7 @@ collections:
 
           - label: "tarifas como"
             name: tarifas_como
-            widget: text
+            widget: string
 
           - label: "─────────── 🛏️ Habitaciones ───────────"
             name: _sep_4
@@ -411,7 +411,7 @@ collections:
 
           - label: "exp 4 texto"
             name: exp_4_texto
-            widget: string
+            widget: text
 
           - label: "bar titulo"
             name: bar_titulo
@@ -550,7 +550,7 @@ collections:
 
           - label: "despues 1 texto"
             name: despues_1_texto
-            widget: text
+            widget: string
 
           - label: "despues 2 titulo"
             name: despues_2_titulo
