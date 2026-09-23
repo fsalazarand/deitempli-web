@@ -781,6 +781,30 @@ collections:
             name: faq_10_a
             widget: text
 
+          - label: "faq 11 q"
+            name: faq_11_q
+            widget: string
+
+          - label: "faq 11 a"
+            name: faq_11_a
+            widget: text
+
+          - label: "faq 12 q"
+            name: faq_12_q
+            widget: string
+
+          - label: "faq 12 a"
+            name: faq_12_a
+            widget: text
+
+          - label: "faq 13 q"
+            name: faq_13_q
+            widget: string
+
+          - label: "faq 13 a"
+            name: faq_13_a
+            widget: text
+
           - label: "─────────── 📣 Llamado final ───────────"
             name: _sep_14
             widget: hidden
