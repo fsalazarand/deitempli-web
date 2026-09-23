@@ -430,8 +430,9 @@
     .mob-actions { margin-top: auto; display: grid; gap: 12px; }
 
     /* ────────────── HERO ────────────── */
-    #inicio { position: relative; min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; justify-content: flex-end; color: #fff; overflow: hidden; }
-    .hero-media { position: absolute; inset: 0; z-index: 0; background: var(--navy); }
+    /* Sin overflow hidden aquí: el calendario de Pxsol se despliega bajo la portada y no debe cortarse */
+    #inicio { position: relative; min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; justify-content: flex-end; color: #fff; }
+    .hero-media { position: absolute; inset: 0; z-index: 0; background: var(--navy); overflow: hidden; }
     .hero-media picture { display: block; width: 100%; height: 100%; }
     .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: center 55%; }
     @media (max-width: 767px) { .hero-media img { object-position: center 30%; } }
@@ -456,7 +457,11 @@
     .proof-sep { width: 1px; height: 18px; background: rgba(255,255,255,.35); }
 
     /* Buscador Pxsol dentro del hero */
-    #buscar { position: relative; z-index: 2; padding-bottom: 40px; }
+    /* El buscador (y su calendario desplegable) queda sobre todas las secciones siguientes */
+    #buscar { position: relative; z-index: 60; padding-bottom: 40px; }
+    /* Con el calendario o los viajeros abiertos, el buscador sube sobre el menú fijo y la barra inferior
+       (en celular Pxsol lo abre como ventana fija arriba de la pantalla) */
+    #buscar.panel-abierto, #buscar:has(.pxsol-search-panel) { z-index: 150; }
     .search-card {
       background: #fff; color: var(--ink); border-radius: var(--r-lg);
       box-shadow: var(--shadow-3); padding: 22px 24px 18px;
@@ -1668,6 +1673,15 @@
       });
     }, { rootMargin: '0px 0px -6% 0px', threshold: 0.12 });
     els.forEach(el => io.observe(el));
+  })();
+
+  /* ── BUSCADOR PXSOL: marca cuándo hay un panel abierto (respaldo del selector :has) ── */
+  (function panelBuscador() {
+    const buscar = document.getElementById('buscar');
+    const cont = document.getElementById('buscador-pxsol');
+    if (!buscar || !cont || !('MutationObserver' in window)) return;
+    new MutationObserver(() => buscar.classList.toggle('panel-abierto', !!cont.querySelector('.pxsol-search-panel')))
+      .observe(cont, { childList: true, subtree: true });
   })();
 
   /* ── BARRA INFERIOR (celular): aparece cuando el buscador ya no está a la vista ── */
