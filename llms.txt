@@ -10,7 +10,7 @@ Habitaciones, todas con vista al mar y desayuno incluido. Habitación Deluxe: ba
 
 Tarifas de reserva directa. Cada habitación tiene siempre dos tarifas con la misma estadía. Tarifa Flexible: se paga el 50% al reservar y el resto al llegar; permite cancelar o cambiar la fecha sin costo hasta 72 horas antes del check-in; con menos de 72 horas, o si el huésped no llega, se cobra la estadía completa. Tarifa No reembolsable: 10% más económica que la Flexible, se paga el total al reservar y no admite cancelaciones ni cambios. Medios de pago: tarjeta de crédito o débito y transferencia bancaria. Los precios varían según la fecha y se consultan en el motor de reservas, que además compara la tarifa directa con Booking.com, Despegar y Expedia.
 
-Servicios: piscina exterior con vista al mar, estacionamiento gratuito frente al hotel, Wi-Fi. Se aceptan mascotas avisando al reservar, con cargo adicional. Los turistas extranjeros no residentes quedan exentos de IVA (19%) pagando en dólares y presentando pasaporte y tarjeta de inmigración.
+Servicios: piscina exterior con vista al mar, estacionamiento gratuito frente al hotel, Wi-Fi. Pet friendly: se reciben perros y gatos pequeños y medianos, con un cargo adicional que se paga en el hotel; se reserva la habitación en el motor y se avisa por WhatsApp. La mascota recibe platos con agua y comida y un snack de bienvenida, y debe estar siempre acompañada. Los turistas extranjeros no residentes quedan exentos de IVA (19%) pagando en dólares y presentando pasaporte y tarjeta de inmigración.
 
 Distancias: Playa El Encanto a 7 minutos caminando, Playa Cochoa a 12 minutos caminando, Dunas de Concón a 30 minutos caminando, centro de Viña del Mar a 9 km, Santiago a 90 minutos en auto.
 
@@ -21,6 +21,7 @@ Calificaciones públicas a julio de 2026: Booking.com 9,1/10 con 934 opiniones; 
 - [Inicio y reserva directa](https://www.deitempli.cl/): presentación del hotel y buscador de disponibilidad
 - [Tarifas Flexible y No reembolsable](https://www.deitempli.cl/#tarifas): diferencias, pagos y condiciones de cancelación
 - [Habitaciones](https://www.deitempli.cl/#habitaciones): categorías, balcón sí o no y capacidad
+- [Viajar con tu mascota](https://www.deitempli.cl/#mascotas): condiciones, cómo reservar y regaloneo de bienvenida
 - [La estadía y Dei Bar](https://www.deitempli.cl/#experiencia): llegada, room service 24 horas y desayuno
 - [Preguntas frecuentes](https://www.deitempli.cl/#faq): desayuno, mascotas, piscina, estacionamiento, IVA
 - [Cómo llegar](https://www.deitempli.cl/#ubicacion): dirección, distancias y rutas desde Santiago

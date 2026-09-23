@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Hotel Dei Templi Reñaca | Vista al mar a 90 min de Santiago</title>
-  <meta name="description" content="Sitio oficial de Hotel Dei Templi en Reñaca alto: habitaciones frente al Pacífico, desayuno en la habitación y Dei Bar 24 horas. Reserva directo con el hotel." />
+  <meta name="description" content="Sitio oficial de Hotel Dei Templi en Reñaca alto: vista al Pacífico, desayuno en la habitación, Dei Bar 24 horas y pet friendly. Reserva directo con el hotel." />
   <link rel="canonical" href="https://www.deitempli.cl/" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="alternate" type="text/plain" href="https://www.deitempli.cl/llms.txt" title="Información del hotel para asistentes de IA" />
@@ -107,7 +107,7 @@
         "priceRange": "$$",
         "currenciesAccepted": "CLP, USD",
         "paymentAccepted": "Tarjeta de crédito, Tarjeta de débito, Transferencia bancaria",
-        "petsAllowed": true,
+        "petsAllowed": "Perros y gatos pequeños y medianos, con cargo adicional. Reciben platos con agua y comida y un snack de bienvenida.",
         "image": [
           "https://www.deitempli.cl/images/portada-mar-2560.jpg",
           "https://www.deitempli.cl/images/habitacion-deluxe.jpg",
@@ -125,7 +125,7 @@
           {"@type":"LocationFeatureSpecification","name":"Piscina exterior","value":true},
           {"@type":"LocationFeatureSpecification","name":"Estacionamiento gratuito","value":true},
           {"@type":"LocationFeatureSpecification","name":"Wi-Fi gratuito","value":true},
-          {"@type":"LocationFeatureSpecification","name":"Pet friendly (con cargo adicional)","value":true}
+          {"@type":"LocationFeatureSpecification","name":"Pet friendly: perros y gatos pequeños y medianos, con cargo adicional","value":true}
         ],
         "containsPlace": [
           {"@type":"HotelRoom","name":"Habitación Deluxe","description":"Cama matrimonial superior, balcón privado con vista al mar, jacuzzi y amenidades exclusivas.","occupancy":{"@type":"QuantitativeValue","maxValue":2},"bed":{"@type":"BedDetails","typeOfBed":"Matrimonial","numberOfBeds":1},"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Balcón","value":true},{"@type":"LocationFeatureSpecification","name":"Jacuzzi","value":true}]},
@@ -204,10 +204,10 @@
     },
     {
       "@type": "Question",
-      "name": "¿Por qué conviene reservar aquí y no en Booking?",
+      "name": "¿Qué ventajas tiene reservar directo con el hotel?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Porque reservas directamente con el hotel. Las plataformas cobran una comisión por cada reserva y eso se refleja en su tarifa; aquí ese intermediario no existe. Además, antes y durante la estadía hablas directo con nuestro equipo. Cuando buscas tus fechas, el motor te muestra la comparación con Booking, Despegar y Expedia."
+        "text": "Accedes a nuestra mejor tarifa disponible, puedes elegir la tarifa Flexible pagando la mitad al reservar y hablas directo con nuestro equipo antes y durante la estadía, para coordinar la hora de llegada, un aniversario o tu mascota. Al buscar tus fechas, el motor también te muestra la comparación con otros canales."
       }
     },
     {
@@ -228,10 +228,10 @@
     },
     {
       "@type": "Question",
-      "name": "¿Puedo llevar a mi mascota?",
+      "name": "¿Puedo ir con mi mascota?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí, somos pet friendly. Indícalo al reservar para asignarte una habitación adecuada. Aplica un cargo adicional y las mascotas deben estar siempre acompañadas."
+        "text": "Sí, somos pet friendly. Recibimos perros y gatos pequeños y medianos, con un cargo adicional que se paga en el hotel. Reserva tu habitación y avísanos por WhatsApp que vienes con tu mascota: cuando lleguen, la estarán esperando sus platos con agua y comida y un snack de bienvenida. Debe estar siempre acompañada; no puede quedarse sola en la habitación."
       }
     },
     {
@@ -468,9 +468,11 @@
     .search-best .icon { width: 15px; height: 15px; }
     .dt-picker-wrap { min-height: 72px; display: flex; align-items: center; justify-content: center; }
     /* Alto medido del buscador ya cargado: se reserva desde el inicio para que nada salte */
-    #buscador-pxsol { width: 100%; min-height: 129px; }
-    @media (max-width: 1023px) { #buscador-pxsol { min-height: 244px; } }
-    @media (max-width: 640px) { #buscador-pxsol { min-height: 256px; } }
+    #buscador-pxsol { width: 100%; min-height: 73px; }
+    @media (max-width: 1023px) { #buscador-pxsol { min-height: 188px; } }
+    @media (max-width: 640px) { #buscador-pxsol { min-height: 200px; } }
+    /* Cajas de mensaje del buscador: sin alto mientras estén vacías (siguen activas para avisos) */
+    #buscador-pxsol .pxsol-search-message:empty, #buscador-pxsol .pxsol-search-error:empty { min-height: 0; margin: 0; }
     /* ID + clase: le gana a los estilos que Pxsol inyecta después */
     #buscador-pxsol .pxsol-search-widget {
       width: 100%; max-width: none;
@@ -565,6 +567,33 @@
     .room-mini h3 { font-family: var(--fb); font-size: 16px; font-weight: 700; margin-bottom: 4px; letter-spacing: 0; }
     .room-mini p { font-size: 14.5px; }
 
+    /* ────────────── MASCOTAS ────────────── */
+    .pets-layout { display: grid; grid-template-columns: 1.05fr .95fr; gap: 64px; align-items: center; }
+    .pets-layout > * { min-width: 0; }
+    .pets-copy h2 { font-size: clamp(34px, 4.6vw, 56px); margin-bottom: 20px; }
+    .pets-intro { font-size: 18px; margin-bottom: 28px; max-width: 560px; }
+    .pets-gift { display: flex; gap: 16px; align-items: flex-start; background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 22px 24px; margin-bottom: 28px; box-shadow: var(--shadow-1); }
+    .pets-gift-icon { width: 48px; height: 48px; flex: 0 0 auto; border-radius: 50%; background: var(--gold-lt); color: var(--gold-ink); display: flex; align-items: center; justify-content: center; }
+    .pets-gift h3 { font-family: var(--fb); font-size: 17px; font-weight: 700; letter-spacing: 0; margin-bottom: 4px; }
+    .pets-gift p { font-size: 15.5px; }
+    .pets-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+    .pets-card { background: var(--navy); color: #fff; border-radius: var(--r-lg); padding: 36px 34px; box-shadow: var(--shadow-2); }
+    .pets-card-title { display: flex; align-items: center; gap: 10px; font-family: var(--fh); font-size: 26px; color: #fff; margin-bottom: 22px; }
+    .pets-card-title .icon { color: var(--gold); width: 24px; height: 24px; }
+    .pets-steps { list-style: none; display: grid; gap: 18px; margin-bottom: 30px; }
+    .pets-steps li { display: grid; grid-template-columns: 34px 1fr; gap: 14px; align-items: start; }
+    .pets-num { width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid var(--gold); color: var(--gold); font-family: var(--fh); font-size: 17px; display: flex; align-items: center; justify-content: center; }
+    .pets-steps p { color: rgba(255,255,255,.86); font-size: 15.5px; }
+    .pets-cond-title { font-family: var(--fb); font-size: 13px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.12); }
+    .pets-cond { list-style: none; display: grid; gap: 10px; }
+    .pets-cond li { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; color: rgba(255,255,255,.86); }
+    .pets-cond .icon { width: 18px; height: 18px; color: var(--gold); margin-top: 2px; flex: 0 0 auto; }
+    .proof-pet { text-decoration: none; background: rgba(217,169,63,.18); border: 1px solid rgba(217,169,63,.55); padding: 5px 12px; border-radius: 999px; }
+    .proof-pet .icon { width: 15px; height: 15px; color: var(--gold); }
+    .proof-pet:hover { background: rgba(217,169,63,.3); }
+    @media (max-width: 1080px) { .pets-layout { grid-template-columns: 1fr; gap: 40px; } }
+    @media (max-width: 640px) { .pets-card { padding: 28px 22px; } .pets-ctas .btn { flex: 1 1 100%; } }
+
     /* ────────────── EXPERIENCIA ────────────── */
     .exp-layout { display: grid; grid-template-columns: 1fr 1.05fr; gap: 64px; align-items: center; }
     .timeline { list-style: none; position: relative; display: grid; gap: 30px; }
@@ -627,6 +656,11 @@
     .cmp td.them .icon { color: var(--ink-3); }
     .cmp-note { font-size: 13px; color: var(--ink-3); margin-top: 12px; }
     .exp-layout > *, .direct-layout > *, .loc-layout > *, .faq-layout > * { min-width: 0; }
+    .perks { list-style: none; display: grid; gap: 14px; }
+    .perks li { display: flex; gap: 16px; align-items: flex-start; background: #fff; border: 1px solid var(--line); border-radius: var(--r-md); padding: 20px 22px; }
+    .perk-icon { width: 44px; height: 44px; flex: 0 0 auto; border-radius: 12px; background: var(--gold-lt); color: var(--gold-ink); display: flex; align-items: center; justify-content: center; }
+    .perks h3 { font-family: var(--fb); font-size: 16.5px; font-weight: 700; letter-spacing: 0; margin-bottom: 4px; }
+    .perks p { font-size: 15px; }
     .cmp-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: var(--r-lg); }
 
     /* ────────────── DESPUÉS DE RESERVAR ────────────── */
@@ -859,6 +893,9 @@
 
 <!-- ═══════════ ÍCONOS SVG (sprite) ═══════════ -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></symbol>
+  <symbol id="i-paw" viewBox="0 0 24 24"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
   <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
@@ -908,6 +945,7 @@
       <ul class="nav-links">
         <li><a href="#tarifas">Tarifas</a></li>
         <li><a href="#habitaciones">Habitaciones</a></li>
+        <li><a href="#mascotas">Mascotas</a></li>
         <li><a href="#experiencia">La estadía</a></li>
         <li><a href="#resenas">Reseñas</a></li>
         <li><a href="#ubicacion">Cómo llegar</a></li>
@@ -927,6 +965,7 @@
   </div>
   <a class="mob-link" style="--i:0" href="#tarifas">Tarifas</a>
   <a class="mob-link" style="--i:1" href="#habitaciones">Habitaciones</a>
+  <a class="mob-link" style="--i:1" href="#mascotas">Mascotas pet friendly</a>
   <a class="mob-link" style="--i:2" href="#experiencia">La estadía</a>
   <a class="mob-link" style="--i:3" href="#resenas">Reseñas</a>
   <a class="mob-link" style="--i:4" href="#ubicacion">Cómo llegar</a>
@@ -953,7 +992,7 @@
   <div class="container hero-content">
     <span class="hero-tag"><svg class="icon"><use href="#i-pin"/></svg><span data-texto="hero_tag">Reñaca alto · a 90 minutos de Santiago</span></span>
     <h1 class="hero-h1" data-texto="hero_h1">El mar te está<br><em>esperando.</em></h1>
-    <p class="hero-sub" data-texto="hero_sub">Una habitación frente al Pacífico, el desayuno que llega a tu puerta a la hora que pidas y un bar que no cierra. Estás en el sitio oficial del hotel, donde reservas directo con nosotros.</p>
+    <p class="hero-sub" data-texto="hero_sub">Una habitación frente al Pacífico, el desayuno que llega a tu puerta a la hora que pidas y un bar que no cierra. Estás en el sitio oficial del hotel.</p>
     <div class="hero-ctas">
       <a href="#tarifas" class="btn btn-ghost-light">Ver las tarifas</a>
     </div>
@@ -963,6 +1002,8 @@
       <span class="proof-chip"><span class="stars" aria-hidden="true"><svg class="icon icon-fill"><use href="#i-star"/></svg><svg class="icon icon-fill"><use href="#i-star"/></svg><svg class="icon icon-fill"><use href="#i-star"/></svg><svg class="icon icon-fill"><use href="#i-star"/></svg><svg class="icon icon-fill"><use href="#i-star"/></svg></span><strong>4,6</strong> Google</span>
       <span class="proof-sep" aria-hidden="true"></span>
       <span class="proof-chip"><strong>Top 5</strong> de 63 hoteles en Viña (TripAdvisor)</span>
+      <span class="proof-sep" aria-hidden="true"></span>
+      <a class="proof-chip proof-pet" href="#mascotas"><svg class="icon"><use href="#i-paw"/></svg><strong>Pet friendly</strong></a>
     </div>
   </div>
 
@@ -984,7 +1025,7 @@
           data-redirect="true"
         ></script>
       </div>
-      <p class="search-note"><svg class="icon"><use href="#i-check"/></svg><span data-texto="buscador_nota">La tarifa directa siempre es la más conveniente. Al buscar, el motor la compara con Booking y otras plataformas para que lo veas tú mismo.</span></p>
+      <p class="search-note"><svg class="icon"><use href="#i-check"/></svg><span data-texto="buscador_nota">Estás reservando directo con el hotel, con nuestra mejor tarifa disponible para tus fechas.</span></p>
     </div>
   </div>
 </section>
@@ -995,11 +1036,11 @@
   <div class="container strip-grid">
     <div class="strip-item reveal">
       <span class="strip-icon"><svg class="icon"><use href="#i-tag"/></svg></span>
-      <div><h3 data-texto="strip_1_titulo">Reservas con el hotel, no con una plataforma</h3><p data-texto="strip_1_texto">Tu reserva llega directo al equipo que te va a recibir. Si algo cambia, hablas con una persona que conoce el hotel, no con un centro de ayuda.</p></div>
+      <div><h3 data-texto="strip_1_titulo">Hablas directo con el hotel</h3><p data-texto="strip_1_texto">Tu reserva la recibe el mismo equipo que te va a recibir. Si necesitas algo, conversas con alguien que conoce cada habitación.</p></div>
     </div>
     <div class="strip-item reveal">
       <span class="strip-icon"><svg class="icon"><use href="#i-refresh"/></svg></span>
-      <div><h3 data-texto="strip_2_titulo">Nunca vas a encontrar esta habitación más barata en otro sitio</h3><p data-texto="strip_2_texto">Aquí no hay comisiones de intermediarios de por medio. El motor de reservas te muestra la comparación con Booking, Despegar y Expedia para tus fechas.</p></div>
+      <div><h3 data-texto="strip_2_titulo">Nuestra mejor tarifa, siempre aquí</h3><p data-texto="strip_2_texto">Reservando en el sitio oficial accedes a la tarifa directa del hotel y eliges la modalidad que te acomode: Flexible o No reembolsable.</p></div>
     </div>
     <div class="strip-item reveal">
       <span class="strip-icon"><svg class="icon"><use href="#i-chat"/></svg></span>
@@ -1141,6 +1182,42 @@
   </div>
 </section>
 
+<!-- ═══════════════ MASCOTAS (segmento parejas con mascota) ═══════════════ -->
+<section id="mascotas" class="section section--cream" aria-labelledby="mascotas-titulo">
+  <div class="container pets-layout">
+    <div class="pets-copy">
+      <span class="eyebrow" data-texto="pets_eyebrow">Pet friendly</span>
+      <h2 id="mascotas-titulo" data-texto="pets_h2">Viajan los tres.<br><em>Como tiene que ser.</em></h2>
+      <p class="pets-intro" data-texto="pets_intro">Sabemos lo que cuesta arrancarse un fin de semana y dejar a tu mascota en casa. Aquí no hace falta: los perros y gatos pequeños y medianos son bienvenidos, y los tratamos como lo que son para ustedes, parte de la familia.</p>
+      <div class="pets-gift">
+        <span class="pets-gift-icon"><svg class="icon"><use href="#i-heart"/></svg></span>
+        <div>
+          <h3 data-texto="pets_regalo_titulo">Su regaloneo de bienvenida</h3>
+          <p data-texto="pets_regalo_texto">Cuando llegan, en la habitación ya están sus platos con agua y comida, y un snack de bienvenida. Para que tu mascota se sienta en casa desde el primer minuto.</p>
+        </div>
+      </div>
+      <div class="pets-ctas">
+        <a href="https://wa.me/56966130676?text=Hola%20Dei%20Templi%2C%20quiero%20reservar%20con%20mi%20mascota.%20Es%20un%20(perro%2Fgato)%20de%20tama%C3%B1o%20(peque%C3%B1o%2Fmediano)%20y%20se%20llama%20" target="_blank" rel="noopener" class="btn btn-wa" aria-label="Reservar con mi mascota por WhatsApp"><svg class="icon icon-fill"><use href="#i-whatsapp"/></svg> Reservar con mi mascota</a>
+        <a href="https://deitemplihotelvinadelmar.reservadirecto.com/lp.html?pos=DeiTempliHotelVinadelMar&amp;webcache=off&amp;tag=PmsLink" target="_blank" rel="noopener" class="btn btn-ghost">Ver disponibilidad <svg class="icon icon-arrow"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+    <div class="pets-card">
+      <h3 class="pets-card-title"><svg class="icon"><use href="#i-paw"/></svg><span data-texto="pets_pasos_titulo">Cómo reservar con tu mascota</span></h3>
+      <ol class="pets-steps">
+        <li class="reveal"><span class="pets-num">1</span><p data-texto="pets_paso_1">Elige tus fechas y reserva tu habitación en el buscador, como siempre.</p></li>
+        <li class="reveal"><span class="pets-num">2</span><p data-texto="pets_paso_2">Escríbenos por WhatsApp contándonos que vienes con tu perro o tu gato, su tamaño y su nombre. Así preparamos su llegada.</p></li>
+        <li class="reveal"><span class="pets-num">3</span><p data-texto="pets_paso_3">El cargo por mascota se paga en el hotel. Te confirmamos el valor al coordinar la reserva.</p></li>
+      </ol>
+      <h3 class="pets-cond-title" data-texto="pets_cond_titulo">Lo que conviene saber</h3>
+      <ul class="pets-cond">
+        <li><svg class="icon"><use href="#i-check"/></svg><span data-texto="pets_cond_1">Recibimos perros y gatos pequeños y medianos.</span></li>
+        <li><svg class="icon"><use href="#i-check"/></svg><span data-texto="pets_cond_2">Hay un cargo adicional por mascota, que te confirmamos antes de llegar.</span></li>
+        <li><svg class="icon"><use href="#i-check"/></svg><span data-texto="pets_cond_3">Tu mascota debe estar siempre acompañada: no puede quedarse sola en la habitación.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════════ EXPERIENCIA (DURANTE) ═══════════════ -->
 <section id="experiencia" class="section section--sand">
   <div class="container exp-layout">
@@ -1243,27 +1320,18 @@
   <div class="container direct-layout">
     <div class="direct-copy">
       <span class="eyebrow" data-texto="directo_eyebrow">Reserva directa</span>
-      <h2 style="font-size:clamp(32px,4.2vw,50px);margin-bottom:20px;" data-texto="directo_h2">Si nos encontraste en Booking,<br><em>qué bueno que llegaste hasta aquí.</em></h2>
-      <p data-texto="directo_p">Booking es una buena vitrina y mucha gente nos conoce por ahí. Pero la estadía la hacemos nosotros. Cuando reservas en este sitio, tu reserva llega sin intermediarios al equipo que te va a recibir, pagas la tarifa más conveniente disponible y cualquier detalle lo resuelves conversando con una persona.</p>
+      <h2 style="font-size:clamp(32px,4.2vw,50px);margin-bottom:20px;" data-texto="directo_h2">Reservar con nosotros<br><em>tiene sus ventajas.</em></h2>
+      <p data-texto="directo_p">Mucha gente nos conoce primero en una plataforma de viajes, y está bien que así sea. Pero cuando reservas aquí, la conversación es directa desde el primer mensaje y cada detalle de tu estadía lo coordinas con quienes te van a recibir.</p>
       <a href="https://deitemplihotelvinadelmar.reservadirecto.com/lp.html?pos=DeiTempliHotelVinadelMar&amp;webcache=off&amp;tag=PmsLink" target="_blank" rel="noopener" class="btn btn-gold">Reservar directo <svg class="icon icon-arrow"><use href="#i-arrow"/></svg></a>
     </div>
     <div>
-      <div class="cmp-wrap">
-        <table class="cmp">
-          <caption class="sr-only">Comparación entre reservar en deitempli.cl y en otras plataformas</caption>
-          <thead>
-            <tr><th scope="col"><span class="sr-only">Aspecto</span></th><th scope="col" class="us">deitempli.cl</th><th scope="col">Booking y otras</th></tr>
-          </thead>
-          <tbody>
-            <tr><th scope="row">Tarifa por la misma habitación</th><td class="us"><span class="cell"><svg class="icon"><use href="#i-check"/></svg>La más conveniente</span></td><td class="them"><span class="cell">Incluye la comisión de la plataforma</span></td></tr>
-            <tr><th scope="row">Tarifa Flexible pagando la mitad al reservar</th><td class="us"><span class="cell"><svg class="icon"><use href="#i-check"/></svg>Siempre disponible</span></td><td class="them"><span class="cell">Depende de cada plataforma</span></td></tr>
-            <tr><th scope="row">Contacto con el hotel</th><td class="us"><span class="cell"><svg class="icon"><use href="#i-check"/></svg>Por WhatsApp, directo con el equipo</span></td><td class="them"><span class="cell">A través de la plataforma</span></td></tr>
-            <tr><th scope="row">Aniversarios y ocasiones especiales</th><td class="us"><span class="cell"><svg class="icon"><use href="#i-check"/></svg>Los coordinas con nosotros</span></td><td class="them"><span class="cell">Pasan por un intermediario</span></td></tr>
-            <tr><th scope="row">Desayuno, estacionamiento y WiFi</th><td class="us"><span class="cell"><svg class="icon"><use href="#i-check"/></svg>Incluidos</span></td><td class="them"><span class="cell">Según la tarifa que elijas</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="cmp-note" data-texto="directo_nota">El motor de reservas compara en vivo, para tus fechas, la tarifa directa con Booking.com, Despegar y Expedia.</p>
+      <ul class="perks">
+        <li><span class="perk-icon"><svg class="icon"><use href="#i-tag"/></svg></span><div><h3>Nuestra mejor tarifa disponible</h3><p>La tarifa directa del hotel para tus fechas, con impuestos incluidos y sin sorpresas al final.</p></div></li>
+        <li><span class="perk-icon"><svg class="icon"><use href="#i-refresh"/></svg></span><div><h3>Flexible pagando la mitad</h3><p>Reservas pagando el 50% y cancelas o cambias la fecha sin costo hasta 72 horas antes.</p></div></li>
+        <li><span class="perk-icon"><svg class="icon"><use href="#i-chat"/></svg></span><div><h3>Conversación directa por WhatsApp</h3><p>Antes y durante la estadía hablas con nuestro equipo, que conoce cada rincón del hotel.</p></div></li>
+        <li><span class="perk-icon"><svg class="icon"><use href="#i-sparkle"/></svg></span><div><h3>Los detalles, a tu manera</h3><p>La hora del desayuno, un aniversario, la llegada de tu mascota: lo coordinamos contigo.</p></div></li>
+      </ul>
+      <p class="cmp-note" data-texto="directo_nota">Si quieres comparar, el buscador te muestra en vivo la tarifa directa junto a la de otros canales para tus mismas fechas.</p>
     </div>
   </div>
 </section>
@@ -1373,7 +1441,7 @@
         <div><dt>Dei Bar</dt><dd>Room service 24 horas</dd></div>
         <div><dt>Estacionamiento</dt><dd>Gratis, frente al hotel</dd></div>
         <div><dt>Piscina</dt><dd>Exterior, con vista al mar</dd></div>
-        <div><dt>Mascotas</dt><dd>Sí, con cargo adicional</dd></div>
+        <div><dt>Mascotas</dt><dd>Perros y gatos pequeños y medianos</dd></div>
         <div><dt>Desde Santiago</dt><dd>90 minutos por la Ruta 68</dd></div>
         <div><dt>Tarifas</dt><dd>Flexible o No reembolsable</dd></div>
       </dl>
@@ -1392,8 +1460,8 @@
         <p class="ans" data-texto="faq_3_a">Si tu tarifa es Flexible, escríbenos por WhatsApp al +56 9 6613 0676 o a info@deitempli.cl hasta 72 horas antes de tu llegada y lo gestionamos sin costo. Después de ese plazo, o si no llegas, se cobra la estadía completa. La No reembolsable no admite cancelaciones ni cambios.</p>
       </details>
       <details>
-        <summary><h3 class="faq-q" data-texto="faq_4_q">¿Por qué conviene reservar aquí y no en Booking?</h3><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
-        <p class="ans" data-texto="faq_4_a">Porque reservas directamente con el hotel. Las plataformas cobran una comisión por cada reserva y eso se refleja en su tarifa; aquí ese intermediario no existe. Además, antes y durante la estadía hablas directo con nuestro equipo. Cuando buscas tus fechas, el motor te muestra la comparación con Booking, Despegar y Expedia.</p>
+        <summary><h3 class="faq-q" data-texto="faq_4_q">¿Qué ventajas tiene reservar directo con el hotel?</h3><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <p class="ans" data-texto="faq_4_a">Accedes a nuestra mejor tarifa disponible, puedes elegir la tarifa Flexible pagando la mitad al reservar y hablas directo con nuestro equipo antes y durante la estadía, para coordinar la hora de llegada, un aniversario o tu mascota. Al buscar tus fechas, el motor también te muestra la comparación con otros canales.</p>
       </details>
       <details>
         <summary><h3 class="faq-q" data-texto="faq_5_q">¿Todas las habitaciones tienen balcón?</h3><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
@@ -1404,8 +1472,8 @@
         <p class="ans" data-texto="faq_6_a">Sí, el desayuno para dos está incluido en todas las habitaciones y en las dos tarifas. No hay que bajar a ningún comedor: lo llevamos a tu habitación a la hora que nos digas. Café de grano, pan recién hecho, huevos, queso, jamón, fruta, algo dulce, mantequilla y mermelada.</p>
       </details>
       <details>
-        <summary><h3 class="faq-q" data-texto="faq_7_q">¿Puedo llevar a mi mascota?</h3><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
-        <p class="ans" data-texto="faq_7_a">Sí, somos pet friendly. Indícalo al reservar para asignarte una habitación adecuada. Aplica un cargo adicional y las mascotas deben estar siempre acompañadas.</p>
+        <summary><h3 class="faq-q" data-texto="faq_7_q">¿Puedo ir con mi mascota?</h3><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <p class="ans" data-texto="faq_7_a">Sí, somos pet friendly. Recibimos perros y gatos pequeños y medianos, con un cargo adicional que se paga en el hotel. Reserva tu habitación y avísanos por WhatsApp que vienes con tu mascota: cuando lleguen, la estarán esperando sus platos con agua y comida y un snack de bienvenida. Debe estar siempre acompañada; no puede quedarse sola en la habitación.</p>
       </details>
       <details>
         <summary><h3 class="faq-q" data-texto="faq_8_q">¿Hay piscina y estacionamiento?</h3><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
@@ -1433,7 +1501,7 @@
       <a href="https://deitemplihotelvinadelmar.reservadirecto.com/lp.html?pos=DeiTempliHotelVinadelMar&amp;webcache=off&amp;tag=PmsLink" target="_blank" rel="noopener" class="btn btn-gold">Reservar directo <svg class="icon icon-arrow"><use href="#i-arrow"/></svg></a>
       <a href="https://wa.me/56966130676?text=Hola%20Dei%20Templi%2C%20quiero%20consultar%20disponibilidad" target="_blank" rel="noopener" class="btn btn-ghost-light"><svg class="icon icon-fill"><use href="#i-whatsapp"/></svg> Escribir por WhatsApp</a>
     </div>
-    <p class="cta-fine" data-texto="cta_fine">Sitio oficial de Dei Templi · Tarifa directa más conveniente que en las plataformas · Pet friendly</p>
+    <p class="cta-fine" data-texto="cta_fine">Sitio oficial de Dei Templi · Nuestra mejor tarifa disponible · Pet friendly</p>
   </div>
 </section>
 
@@ -1458,6 +1526,7 @@
           <li><a href="#tarifas">Tarifas Flexible y No reembolsable</a></li>
           <li><a href="#habitaciones">Habitaciones</a></li>
           <li><a href="#experiencia">Dei Bar 24 horas</a></li>
+          <li><a href="#mascotas">Viajar con tu mascota</a></li>
           <li><a href="#carabela">Departamento Carabela</a></li>
           <li><a href="#faq">Preguntas frecuentes</a></li>
         </ul>
@@ -1486,7 +1555,7 @@
       <a href="#carabela">Escapada romántica Reñaca</a>
       <a href="#experiencia">Room service 24 horas Reñaca</a>
       <a href="#faq">Hotel desayuno incluido Reñaca</a>
-      <a href="#faq">Hotel pet friendly Reñaca</a>
+      <a href="#mascotas">Hotel pet friendly Reñaca</a>
       <a href="#ubicacion">Hotel cerca de Santiago</a>
     </div>
     <div class="foot-bottom">

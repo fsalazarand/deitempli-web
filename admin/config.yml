@@ -348,8 +348,65 @@ collections:
             name: basica_descripcion
             widget: text
 
-          - label: "─────────── 🌅 La estadía y Dei Bar ───────────"
+          - label: "─────────── 🐾 Mascotas (pet friendly) ───────────"
             name: _sep_5
+            widget: hidden
+
+          - label: "pets eyebrow"
+            name: pets_eyebrow
+            widget: string
+
+          - label: "pets h2"
+            name: pets_h2
+            widget: text
+            hint: "Puedes usar <strong>negrita</strong>, <em>dorado en cursiva</em> y <br> para salto de línea."
+
+          - label: "pets intro"
+            name: pets_intro
+            widget: text
+
+          - label: "pets regalo titulo"
+            name: pets_regalo_titulo
+            widget: string
+
+          - label: "pets regalo texto"
+            name: pets_regalo_texto
+            widget: text
+
+          - label: "pets pasos titulo"
+            name: pets_pasos_titulo
+            widget: string
+
+          - label: "pets paso 1"
+            name: pets_paso_1
+            widget: string
+
+          - label: "pets paso 2"
+            name: pets_paso_2
+            widget: text
+
+          - label: "pets paso 3"
+            name: pets_paso_3
+            widget: string
+
+          - label: "pets cond titulo"
+            name: pets_cond_titulo
+            widget: string
+
+          - label: "pets cond 1"
+            name: pets_cond_1
+            widget: string
+
+          - label: "pets cond 2"
+            name: pets_cond_2
+            widget: string
+
+          - label: "pets cond 3"
+            name: pets_cond_3
+            widget: string
+
+          - label: "─────────── 🌅 La estadía y Dei Bar ───────────"
+            name: _sep_6
             widget: hidden
 
           - label: "exp eyebrow"
@@ -422,7 +479,7 @@ collections:
             widget: text
 
           - label: "─────────── ⭐ Reseñas (copiar SIEMPRE textual desde la plataforma) ───────────"
-            name: _sep_6
+            name: _sep_7
             widget: hidden
 
           - label: "reviews eyebrow"
@@ -511,7 +568,7 @@ collections:
             widget: string
 
           - label: "─────────── 🏆 Por qué reservar directo ───────────"
-            name: _sep_7
+            name: _sep_8
             widget: hidden
 
           - label: "directo eyebrow"
@@ -532,7 +589,7 @@ collections:
             widget: text
 
           - label: "─────────── 📩 Después de reservar ───────────"
-            name: _sep_8
+            name: _sep_9
             widget: hidden
 
           - label: "despues eyebrow"
@@ -577,7 +634,7 @@ collections:
             widget: text
 
           - label: "─────────── ⛵ Carabela ───────────"
-            name: _sep_9
+            name: _sep_10
             widget: hidden
 
           - label: "carabela eyebrow"
@@ -598,7 +655,7 @@ collections:
             widget: text
 
           - label: "─────────── 📷 Galería ───────────"
-            name: _sep_10
+            name: _sep_11
             widget: hidden
 
           - label: "galeria eyebrow"
@@ -611,7 +668,7 @@ collections:
             hint: "Puedes usar <strong>negrita</strong>, <em>dorado en cursiva</em> y <br> para salto de línea."
 
           - label: "─────────── 📍 Cómo llegar ───────────"
-            name: _sep_11
+            name: _sep_12
             widget: hidden
 
           - label: "ubicacion eyebrow"
@@ -628,7 +685,7 @@ collections:
             widget: text
 
           - label: "─────────── ❓ Preguntas frecuentes ───────────"
-            name: _sep_12
+            name: _sep_13
             widget: hidden
 
           - label: "faq eyebrow"
@@ -725,7 +782,7 @@ collections:
             widget: text
 
           - label: "─────────── 📣 Llamado final ───────────"
-            name: _sep_13
+            name: _sep_14
             widget: hidden
 
           - label: "cta h2"
@@ -739,4 +796,4 @@ collections:
 
           - label: "cta fine"
             name: cta_fine
-            widget: text
+            widget: string
