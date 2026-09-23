@@ -16,590 +16,727 @@ collections:
         label: "Gestionar todas las fotos"
         file: "data/fotos.json"
         fields:
-          - label: "🌅 Foto principal — Hero (balcón al amanecer, vista frontal Pacífico)"
+          - label: "🌅 Foto principal — inicio de la página"
             name: hero
             widget: image
             required: false
-            hint: "Foto horizontal. Ocupa toda la pantalla de inicio."
+            hint: "Foto HORIZONTAL con el mar. Ocupa toda la pantalla de inicio."
 
-          - label: "🏨 Sobre nosotros — Foto grande (vista o fachada del hotel)"
-            name: about_big
-            widget: image
-            required: false
-            hint: "Foto grande de la sección 'Sobre nosotros'. Ideal: vista aérea o fachada."
-
-          - label: "🍳 Sobre nosotros — Foto pequeña (desayuno en balcón)"
-            name: about_small
-            widget: image
-            required: false
-            hint: "Foto pequeña debajo de la anterior. Ideal: desayuno o detalle del hotel."
-
-          - label: "🛏️ Habitación Deluxe (ventanal panorámico con vista al mar)"
+          - label: "🛏️ Habitación Deluxe"
             name: hab_deluxe
             widget: image
             required: false
-            hint: "Foto principal de la Habitación Deluxe."
+            hint: "Foto principal de la Deluxe."
 
-          - label: "🛏️ Habitación Estándar (balcón con vista al mar)"
+          - label: "🛏️ Habitación Estándar con balcón"
             name: hab_estandar
             widget: image
             required: false
-            hint: "Foto de la Habitación Estándar."
 
-          - label: "🏠 Departamento (kitchenette + balcón)"
+          - label: "🏠 Departamentos Doble y Triple"
             name: hab_depto
             widget: image
             required: false
-            hint: "Foto del Departamento familiar."
 
-          - label: "⛵ Departamento Carabela (balcón panorámico, Playa El Encanto)"
-            name: carabela
-            widget: image
-            required: false
-            hint: "Foto del Departamento Carabela. Ideal con vista a la playa."
-
-          - label: "🍹 Dei Bar — Cócteles en balcón al atardecer"
+          - label: "🍹 La estadía — Dei Bar en el balcón (foto grande)"
             name: bar_coctel
             widget: image
             required: false
-            hint: "Foto del Dei Bar. Ideal: bebidas con el Pacífico de fondo."
+            hint: "Foto horizontal: cócteles o tabla con el mar de fondo."
 
-          - label: "🥐 Dei Bar — Desayuno completo en bandeja"
+          - label: "🥐 La estadía — Desayuno (foto chica)"
             name: bar_desayuno
             widget: image
             required: false
-            hint: "Foto del desayuno servido en balcón o bandeja."
 
-          - label: "📷 Galería 1 — Vista panorámica desde balcón Deluxe"
+          - label: "⛵ Departamento Carabela"
+            name: carabela
+            widget: image
+            required: false
+
+          - label: "📷 Galería 1 (foto grande)"
             name: galeria_1
             widget: image
             required: false
 
-          - label: "📷 Galería 2 — Piscina exterior con el mar de fondo"
+          - label: "📷 Galería 2"
             name: galeria_2
             widget: image
             required: false
 
-          - label: "📷 Galería 3 — Pareja en balcón con cócteles, atardecer"
+          - label: "📷 Galería 3"
             name: galeria_3
             widget: image
             required: false
 
-          - label: "📷 Galería 4 — Desayuno en bandeja sobre la cama"
+          - label: "📷 Galería 4"
             name: galeria_4
             widget: image
             required: false
 
-          - label: "📷 Galería 5 — Carabela, vista a Playa El Encanto"
+          - label: "📷 Galería 5"
             name: galeria_5
-            widget: image
-            required: false
-
-          - label: "📷 Galería 6 — Pizza casera Dei Bar, balcón de noche"
-            name: galeria_6
             widget: image
             required: false
 
   - name: "contenido"
     label: "✏️ Textos del Hotel"
     files:
-
-      # ─── DATOS DE CONTACTO ───────────────────────────────────
       - name: "general"
-        label: "📞 Contacto y datos generales"
+        label: "Todos los textos de la web"
         file: "data/contenido.json"
         fields:
-          - label: "Teléfono WhatsApp (sin espacios)"
+          - label: "─────────── 📞 Contacto y datos generales ───────────"
+            name: _sep_0
+            widget: hidden
+
+          - label: "telefono"
             name: telefono
             widget: string
-            hint: "Ej: +56966130676"
 
-          - label: "Teléfono (cómo se muestra en la web)"
+          - label: "telefono display"
             name: telefono_display
             widget: string
-            hint: "Ej: +56 9 6613 0676"
 
-          - label: "Email de contacto"
+          - label: "email"
             name: email
             widget: string
 
-          - label: "Código de descuento"
-            name: codigo_descuento
-            widget: string
-
-          - label: "Porcentaje de descuento"
-            name: pct_descuento
-            widget: string
-            hint: "Ej: 10%"
-
-          - label: "Horario desayuno"
+          - label: "horario desayuno"
             name: horario_desayuno
             widget: string
-            hint: "Ej: 8:00 a 11:30"
 
-          - label: "Check-in hora"
+          - label: "checkin hora"
             name: checkin_hora
             widget: string
-            hint: "Ej: 16:00"
 
-          - label: "Check-out hora"
+          - label: "checkout hora"
             name: checkout_hora
             widget: string
-            hint: "Ej: 12:00"
 
-          - label: "─────────── 🌊 HERO (inicio de página) ───────────"
-            name: _sep_hero
+          - label: "─────────── 🌊 Inicio y buscador de fechas ───────────"
+            name: _sep_1
             widget: hidden
 
-          - label: "Hero — Etiqueta superior (ej: REÑACA · VIÑA DEL MAR)"
+          - label: "hero tag"
             name: hero_tag
             widget: string
 
-          - label: "Hero — Título principal"
+          - label: "hero h1"
             name: hero_h1
             widget: text
-            hint: "Usa <br> para salto de línea. Usa <em>palabra</em> para texto dorado en cursiva."
+            hint: "Puedes usar <strong>negrita</strong>, <em>dorado en cursiva</em> y <br> para salto de línea."
 
-          - label: "Hero — Subtítulo / descripción"
+          - label: "hero sub"
             name: hero_sub
             widget: text
 
-          - label: "Hero — Texto de reseñas (ej: 4.6 en Google · 532 reseñas)"
-            name: hero_proof
+          - label: "buscador titulo"
+            name: buscador_titulo
             widget: string
-            hint: "Usa <strong>texto</strong> para negrita."
 
-          - label: "Barra de promoción (bajo el buscador de fechas)"
-            name: promo_strip
-            widget: string
-            hint: "Usa <strong>texto</strong> para negrita."
+          - label: "buscador nota"
+            name: buscador_nota
+            widget: text
 
-          - label: "─────────── 🏨 SOBRE NOSOTROS ───────────"
-            name: _sep_about
+          - label: "─────────── ✅ Franja de beneficios (bajo el buscador) ───────────"
+            name: _sep_2
             widget: hidden
 
-          - label: "Sobre nosotros — Eyebrow (ej: Por qué Dei Templi)"
-            name: about_eyebrow
+          - label: "strip 1 titulo"
+            name: strip_1_titulo
             widget: string
 
-          - label: "Sobre nosotros — Título"
-            name: about_h2
-            widget: text
-            hint: "Usa <br> para salto de línea. Usa <em>palabra</em> para dorado."
-
-          - label: "Sobre nosotros — Párrafo 1"
-            name: about_p1
+          - label: "strip 1 texto"
+            name: strip_1_texto
             widget: text
 
-          - label: "Sobre nosotros — Párrafo 2"
-            name: about_p2
+          - label: "strip 2 titulo"
+            name: strip_2_titulo
+            widget: string
+
+          - label: "strip 2 texto"
+            name: strip_2_texto
             widget: text
 
-          - label: "─────────── 🛏️ HABITACIONES ───────────"
-            name: _sep_rooms
+          - label: "strip 3 titulo"
+            name: strip_3_titulo
+            widget: string
+
+          - label: "strip 3 texto"
+            name: strip_3_texto
+            widget: text
+
+          - label: "─────────── 💳 Tarifas: Flexible y No reembolsable ───────────"
+            name: _sep_3
             widget: hidden
 
-          - label: "Habitaciones — Eyebrow"
+          - label: "tarifas eyebrow"
+            name: tarifas_eyebrow
+            widget: string
+
+          - label: "tarifas h2"
+            name: tarifas_h2
+            widget: text
+            hint: "Puedes usar <strong>negrita</strong>, <em>dorado en cursiva</em> y <br> para salto de línea."
+
+          - label: "tarifas intro"
+            name: tarifas_intro
+            widget: text
+
+          - label: "nr badge"
+            name: nr_badge
+            widget: string
+
+          - label: "nr titulo"
+            name: nr_titulo
+            widget: string
+
+          - label: "nr lead"
+            name: nr_lead
+            widget: string
+
+          - label: "nr b1"
+            name: nr_b1
+            widget: string
+            hint: "Puedes usar <strong>negrita</strong>, <em>dorado en cursiva</em> y <br> para salto de línea."
+
+          - label: "nr b2"
+            name: nr_b2
+            widget: string
+            hint: "Puedes usar <strong>negrita</strong>, <em>dorado en cursiva</em> y <br> para salto de línea."
+
+          - label: "nr b3"
+            name: nr_b3
+            widget: string
+
+          - label: "nr b4"
+            name: nr_b4
+            widget: string
+
+          - label: "nr ideal"
+            name: nr_ideal
+            widget: text
+            hint: "Puedes usar <strong>negrita</strong>, <em>dorado en cursiva</em> y <br> para salto de línea."
+
+          - label: "flex badge"
+            name: flex_badge
+            widget: string
+
+          - label: "flex titulo"
+            name: flex_titulo
+            widget: string
+
+          - label: "flex lead"
+            name: flex_lead
+            widget: string
+
+          - label: "flex b1"
+            name: flex_b1
+            widget: string
+            hint: "Puedes usar <strong>negrita</strong>, <em>dorado en cursiva</em> y <br> para salto de línea."
+
+          - label: "flex b2"
+            name: flex_b2
+            widget: string
+            hint: "Puedes usar <strong>negrita</strong>, <em>dorado en cursiva</em> y <br> para salto de línea."
+
+          - label: "flex b3"
+            name: flex_b3
+            widget: string
+
+          - label: "flex b4"
+            name: flex_b4
+            widget: text
+
+          - label: "flex ideal"
+            name: flex_ideal
+            widget: text
+            hint: "Puedes usar <strong>negrita</strong>, <em>dorado en cursiva</em> y <br> para salto de línea."
+
+          - label: "tarifas ejemplo"
+            name: tarifas_ejemplo
+            widget: text
+            hint: "Puedes usar <strong>negrita</strong>, <em>dorado en cursiva</em> y <br> para salto de línea."
+
+          - label: "tarifas tip titulo"
+            name: tarifas_tip_titulo
+            widget: string
+
+          - label: "tarifas tip"
+            name: tarifas_tip
+            widget: text
+
+          - label: "tarifas incluye"
+            name: tarifas_incluye
+            widget: text
+
+          - label: "tarifas como"
+            name: tarifas_como
+            widget: text
+
+          - label: "─────────── 🛏️ Habitaciones ───────────"
+            name: _sep_4
+            widget: hidden
+
+          - label: "rooms eyebrow"
             name: rooms_eyebrow
             widget: string
 
-          - label: "Habitaciones — Título"
+          - label: "rooms h2"
             name: rooms_h2
             widget: text
-            hint: "Usa <br> para salto de línea. Usa <em>palabra</em> para dorado."
+            hint: "Puedes usar <strong>negrita</strong>, <em>dorado en cursiva</em> y <br> para salto de línea."
 
-          - label: "Habitaciones — Descripción general"
+          - label: "rooms intro"
             name: rooms_intro
             widget: text
 
-          - label: "Habitación Deluxe — Badge (ej: La más pedida)"
+          - label: "deluxe badge"
             name: deluxe_badge
             widget: string
 
-          - label: "Habitación Deluxe — Nombre"
+          - label: "deluxe nombre"
             name: deluxe_nombre
             widget: string
 
-          - label: "Habitación Deluxe — Tagline"
+          - label: "deluxe tagline"
             name: deluxe_tagline
             widget: string
 
-          - label: "Habitación Deluxe — Descripción"
+          - label: "deluxe descripcion"
             name: deluxe_descripcion
             widget: text
 
-          - label: "Habitación Estándar — Nombre"
+          - label: "estandar nombre"
             name: estandar_nombre
             widget: string
 
-          - label: "Habitación Estándar — Tagline"
+          - label: "estandar tagline"
             name: estandar_tagline
             widget: string
 
-          - label: "Habitación Estándar — Descripción"
+          - label: "estandar descripcion"
             name: estandar_descripcion
             widget: text
 
-          - label: "Departamento — Nombre"
+          - label: "depto nombre"
             name: depto_nombre
             widget: string
 
-          - label: "Departamento — Tagline"
+          - label: "depto tagline"
             name: depto_tagline
             widget: string
 
-          - label: "Departamento — Descripción"
+          - label: "depto descripcion"
             name: depto_descripcion
             widget: text
 
-          - label: "─────────── ⛵ CARABELA ───────────"
-            name: _sep_carabela
+          - label: "superior nombre"
+            name: superior_nombre
+            widget: string
+
+          - label: "superior descripcion"
+            name: superior_descripcion
+            widget: string
+
+          - label: "basica nombre"
+            name: basica_nombre
+            widget: string
+
+          - label: "basica descripcion"
+            name: basica_descripcion
+            widget: text
+
+          - label: "─────────── 🌅 La estadía y Dei Bar ───────────"
+            name: _sep_5
             widget: hidden
 
-          - label: "Carabela — Eyebrow (ej: Solo para dos)"
-            name: carabela_eyebrow
+          - label: "exp eyebrow"
+            name: exp_eyebrow
             widget: string
 
-          - label: "Carabela — Título"
-            name: carabela_h2
+          - label: "exp h2"
+            name: exp_h2
             widget: text
-            hint: "Usa <br> y <em>palabra</em> para dorado."
+            hint: "Puedes usar <strong>negrita</strong>, <em>dorado en cursiva</em> y <br> para salto de línea."
 
-          - label: "Carabela — Párrafo 1"
-            name: carabela_p1
-            widget: text
-
-          - label: "Carabela — Párrafo 2"
-            name: carabela_p2
+          - label: "exp intro"
+            name: exp_intro
             widget: text
 
-          - label: "─────────── 🍹 DEI BAR ───────────"
-            name: _sep_bar
+          - label: "exp 1 hora"
+            name: exp_1_hora
+            widget: string
+
+          - label: "exp 1 titulo"
+            name: exp_1_titulo
+            widget: string
+
+          - label: "exp 1 texto"
+            name: exp_1_texto
+            widget: text
+
+          - label: "exp 2 hora"
+            name: exp_2_hora
+            widget: string
+
+          - label: "exp 2 titulo"
+            name: exp_2_titulo
+            widget: string
+
+          - label: "exp 2 texto"
+            name: exp_2_texto
+            widget: text
+
+          - label: "exp 3 hora"
+            name: exp_3_hora
+            widget: string
+
+          - label: "exp 3 titulo"
+            name: exp_3_titulo
+            widget: string
+
+          - label: "exp 3 texto"
+            name: exp_3_texto
+            widget: text
+
+          - label: "exp 4 hora"
+            name: exp_4_hora
+            widget: string
+
+          - label: "exp 4 titulo"
+            name: exp_4_titulo
+            widget: string
+
+          - label: "exp 4 texto"
+            name: exp_4_texto
+            widget: string
+
+          - label: "bar titulo"
+            name: bar_titulo
+            widget: string
+
+          - label: "bar texto"
+            name: bar_texto
+            widget: text
+
+          - label: "─────────── ⭐ Reseñas (copiar SIEMPRE textual desde la plataforma) ───────────"
+            name: _sep_6
             widget: hidden
 
-          - label: "Dei Bar — Eyebrow"
-            name: bar_eyebrow
-            widget: string
-
-          - label: "Dei Bar — Título"
-            name: bar_h2
-            widget: text
-            hint: "Usa <br> y <em>palabra</em> para dorado."
-
-          - label: "Dei Bar — Párrafo 1"
-            name: bar_p1
-            widget: text
-
-          - label: "Dei Bar — Párrafo 2"
-            name: bar_p2
-            widget: text
-
-          - label: "Dei Bar — Caption de la foto"
-            name: bar_caption
-            widget: string
-
-          - label: "Dei Bar — Room service título"
-            name: bar_rs_titulo
-            widget: string
-
-          - label: "Dei Bar — Room service subtítulo"
-            name: bar_rs_sub
-            widget: string
-
-          - label: "─────────── ⭐ RESEÑAS ───────────"
-            name: _sep_reviews
-            widget: hidden
-
-          - label: "Reseñas — Eyebrow"
+          - label: "reviews eyebrow"
             name: reviews_eyebrow
             widget: string
 
-          - label: "Reseñas — Título"
+          - label: "reviews h2"
             name: reviews_h2
             widget: text
-            hint: "Usa <br> y <em>palabra</em> para dorado."
+            hint: "Puedes usar <strong>negrita</strong>, <em>dorado en cursiva</em> y <br> para salto de línea."
 
-          - label: "Reseñas — Párrafo intro"
+          - label: "reviews p"
             name: reviews_p
             widget: text
 
-          - label: "Reseñas — Texto bajo puntaje (ej: Promedio de 532 reseñas...)"
-            name: reviews_score_p
-            widget: string
-
-          - label: "Reseña 1 — Texto"
+          - label: "rv1 texto"
             name: rv1_texto
             widget: text
 
-          - label: "Reseña 1 — Nombre"
+          - label: "rv1 nombre"
             name: rv1_nombre
             widget: string
 
-          - label: "Reseña 1 — Fuente (Google / Booking.com)"
+          - label: "rv1 fuente"
             name: rv1_fuente
             widget: string
 
-          - label: "Reseña 2 — Texto"
+          - label: "rv2 texto"
             name: rv2_texto
             widget: text
 
-          - label: "Reseña 2 — Nombre"
+          - label: "rv2 nombre"
             name: rv2_nombre
             widget: string
 
-          - label: "Reseña 2 — Fuente"
+          - label: "rv2 fuente"
             name: rv2_fuente
             widget: string
 
-          - label: "Reseña 3 — Texto"
+          - label: "rv3 texto"
             name: rv3_texto
             widget: text
 
-          - label: "Reseña 3 — Nombre"
+          - label: "rv3 nombre"
             name: rv3_nombre
             widget: string
 
-          - label: "Reseña 3 — Fuente"
+          - label: "rv3 fuente"
             name: rv3_fuente
             widget: string
 
-          - label: "Reseña 4 — Texto"
+          - label: "rv4 texto"
             name: rv4_texto
             widget: text
 
-          - label: "Reseña 4 — Nombre"
+          - label: "rv4 nombre"
             name: rv4_nombre
             widget: string
 
-          - label: "Reseña 4 — Fuente"
+          - label: "rv4 fuente"
             name: rv4_fuente
             widget: string
 
-          - label: "Reseña 5 — Texto"
+          - label: "rv5 texto"
             name: rv5_texto
             widget: text
 
-          - label: "Reseña 5 — Nombre"
+          - label: "rv5 nombre"
             name: rv5_nombre
             widget: string
 
-          - label: "Reseña 5 — Fuente"
+          - label: "rv5 fuente"
             name: rv5_fuente
             widget: string
 
-          - label: "Reseña 6 — Texto"
+          - label: "rv6 texto"
             name: rv6_texto
             widget: text
 
-          - label: "Reseña 6 — Nombre"
+          - label: "rv6 nombre"
             name: rv6_nombre
             widget: string
 
-          - label: "Reseña 6 — Fuente"
+          - label: "rv6 fuente"
             name: rv6_fuente
             widget: string
 
-          - label: "Reseña 7 — Texto"
-            name: rv7_texto
-            widget: text
-
-          - label: "Reseña 7 — Nombre"
-            name: rv7_nombre
-            widget: string
-
-          - label: "Reseña 7 — Fuente"
-            name: rv7_fuente
-            widget: string
-
-          - label: "─────────── 💰 RESERVA DIRECTA ───────────"
-            name: _sep_directo
+          - label: "─────────── 🏆 Por qué reservar directo ───────────"
+            name: _sep_7
             widget: hidden
 
-          - label: "Reserva directa — Eyebrow"
+          - label: "directo eyebrow"
             name: directo_eyebrow
             widget: string
 
-          - label: "Reserva directa — Título"
+          - label: "directo h2"
             name: directo_h2
             widget: text
-            hint: "Usa <br> y <em>palabra</em> para dorado."
+            hint: "Puedes usar <strong>negrita</strong>, <em>dorado en cursiva</em> y <br> para salto de línea."
 
-          - label: "Reserva directa — Párrafo"
+          - label: "directo p"
             name: directo_p
             widget: text
 
-          - label: "Ventaja 01 — Título"
-            name: directo_01_titulo
-            widget: string
-
-          - label: "Ventaja 01 — Descripción"
-            name: directo_01_sub
+          - label: "directo nota"
+            name: directo_nota
             widget: text
 
-          - label: "Ventaja 02 — Título"
-            name: directo_02_titulo
-            widget: string
-
-          - label: "Ventaja 02 — Descripción"
-            name: directo_02_sub
-            widget: text
-
-          - label: "Ventaja 03 — Título"
-            name: directo_03_titulo
-            widget: string
-
-          - label: "Ventaja 03 — Descripción"
-            name: directo_03_sub
-            widget: text
-
-          - label: "Ventaja 04 — Título"
-            name: directo_04_titulo
-            widget: string
-
-          - label: "Ventaja 04 — Descripción"
-            name: directo_04_sub
-            widget: text
-
-          - label: "Tarjeta promo — % grande (ej: 10%)"
-            name: promo_percent
-            widget: string
-
-          - label: "Tarjeta promo — Etiqueta"
-            name: promo_label
-            widget: string
-
-          - label: "Tarjeta promo — Título"
-            name: promo_titulo
-            widget: string
-
-          - label: "Tarjeta promo — Descripción"
-            name: promo_sub
-            widget: text
-
-          - label: "Tarjeta promo — Condiciones (letra chica)"
-            name: promo_condiciones
-            widget: text
-
-          - label: "─────────── 📍 UBICACIÓN ───────────"
-            name: _sep_ubicacion
+          - label: "─────────── 📩 Después de reservar ───────────"
+            name: _sep_8
             widget: hidden
 
-          - label: "Ubicación — Eyebrow"
+          - label: "despues eyebrow"
+            name: despues_eyebrow
+            widget: string
+
+          - label: "despues h2"
+            name: despues_h2
+            widget: text
+            hint: "Puedes usar <strong>negrita</strong>, <em>dorado en cursiva</em> y <br> para salto de línea."
+
+          - label: "despues 1 titulo"
+            name: despues_1_titulo
+            widget: string
+
+          - label: "despues 1 texto"
+            name: despues_1_texto
+            widget: text
+
+          - label: "despues 2 titulo"
+            name: despues_2_titulo
+            widget: string
+
+          - label: "despues 2 texto"
+            name: despues_2_texto
+            widget: text
+
+          - label: "despues 3 titulo"
+            name: despues_3_titulo
+            widget: string
+
+          - label: "despues 3 texto"
+            name: despues_3_texto
+            widget: text
+
+          - label: "despues 4 titulo"
+            name: despues_4_titulo
+            widget: string
+
+          - label: "despues 4 texto"
+            name: despues_4_texto
+            widget: text
+
+          - label: "─────────── ⛵ Carabela ───────────"
+            name: _sep_9
+            widget: hidden
+
+          - label: "carabela eyebrow"
+            name: carabela_eyebrow
+            widget: string
+
+          - label: "carabela h2"
+            name: carabela_h2
+            widget: text
+            hint: "Puedes usar <strong>negrita</strong>, <em>dorado en cursiva</em> y <br> para salto de línea."
+
+          - label: "carabela p1"
+            name: carabela_p1
+            widget: text
+
+          - label: "carabela p2"
+            name: carabela_p2
+            widget: text
+
+          - label: "─────────── 📷 Galería ───────────"
+            name: _sep_10
+            widget: hidden
+
+          - label: "galeria eyebrow"
+            name: galeria_eyebrow
+            widget: string
+
+          - label: "galeria h2"
+            name: galeria_h2
+            widget: text
+            hint: "Puedes usar <strong>negrita</strong>, <em>dorado en cursiva</em> y <br> para salto de línea."
+
+          - label: "─────────── 📍 Cómo llegar ───────────"
+            name: _sep_11
+            widget: hidden
+
+          - label: "ubicacion eyebrow"
             name: ubicacion_eyebrow
             widget: string
 
-          - label: "Ubicación — Título"
+          - label: "ubicacion h2"
             name: ubicacion_h2
             widget: text
-            hint: "Usa <br> y <em>palabra</em> para dorado."
+            hint: "Puedes usar <strong>negrita</strong>, <em>dorado en cursiva</em> y <br> para salto de línea."
 
-          - label: "Ubicación — Párrafo"
+          - label: "ubicacion p"
             name: ubicacion_p
             widget: text
 
-          - label: "Check-in / Check-out (texto informativo)"
-            name: checkin_info
-            widget: string
-            hint: "Ej: Check-in 16:00 · Check-out 12:00"
-
-          - label: "─────────── ❓ PREGUNTAS FRECUENTES ───────────"
-            name: _sep_faq
+          - label: "─────────── ❓ Preguntas frecuentes ───────────"
+            name: _sep_12
             widget: hidden
 
-          - label: "FAQ — Eyebrow"
+          - label: "faq eyebrow"
             name: faq_eyebrow
             widget: string
 
-          - label: "FAQ — Título"
+          - label: "faq h2"
             name: faq_h2
             widget: text
-            hint: "Usa <br> y <em>palabra</em> para dorado."
+            hint: "Puedes usar <strong>negrita</strong>, <em>dorado en cursiva</em> y <br> para salto de línea."
 
-          - label: "FAQ — Texto introductorio"
+          - label: "faq intro"
             name: faq_intro
-            widget: text
+            widget: string
 
-          - label: "Pregunta 1"
+          - label: "faq 1 q"
             name: faq_1_q
             widget: string
 
-          - label: "Respuesta 1"
+          - label: "faq 1 a"
             name: faq_1_a
             widget: text
 
-          - label: "Pregunta 2"
+          - label: "faq 2 q"
             name: faq_2_q
             widget: string
 
-          - label: "Respuesta 2"
+          - label: "faq 2 a"
             name: faq_2_a
             widget: text
 
-          - label: "Pregunta 3"
+          - label: "faq 3 q"
             name: faq_3_q
             widget: string
 
-          - label: "Respuesta 3"
+          - label: "faq 3 a"
             name: faq_3_a
             widget: text
 
-          - label: "Pregunta 4"
+          - label: "faq 4 q"
             name: faq_4_q
             widget: string
 
-          - label: "Respuesta 4"
+          - label: "faq 4 a"
             name: faq_4_a
             widget: text
 
-          - label: "Pregunta 5"
+          - label: "faq 5 q"
             name: faq_5_q
             widget: string
 
-          - label: "Respuesta 5"
+          - label: "faq 5 a"
             name: faq_5_a
             widget: text
 
-          - label: "Pregunta 6"
+          - label: "faq 6 q"
             name: faq_6_q
             widget: string
 
-          - label: "Respuesta 6"
+          - label: "faq 6 a"
             name: faq_6_a
             widget: text
 
-          - label: "Pregunta 7"
+          - label: "faq 7 q"
             name: faq_7_q
             widget: string
 
-          - label: "Respuesta 7"
+          - label: "faq 7 a"
             name: faq_7_a
             widget: text
 
-          - label: "─────────── 🎯 CTA FINAL ───────────"
-            name: _sep_cta
-            widget: hidden
-
-          - label: "CTA — Eyebrow"
-            name: cta_eyebrow
+          - label: "faq 8 q"
+            name: faq_8_q
             widget: string
 
-          - label: "CTA — Título"
+          - label: "faq 8 a"
+            name: faq_8_a
+            widget: text
+
+          - label: "faq 9 q"
+            name: faq_9_q
+            widget: string
+
+          - label: "faq 9 a"
+            name: faq_9_a
+            widget: text
+
+          - label: "faq 10 q"
+            name: faq_10_q
+            widget: string
+
+          - label: "faq 10 a"
+            name: faq_10_a
+            widget: text
+
+          - label: "─────────── 📣 Llamado final ───────────"
+            name: _sep_13
+            widget: hidden
+
+          - label: "cta h2"
             name: cta_h2
             widget: text
-            hint: "Usa <br> y <em>palabra</em> para dorado."
+            hint: "Puedes usar <strong>negrita</strong>, <em>dorado en cursiva</em> y <br> para salto de línea."
 
-          - label: "CTA — Párrafo"
+          - label: "cta p"
             name: cta_p
             widget: text
 
-          - label: "Tarjeta reserva — Título (ej: ¿Cuándo nos visitas?)"
-            name: cta_card_h3
-            widget: string
-
-          - label: "Tarjeta reserva — Subtítulo"
-            name: cta_card_sub
-            widget: string
-
-          - label: "Tarjeta reserva — Letra chica"
-            name: cta_card_fine
-            widget: string
+          - label: "cta fine"
+            name: cta_fine
+            widget: text
