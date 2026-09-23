@@ -98,7 +98,7 @@
         "paymentAccepted": "Tarjeta de crédito, Tarjeta de débito, Transferencia bancaria",
         "petsAllowed": true,
         "image": [
-          "https://www.deitempli.cl/images/vistahab.jpg",
+          "https://www.deitempli.cl/images/portada-mar-2560.jpg",
           "https://www.deitempli.cl/images/habitacion-deluxe.jpg",
           "https://www.deitempli.cl/images/habweb.jpg",
           "https://www.deitempli.cl/images/deptoweb.jpg",
@@ -241,7 +241,8 @@
 }
   </script>
 
-  <link rel="preload" as="image" href="/images/vistahab.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" media="(max-width: 767px)" imagesrcset="/images/portada-mar-movil-800.jpg 748w, /images/portada-mar-movil.jpg 1208w" imagesizes="100vw" fetchpriority="high" />
+  <link rel="preload" as="image" media="(min-width: 768px)" imagesrcset="/images/portada-mar-1280.jpg 1280w, /images/portada-mar-1920.jpg 1920w, /images/portada-mar-2560.jpg 2560w" imagesizes="(max-aspect-ratio: 16/9) 178vh, 100vw" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -407,7 +408,9 @@
     /* ────────────── HERO ────────────── */
     #inicio { position: relative; min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; justify-content: flex-end; color: #fff; overflow: hidden; }
     .hero-media { position: absolute; inset: 0; z-index: 0; background: var(--navy); }
+    .hero-media picture { display: block; width: 100%; height: 100%; }
     .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: center 55%; }
+    @media (max-width: 767px) { .hero-media img { object-position: center 30%; } }
     .hero-media::after {
       content: ''; position: absolute; inset: 0;
       background:
@@ -905,7 +908,11 @@
 <!-- ═══════════════ HERO (ANTES: descubrimiento) ═══════════════ -->
 <section id="inicio" aria-label="Inicio">
   <div class="hero-media">
-    <img data-foto="hero" src="/images/vistahab.jpg" alt="Balcón de Hotel Dei Templi con vista panorámica al océano Pacífico en Reñaca" width="1600" height="900" fetchpriority="high" />
+    <picture>
+      <!-- Celular: recorte vertical propio (nítido y liviano) -->
+      <source media="(max-width: 767px)" srcset="/images/portada-mar-movil-800.jpg 748w, /images/portada-mar-movil.jpg 1208w" sizes="100vw" width="1208" height="2149" />
+      <img data-foto="hero" src="/images/portada-mar-1920.jpg" srcset="/images/portada-mar-1280.jpg 1280w, /images/portada-mar-1920.jpg 1920w, /images/portada-mar-2560.jpg 2560w" sizes="(max-aspect-ratio: 16/9) 178vh, 100vw" alt="Balcón de Hotel Dei Templi con vista panorámica al océano Pacífico en Reñaca" width="2560" height="1439" fetchpriority="high" />
+    </picture>
   </div>
   <div class="container hero-content">
     <span class="hero-tag"><svg class="icon"><use href="#i-pin"/></svg><span data-texto="hero_tag">Reñaca alto · a 90 minutos de Santiago</span></span>
@@ -1656,7 +1663,11 @@
         var src = fotos[el.getAttribute('data-foto')];
         if (!src || String(src).trim() === '') return;
         if (el.tagName === 'IMG') {
-          if (el.getAttribute('src') !== src) el.src = src;
+          if (el.getAttribute('src') !== src) {
+            /* Foto nueva subida desde /admin: le gana a las versiones preparadas */
+            if (el.parentElement && el.parentElement.tagName === 'PICTURE') el.parentElement.querySelectorAll('source').forEach(function(x) { x.remove(); });
+            el.removeAttribute('srcset'); el.src = src;
+          }
         } else {
           el.style.backgroundImage = 'url(' + src + ')';
         }
