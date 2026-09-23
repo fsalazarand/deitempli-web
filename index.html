@@ -7,6 +7,8 @@
   <title>Hotel Dei Templi Reñaca · Vista al mar a 90 min de Santiago | Reserva directa</title>
   <meta name="description" content="Habitaciones con vista al mar en Reñaca, desayuno en tu habitación y Dei Bar 24 horas. Reserva directo: mejor precio que en Booking y elige tarifa Flexible o No reembolsable." />
   <link rel="canonical" href="https://www.deitempli.cl/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="alternate" type="text/plain" href="https://www.deitempli.cl/llms.txt" title="Información del hotel para asistentes de IA" />
   <meta name="theme-color" content="#0E2F3D" />
 
   <!-- Favicon -->
@@ -48,6 +50,9 @@
   <meta property="og:title" content="Hotel Dei Templi Reñaca — El mar te está esperando" />
   <meta property="og:description" content="Balcón frente al Pacífico, desayuno en tu habitación y Dei Bar 24 horas, a 90 min de Santiago. Reserva directo: mejor precio que en Booking, con tarifa Flexible o No reembolsable." />
   <meta property="og:image" content="https://www.deitempli.cl/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="675" />
+  <meta property="og:image:alt" content="Vista al océano Pacífico desde Hotel Dei Templi en Reñaca" />
   <meta property="og:locale" content="es_CL" />
   <meta property="og:site_name" content="Hotel Dei Templi" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -58,59 +63,84 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LodgingBusiness",
-    "name": "Hotel Dei Templi",
-    "url": "https://www.deitempli.cl",
-    "description": "Hotel boutique en Reñaca alto con habitaciones y departamentos con vista al Pacífico, desayuno en la habitación, Dei Bar con room service 24 horas y piscina exterior.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Av. Edmundo Eluchans 1475",
-      "addressLocality": "Reñaca, Viña del Mar",
-      "addressRegion": "Valparaíso",
-      "postalCode": "2540038",
-      "addressCountry": "CL"
-    },
-    "telephone": "+56966130676",
-    "email": "info@deitempli.cl",
-    "checkinTime": "16:00",
-    "checkoutTime": "12:00",
-    "priceRange": "$$",
-    "currenciesAccepted": "CLP, USD",
-    "paymentAccepted": "Tarjeta de crédito, Tarjeta de débito, Transferencia bancaria",
-    "petsAllowed": true,
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": -32.9689,
-      "longitude": -71.5356
-    },
-    "hasMap": "https://maps.google.com/?cid=13955628741804259447",
-    "image": [
-      "https://www.deitempli.cl/images/vistahab.jpg",
-      "https://www.deitempli.cl/images/habitacion-deluxe.jpg",
-      "https://www.deitempli.cl/images/vista.jpg",
-      "https://www.deitempli.cl/images/piscina.jpg",
-      "https://www.deitempli.cl/images/desayuno.jpg",
-      "https://www.deitempli.cl/images/carabela.jpg"
-    ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.6",
-      "reviewCount": "559",
-      "bestRating": "5"
-    },
-    "amenityFeature": [
-      {"@type":"LocationFeatureSpecification","name":"Piscina exterior","value":true},
-      {"@type":"LocationFeatureSpecification","name":"Wi-Fi gratuito","value":true},
-      {"@type":"LocationFeatureSpecification","name":"Desayuno incluido","value":true},
-      {"@type":"LocationFeatureSpecification","name":"Estacionamiento gratuito","value":true},
-      {"@type":"LocationFeatureSpecification","name":"Room service 24 horas","value":true},
-      {"@type":"LocationFeatureSpecification","name":"Pet friendly","value":true}
-    ],
-    "sameAs": [
-      "https://www.instagram.com/deitempli",
-      "https://facebook.com/deitempliaparthotel",
-      "https://www.booking.com/hotel/cl/dei-templi-apart.html",
-      "https://www.tripadvisor.cl/Hotel_Review-g295425-d552351-Reviews-Dei_Templi_Hotel-Vina_del_Mar_Valparaiso_Region.html"
+    "@graph": [
+      {
+        "@type": "Hotel",
+        "@id": "https://www.deitempli.cl/#hotel",
+        "name": "Hotel Dei Templi",
+        "alternateName": ["Dei Templi Hotel Viña del Mar", "Dei Templi Apart Hotel", "Dei Templi Reñaca"],
+        "url": "https://www.deitempli.cl/",
+        "description": "Hotel boutique en Reñaca alto, Viña del Mar, a 90 minutos de Santiago. 16 habitaciones y departamentos con vista al océano Pacífico, desayuno servido en la habitación, Dei Bar con room service 24 horas, piscina exterior y estacionamiento gratis. Reserva directa con dos tarifas: Flexible (cancelación sin costo hasta 72 horas antes, 50% al reservar) y No reembolsable (10% más económica, 100% al reservar).",
+        "numberOfRooms": 16,
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Av. Edmundo Eluchans 1475",
+          "addressLocality": "Reñaca, Viña del Mar",
+          "addressRegion": "Valparaíso",
+          "postalCode": "2540038",
+          "addressCountry": "CL"
+        },
+        "geo": { "@type": "GeoCoordinates", "latitude": -32.9689, "longitude": -71.5356 },
+        "hasMap": "https://maps.google.com/?cid=13955628741804259447",
+        "telephone": "+56966130676",
+        "email": "info@deitempli.cl",
+        "checkinTime": "16:00",
+        "checkoutTime": "12:00",
+        "priceRange": "$$",
+        "currenciesAccepted": "CLP, USD",
+        "paymentAccepted": "Tarjeta de crédito, Tarjeta de débito, Transferencia bancaria",
+        "petsAllowed": true,
+        "image": [
+          "https://www.deitempli.cl/images/vistahab.jpg",
+          "https://www.deitempli.cl/images/habitacion-deluxe.jpg",
+          "https://www.deitempli.cl/images/habweb.jpg",
+          "https://www.deitempli.cl/images/deptoweb.jpg",
+          "https://www.deitempli.cl/images/vista.jpg",
+          "https://www.deitempli.cl/images/piscina.jpg",
+          "https://www.deitempli.cl/images/desayuno.jpg"
+        ],
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.6", "reviewCount": "559", "bestRating": "5" },
+        "amenityFeature": [
+          {"@type":"LocationFeatureSpecification","name":"Vista al mar en todas las habitaciones","value":true},
+          {"@type":"LocationFeatureSpecification","name":"Desayuno incluido, servido en la habitación","value":true},
+          {"@type":"LocationFeatureSpecification","name":"Room service 24 horas (Dei Bar)","value":true},
+          {"@type":"LocationFeatureSpecification","name":"Piscina exterior","value":true},
+          {"@type":"LocationFeatureSpecification","name":"Estacionamiento gratuito","value":true},
+          {"@type":"LocationFeatureSpecification","name":"Wi-Fi gratuito","value":true},
+          {"@type":"LocationFeatureSpecification","name":"Pet friendly (con cargo adicional)","value":true}
+        ],
+        "containsPlace": [
+          {"@type":"HotelRoom","name":"Habitación Deluxe","description":"Cama matrimonial superior, balcón privado con vista al mar, jacuzzi y amenidades exclusivas.","occupancy":{"@type":"QuantitativeValue","maxValue":2},"bed":{"@type":"BedDetails","typeOfBed":"Matrimonial","numberOfBeds":1},"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Balcón","value":true},{"@type":"LocationFeatureSpecification","name":"Jacuzzi","value":true}]},
+          {"@type":"HotelRoom","name":"Habitación Estándar con balcón","description":"Cama de dos plazas y balcón privado con vista al mar.","occupancy":{"@type":"QuantitativeValue","maxValue":2},"bed":{"@type":"BedDetails","typeOfBed":"Matrimonial","numberOfBeds":1},"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Balcón","value":true}]},
+          {"@type":"Suite","name":"Departamento Doble","description":"Balcón con vista al mar y kitchenette equipada (frigobar, microondas y loza).","occupancy":{"@type":"QuantitativeValue","maxValue":2},"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Balcón","value":true},{"@type":"LocationFeatureSpecification","name":"Kitchenette","value":true}]},
+          {"@type":"Suite","name":"Departamento Triple","description":"Dos ambientes, balcón con vista al mar y kitchenette. Hasta 3 personas.","occupancy":{"@type":"QuantitativeValue","maxValue":3},"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Balcón","value":true},{"@type":"LocationFeatureSpecification","name":"Kitchenette","value":true}]},
+          {"@type":"HotelRoom","name":"Habitación Superior con jacuzzi","description":"Jacuzzi privado y vista panorámica al mar desde el ventanal. Sin balcón.","occupancy":{"@type":"QuantitativeValue","maxValue":2},"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Balcón","value":false},{"@type":"LocationFeatureSpecification","name":"Jacuzzi","value":true}]},
+          {"@type":"HotelRoom","name":"Habitación Básica vista al mar","description":"Opción más económica, compacta, con vista al mar desde el interior. Sin balcón.","occupancy":{"@type":"QuantitativeValue","maxValue":2},"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Balcón","value":false}]}
+        ],
+        "potentialAction": {
+          "@type": "ReserveAction",
+          "name": "Reservar directo",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://deitemplihotelvinadelmar.reservadirecto.com/lp.html?pos=DeiTempliHotelVinadelMar&webcache=off&tag=PmsLink",
+            "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"]
+          }
+        },
+        "sameAs": [
+          "https://www.instagram.com/deitempli",
+          "https://facebook.com/deitempliaparthotel",
+          "https://www.booking.com/hotel/cl/dei-templi-apart.html",
+          "https://www.tripadvisor.cl/Hotel_Review-g295425-d552351-Reviews-Dei_Templi_Hotel-Vina_del_Mar_Valparaiso_Region.html"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.deitempli.cl/#website",
+        "url": "https://www.deitempli.cl/",
+        "name": "Hotel Dei Templi",
+        "inLanguage": "es-CL",
+        "publisher": { "@id": "https://www.deitempli.cl/#hotel" }
+      }
     ]
   }
   </script>
@@ -355,7 +385,7 @@
     .mob-actions { margin-top: auto; display: grid; gap: 12px; }
 
     /* ────────────── HERO ────────────── */
-    #inicio { position: relative; min-height: 100svh; display: flex; flex-direction: column; justify-content: flex-end; color: #fff; overflow: hidden; }
+    #inicio { position: relative; min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; justify-content: flex-end; color: #fff; overflow: hidden; }
     .hero-media { position: absolute; inset: 0; z-index: 0; background: var(--navy); }
     .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: center 55%; }
     .hero-media::after {
@@ -463,10 +493,11 @@
     .rooms-grid { display: grid; grid-template-columns: 1.15fr 1fr 1fr; gap: 26px; }
     .room-card { background: #fff; border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-1); display: flex; flex-direction: column; border: 1px solid var(--line); transition: box-shadow .25s var(--ease), transform .25s var(--ease); }
     .room-card:hover { box-shadow: var(--shadow-2); transform: translateY(-3px); }
-    .room-media { position: relative; aspect-ratio: 4 / 3.4; overflow: hidden; background: var(--sand); }
-    .room-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
-    .room-card:hover .room-media img { transform: scale(1.04); }
-    .room-badge { position: absolute; top: 16px; left: 16px; background: var(--gold); color: var(--navy); font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; }
+    /* Foto completa, sin recortes: la imagen define su propia altura */
+    .rooms-grid { align-items: start; }
+    .room-media { background: var(--sand); }
+    .room-media img { width: 100%; height: auto; display: block; }
+    .room-badge { display: inline-block; align-self: flex-start; background: var(--gold); color: var(--navy); font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; margin-bottom: 12px; }
     .room-body { padding: 24px 24px 26px; display: flex; flex-direction: column; flex: 1; }
     .room-body h3 { font-size: 25px; margin-bottom: 6px; }
     .room-tagline { font-family: var(--fh); font-style: italic; color: var(--gold-ink); font-size: 17px; margin-bottom: 12px; }
@@ -649,8 +680,8 @@
       .nav-cta .btn-reservar-nav { display: none; }
       .rooms-grid { grid-template-columns: 1fr 1fr; }
       .rooms-grid .room-card:first-child { grid-column: 1 / -1; flex-direction: row; }
-      .rooms-grid .room-card:first-child .room-media { flex: 1 1 50%; aspect-ratio: auto; min-height: 380px; }
-      .rooms-grid .room-card:first-child .room-body { flex: 1 1 50%; }
+      .rooms-grid .room-card:first-child .room-media { flex: 0 0 44%; }
+      .rooms-grid .room-card:first-child .room-body { flex: 1 1 56%; }
       .exp-layout, .direct-layout, .loc-layout, .faq-layout { grid-template-columns: 1fr; gap: 48px; }
       .faq-side { position: static; }
       .steps { grid-template-columns: 1fr 1fr; }
@@ -692,7 +723,7 @@
       .search-card-title { font-size: 18px; }
       .rooms-grid { grid-template-columns: 1fr; }
       .rooms-grid .room-card:first-child { flex-direction: column; }
-      .rooms-grid .room-card:first-child .room-media { min-height: 0; aspect-ratio: 4 / 3.4; }
+      .rooms-grid .room-card:first-child .room-media { flex: none; }
       .steps { grid-template-columns: 1fr; }
       .exp-media { grid-template-columns: 1fr; }
       .exp-media .m2 { aspect-ratio: 16 / 10; }
@@ -938,9 +969,9 @@
       <article class="room-card reveal">
         <div class="room-media">
           <img data-foto="hab_deluxe" src="/images/habitacion-deluxe.jpg" alt="Habitación Deluxe con jacuzzi, cama matrimonial y ventanal con vista al mar" width="1200" height="1600" loading="lazy" />
-          <span class="room-badge" data-texto="deluxe_badge">La más completa</span>
         </div>
         <div class="room-body">
+          <span class="room-badge" data-texto="deluxe_badge">La más completa</span>
           <h3 data-texto="deluxe_nombre">Habitación Deluxe</h3>
           <p class="room-tagline" data-texto="deluxe_tagline">Balcón, jacuzzi y la mejor vista del hotel.</p>
           <p class="desc" data-texto="deluxe_descripcion">Cama matrimonial superior, balcón privado frente al mar, jacuzzi y amenidades exclusivas. La favorita de nuestros huéspedes para aniversarios y escapadas especiales.</p>
@@ -1352,17 +1383,37 @@
 
 <script>
   /* ════════════════════════════════════════════════════════
-     DATALAYER — FUENTE ÚNICA DE VERDAD
-     Todos los eventos van al dataLayer de GTM.
-     GTM (GTM-KSMZC9T) enruta a:
-       → Meta Pixel 2312684685824226 (PageView, ViewContent,
-         InitiateCheckout, Purchase, Contact)
-       → GA4
-     Nunca llamar fbq() directamente — solo dataLayer.push().
+     MEDICIÓN — Meta Pixel 2312684685824226 + GA4 G-F8YFE92R3J
+     Auditoría GTM-KSMZC9T (sep-2026): el contenedor solo tiene
+     2 etiquetas → Pixel base + PageView, y Purchase (evento
+     "purchase"). NO tiene InitiateCheckout, ViewContent ni Contact.
+     Por eso esos eventos se envían aquí directo a Meta (fbq) y a
+     GA4 (gtag). ⚠️ NO crear en GTM etiquetas para estos mismos
+     eventos: se contarían dos veces.
+     Todo se deja además en el dataLayer por si GTM lo necesita.
   ════════════════════════════════════════════════════════ */
   window.dataLayer = window.dataLayer || [];
   function dlPush(eventName, params) {
     window.dataLayer.push(Object.assign({ event: eventName }, params || {}));
+  }
+  /* fbq lo carga GTM de forma asíncrona: si aún no existe, se encola y se envía apenas cargue */
+  const metaQueue = [];
+  function metaTrack(eventName, params) {
+    if (typeof window.fbq === 'function') window.fbq('track', eventName, params || {});
+    else metaQueue.push([eventName, params || {}]);
+  }
+  (function flushMetaQueue(tries) {
+    if (typeof window.fbq === 'function') { while (metaQueue.length) { const [e, p] = metaQueue.shift(); window.fbq('track', e, p); } }
+    if (tries < 40) setTimeout(() => flushMetaQueue(tries + 1), 500);
+  })(0);
+  function ga4Track(eventName, params) {
+    if (typeof window.gtag === 'function') window.gtag('event', eventName, params || {});
+  }
+  /* Un evento de negocio → dataLayer + Meta + GA4 */
+  function track(dlName, metaName, ga4Name, params) {
+    dlPush(dlName, params);
+    if (metaName) metaTrack(metaName, params);
+    if (ga4Name) ga4Track(ga4Name, params);
   }
 
   /* ════════════════════════════════════════════════════════
@@ -1440,11 +1491,9 @@
       entries.forEach(entry => {
         if (entry.isIntersecting && !fired) {
           fired = true;
-          dlPush('view_content', {
+          track('view_content', 'ViewContent', 'view_item_list', {
             content_name: 'Hotel Dei Templi — ' + (entry.target.id === 'tarifas' ? 'Tarifas' : 'Habitaciones'),
-            content_category: 'hotel_room',
-            content_ids: ['habitacion-deluxe', 'habitacion-estandar', 'departamento-2-3', 'carabela'],
-            content_type: 'hotel',
+            content_category: 'hotel',
             currency: 'CLP'
           });
           io.disconnect();
@@ -1461,7 +1510,7 @@
     dtPickerTrigger.addEventListener('click', () => {
       if (!checkoutFired) {
         checkoutFired = true;
-        dlPush('initiate_checkout', { content_name: 'Buscador Pxsol — Hotel Dei Templi', content_category: 'hotel', currency: 'CLP', num_items: 1 });
+        track('initiate_checkout', 'InitiateCheckout', 'begin_checkout', { content_name: 'Buscador Pxsol — Hotel Dei Templi', content_category: 'hotel', currency: 'CLP', num_items: 1 });
       }
     });
   }
@@ -1469,15 +1518,15 @@
     link.addEventListener('click', () => {
       if (!checkoutFired) {
         checkoutFired = true;
-        dlPush('initiate_checkout', { content_name: 'CTA Reservar — ' + (link.textContent.trim() || 'Hotel Dei Templi'), content_category: 'hotel', currency: 'CLP', num_items: 1 });
+        track('initiate_checkout', 'InitiateCheckout', 'begin_checkout', { content_name: 'CTA Reservar — ' + (link.textContent.trim() || 'Hotel Dei Templi'), content_category: 'hotel', currency: 'CLP', num_items: 1 });
       }
     });
   });
 
-  /* EVENTO 2b: Contact — clic en WhatsApp (en GTM mapear a Meta "Contact") */
+  /* EVENTO 2b: Contact — clic en WhatsApp (Meta "Contact" / GA4 "generate_lead") */
   document.querySelectorAll('a[href*="wa.me/"]').forEach(link => {
     link.addEventListener('click', () => {
-      dlPush('contact', { method: 'whatsapp', content_name: link.getAttribute('aria-label') || link.textContent.trim() || 'WhatsApp' });
+      track('contact', 'Contact', 'generate_lead', { method: 'whatsapp', content_name: link.getAttribute('aria-label') || link.textContent.trim() || 'WhatsApp' });
     });
   });
 
@@ -1488,6 +1537,7 @@
      (Puntos de venta → Analítica y seguimiento). Estas dos vías
      quedan listas por si Pxsol redirige de vuelta con
      ?reservation_id= o embebe el motor en el futuro.
+     Purchase va SOLO al dataLayer: GTM ya tiene su etiqueta.
   ════════════════════════════════════════════════════════ */
   window.addEventListener('message', function(event) {
     if (!event.origin.includes('reservadirecto.com') && !event.origin.includes('pxsol.com')) return;
