@@ -793,7 +793,9 @@
     .hero-h1 em { display: inline-block; animation: horizonte 900ms var(--ease-out) 700ms both; }
     .hero-sub { animation: aparece 700ms var(--ease-out) 820ms both; }
     .hero-ctas, .hero-proof { animation: aparece 700ms var(--ease-out) 920ms both; }
-    #buscar .search-card { animation: aparece 800ms var(--ease-out) 1000ms both; }
+    /* 'backwards' y no 'both': al terminar no deja transform aplicado. Un transform en la tarjeta
+       encerraría el calendario de Pxsol (position: fixed en celular) dentro de ella */
+    #buscar .search-card { animation: aparece 800ms var(--ease-out) 1000ms backwards; }
 
     /* Estados: respuesta inmediata al tocar */
     .room-card, .rate-card, .score, .faq-list details { will-change: auto; }
