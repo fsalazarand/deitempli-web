@@ -141,6 +141,16 @@
         ]
       },
       {
+        "@type": "WebPage",
+        "@id": "https://www.deitempli.cl/#webpage",
+        "url": "https://www.deitempli.cl/",
+        "name": "Hotel Dei Templi Reñaca | Vista al mar a 90 min de Santiago",
+        "inLanguage": "es-CL",
+        "dateModified": "2026-09-23",
+        "about": { "@id": "https://www.deitempli.cl/#hotel" },
+        "isPartOf": { "@id": "https://www.deitempli.cl/#website" }
+      },
+      {
         "@type": "WebSite",
         "@id": "https://www.deitempli.cl/#website",
         "url": "https://www.deitempli.cl/",
@@ -651,10 +661,16 @@
     .faq-side { position: sticky; top: 110px; }
     .faq-side p { margin-bottom: 26px; font-size: 17px; }
     .faq-list { display: grid; gap: 12px; }
+    .facts-title { font-family: var(--fb); font-size: 13px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-ink); margin: 40px 0 12px; }
+    .facts { border-top: 1px solid var(--line); }
+    .facts div { display: flex; justify-content: space-between; gap: 16px; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+    .facts dt { color: var(--ink-2); }
+    .facts dd { color: var(--ink); font-weight: 600; text-align: right; }
     .faq-list details { background: #fff; border: 1px solid var(--line); border-radius: var(--r-md); transition: border-color .2s var(--ease), box-shadow .2s var(--ease); }
     .faq-list details[open] { border-color: var(--gold); box-shadow: var(--shadow-1); }
     .faq-list summary { list-style: none; cursor: pointer; padding: 20px 22px; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-weight: 700; font-size: 16.5px; color: var(--ink); min-height: 56px; }
     .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-q { font-family: var(--fb); font-size: 16.5px; font-weight: 700; line-height: 1.4; letter-spacing: 0; color: var(--ink); }
     .faq-list summary .icon { color: var(--gold-ink); transition: transform .25s var(--ease); }
     .faq-list details[open] summary .icon { transform: rotate(45deg); }
     @supports (interpolate-size: allow-keywords) {
@@ -1329,46 +1345,58 @@
       <h2 style="font-size:clamp(32px,4vw,48px);margin-bottom:18px;" data-texto="faq_h2">Todo lo que quieres<br><em>saber antes de venir.</em></h2>
       <p data-texto="faq_intro">Si tu duda no está aquí, escríbenos por WhatsApp. Contestamos rápido.</p>
       <a href="https://wa.me/56966130676?text=Hola%20Dei%20Templi%2C%20tengo%20una%20consulta%20antes%20de%20reservar" target="_blank" rel="noopener" class="btn btn-wa"><svg class="icon icon-fill"><use href="#i-whatsapp"/></svg> Preguntar por WhatsApp</a>
+      <h3 class="facts-title">El hotel en datos</h3>
+      <dl class="facts">
+        <div><dt>Habitaciones</dt><dd>16, todas con vista al mar</dd></div>
+        <div><dt>Check-in / check-out</dt><dd>16:00 / 12:00</dd></div>
+        <div><dt>Desayuno</dt><dd>Incluido, en tu habitación</dd></div>
+        <div><dt>Dei Bar</dt><dd>Room service 24 horas</dd></div>
+        <div><dt>Estacionamiento</dt><dd>Gratis, frente al hotel</dd></div>
+        <div><dt>Piscina</dt><dd>Exterior, con vista al mar</dd></div>
+        <div><dt>Mascotas</dt><dd>Sí, con cargo adicional</dd></div>
+        <div><dt>Desde Santiago</dt><dd>90 minutos por la Ruta 68</dd></div>
+        <div><dt>Tarifas</dt><dd>Flexible o No reembolsable</dd></div>
+      </dl>
     </div>
     <div class="faq-list">
       <details open>
-        <summary><span data-texto="faq_1_q">¿Cuál es la diferencia entre la tarifa Flexible y la No reembolsable?</span><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary><h3 class="faq-q" data-texto="faq_1_q">¿Cuál es la diferencia entre la tarifa Flexible y la No reembolsable?</h3><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <p class="ans" data-texto="faq_1_a">La habitación, el desayuno y la atención son exactamente iguales. La Flexible te deja cancelar o cambiar la fecha sin costo hasta 72 horas antes y al reservar pagas la mitad. La No reembolsable cuesta un 10% menos, se paga completa al reservar y no admite cambios.</p>
       </details>
       <details>
-        <summary><span data-texto="faq_2_q">¿Cuánto pago al momento de reservar?</span><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary><h3 class="faq-q" data-texto="faq_2_q">¿Cuánto pago al momento de reservar?</h3><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <p class="ans" data-texto="faq_2_a">Con la tarifa Flexible pagas la mitad al reservar y la otra mitad al llegar. Con la No reembolsable pagas el total al reservar. En los dos casos puedes pagar con tarjeta o por transferencia.</p>
       </details>
       <details>
-        <summary><span data-texto="faq_3_q">¿Cómo cancelo o cambio mis fechas?</span><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary><h3 class="faq-q" data-texto="faq_3_q">¿Cómo cancelo o cambio mis fechas?</h3><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <p class="ans" data-texto="faq_3_a">Si tu tarifa es Flexible, escríbenos por WhatsApp al +56 9 6613 0676 o a info@deitempli.cl hasta 72 horas antes de tu llegada y lo gestionamos sin costo. Después de ese plazo, o si no llegas, se cobra la estadía completa. La No reembolsable no admite cancelaciones ni cambios.</p>
       </details>
       <details>
-        <summary><span data-texto="faq_4_q">¿Por qué conviene reservar aquí y no en Booking?</span><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary><h3 class="faq-q" data-texto="faq_4_q">¿Por qué conviene reservar aquí y no en Booking?</h3><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <p class="ans" data-texto="faq_4_a">Porque reservas directamente con el hotel. Las plataformas cobran una comisión por cada reserva y eso se refleja en su tarifa; aquí ese intermediario no existe. Además, antes y durante la estadía hablas directo con nuestro equipo. Cuando buscas tus fechas, el motor te muestra la comparación con Booking, Despegar y Expedia.</p>
       </details>
       <details>
-        <summary><span data-texto="faq_5_q">¿Todas las habitaciones tienen balcón?</span><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary><h3 class="faq-q" data-texto="faq_5_q">¿Todas las habitaciones tienen balcón?</h3><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <p class="ans" data-texto="faq_5_a">Todas tienen vista al mar, pero no todas tienen balcón. La Deluxe, la Estándar y los Departamentos tienen balcón privado. La Superior con jacuzzi tiene un ventanal panorámico y la Básica tiene vista desde el interior; ninguna de esas dos tiene balcón. En el motor de reservas cada habitación lo indica en su nombre.</p>
       </details>
       <details>
-        <summary><span data-texto="faq_6_q">¿El desayuno está incluido? ¿Cómo funciona?</span><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary><h3 class="faq-q" data-texto="faq_6_q">¿El desayuno está incluido? ¿Cómo funciona?</h3><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <p class="ans" data-texto="faq_6_a">Sí, el desayuno para dos está incluido en todas las habitaciones y en las dos tarifas. No hay que bajar a ningún comedor: lo llevamos a tu habitación a la hora que nos digas. Café de grano, pan recién hecho, huevos, queso, jamón, fruta, algo dulce, mantequilla y mermelada.</p>
       </details>
       <details>
-        <summary><span data-texto="faq_7_q">¿Puedo llevar a mi mascota?</span><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary><h3 class="faq-q" data-texto="faq_7_q">¿Puedo llevar a mi mascota?</h3><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <p class="ans" data-texto="faq_7_a">Sí, somos pet friendly. Indícalo al reservar para asignarte una habitación adecuada. Aplica un cargo adicional y las mascotas deben estar siempre acompañadas.</p>
       </details>
       <details>
-        <summary><span data-texto="faq_8_q">¿Hay piscina y estacionamiento?</span><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary><h3 class="faq-q" data-texto="faq_8_q">¿Hay piscina y estacionamiento?</h3><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <p class="ans" data-texto="faq_8_a">Sí. La piscina es exterior y mira al mar; está unos 82 escalones bajo el lobby y vale cada uno. El estacionamiento es gratis, frente al hotel, y no necesitas reservarlo.</p>
       </details>
       <details>
-        <summary><span data-texto="faq_9_q">¿Aplica la exención de IVA para turistas extranjeros?</span><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary><h3 class="faq-q" data-texto="faq_9_q">¿Aplica la exención de IVA para turistas extranjeros?</h3><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <p class="ans" data-texto="faq_9_a">Sí. Los turistas extranjeros no residentes en Chile quedan exentos del IVA (19%) pagando en dólares y presentando pasaporte y tarjeta de inmigración al hacer check-in. Si pagas en pesos, el IVA aplica independiente de la nacionalidad.</p>
       </details>
       <details>
-        <summary><span data-texto="faq_10_q">¿A qué distancia están de Santiago?</span><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary><h3 class="faq-q" data-texto="faq_10_q">¿A qué distancia están de Santiago?</h3><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <p class="ans" data-texto="faq_10_a">Unos 90 minutos por la Ruta 68. Sales de la pega el viernes y a las diez de la noche ya estás en el balcón.</p>
       </details>
     </div>
@@ -1443,7 +1471,7 @@
     </div>
     <div class="foot-bottom">
       <p style="color:inherit;">© <span id="year">2026</span> Hotel Dei Templi · Reñaca, Viña del Mar, Chile</p>
-      <p style="color:inherit;">Reserva directa en deitempli.cl</p>
+      <p style="color:inherit;">Información actualizada en <time datetime="2026-09-23">septiembre de 2026</time></p>
     </div>
   </div>
 </footer>
