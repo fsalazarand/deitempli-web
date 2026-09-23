@@ -1,0 +1,9 @@
+# Cloudflare Pages: caché del navegador para archivos que cambian poco
+/images/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+/logo-*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+/*.png
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+/favicon.ico
+  Cache-Control: public, max-age=2592000

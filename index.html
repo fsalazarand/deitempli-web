@@ -28,10 +28,21 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    /* Los scripts de medición se cargan cuando la página ya se mostró (o al primer toque/scroll),
+       para que no compitan con la foto y el buscador. Los eventos se guardan y se envían igual. */
+    window.dtCargarMedicion = function (fn) {
+      if (!window.DT_MEDIR) return;
+      var hecho = false;
+      function go() { if (hecho) return; hecho = true; ['scroll','pointerdown','keydown','touchstart'].forEach(function (e) { removeEventListener(e, go, true); }); fn(); }
+      ['scroll','pointerdown','keydown','touchstart'].forEach(function (e) { addEventListener(e, go, { capture: true, passive: true, once: true }); });
+      addEventListener('load', function () { (window.requestIdleCallback || setTimeout)(go, { timeout: 1500 }); });
+    };
     if (window.DT_MEDIR) {
-      var ga = document.createElement('script'); ga.async = true;
-      ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-F8YFE92R3J';
-      document.head.appendChild(ga);
+      dtCargarMedicion(function () {
+        var ga = document.createElement('script'); ga.async = true;
+        ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-F8YFE92R3J';
+        document.head.appendChild(ga);
+      });
       gtag('js', new Date());
       gtag('config', 'G-F8YFE92R3J', {
         'send_page_view': true,
@@ -46,11 +57,11 @@
        consent mode y server-side tracking.
        GA4: G-F8YFE92R3J (directo, ver arriba)
   ════════════════════════════════════════════════ -->
-  <script>if (window.DT_MEDIR) (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  <script>if (window.DT_MEDIR) dtCargarMedicion(function(){ (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-KSMZC9T');</script>
+  })(window,document,'script','dataLayer','GTM-KSMZC9T'); });</script>
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.deitempli.cl/" />
@@ -251,11 +262,13 @@
 }
   </script>
 
-  <link rel="preload" as="image" media="(max-width: 767px)" imagesrcset="/images/portada-mar-movil-800.jpg 748w, /images/portada-mar-movil.jpg 1208w" imagesizes="100vw" fetchpriority="high" />
-  <link rel="preload" as="image" media="(min-width: 768px)" imagesrcset="/images/portada-mar-1280.jpg 1280w, /images/portada-mar-1920.jpg 1920w, /images/portada-mar-2560.jpg 2560w" imagesizes="(max-aspect-ratio: 16/9) 178vh, 100vw" fetchpriority="high" />
+  <link rel="preload" as="image" type="image/webp" media="(max-width: 767px)" imagesrcset="/images/portada-mar-movil-800.webp 748w, /images/portada-mar-movil.webp 1208w" imagesizes="100vw" fetchpriority="high" />
+  <link rel="preload" as="image" type="image/webp" media="(min-width: 768px)" imagesrcset="/images/portada-mar-1280.webp 1280w, /images/portada-mar-1920.webp 1920w, /images/portada-mar-2560.webp 2560w" imagesizes="(max-aspect-ratio: 16/9) 178vh, 100vw" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" /></noscript>
 
   <script>document.documentElement.classList.add('js');</script>
 
@@ -385,6 +398,7 @@
     }
     #nav .container { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
     .nav-logo img { height: 44px; width: auto; }
+    .nav-logo picture { display: block; }
     .nav-logo .logo-dark { display: none; }
     .nav-links { display: flex; align-items: center; gap: 30px; list-style: none; }
     .nav-links a { color: #fff; text-decoration: none; font-size: 14px; font-weight: 600; letter-spacing: .02em; opacity: .92; padding: 8px 0; position: relative; }
@@ -453,6 +467,10 @@
     .search-best { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 700; color: var(--ok); background: var(--ok-lt); padding: 6px 12px; border-radius: 999px; }
     .search-best .icon { width: 15px; height: 15px; }
     .dt-picker-wrap { min-height: 72px; display: flex; align-items: center; justify-content: center; }
+    /* Alto medido del buscador ya cargado: se reserva desde el inicio para que nada salte */
+    #buscador-pxsol { width: 100%; min-height: 129px; }
+    @media (max-width: 1023px) { #buscador-pxsol { min-height: 244px; } }
+    @media (max-width: 640px) { #buscador-pxsol { min-height: 256px; } }
     /* ID + clase: le gana a los estilos que Pxsol inyecta después */
     #buscador-pxsol .pxsol-search-widget {
       width: 100%; max-width: none;
@@ -883,8 +901,8 @@
 <header id="nav">
   <div class="container">
     <a href="#inicio" class="nav-logo" aria-label="Hotel Dei Templi — inicio">
-      <img class="logo-light" src="/logohotel.png" alt="Hotel Dei Templi Reñaca" width="160" height="46" style="filter:brightness(0) invert(1);" />
-      <img class="logo-dark" src="/logohotel.png" alt="Hotel Dei Templi Reñaca" width="160" height="46" />
+      <picture class="logo-light"><source type="image/webp" srcset="/logo-blanco-360.webp" /><img src="/logo-blanco-360.png" alt="Hotel Dei Templi Reñaca" width="140" height="44" fetchpriority="high" /></picture>
+      <picture class="logo-dark"><source type="image/webp" srcset="/logo-360.webp" /><img src="/logo-360.png" alt="Hotel Dei Templi Reñaca" width="140" height="44" loading="lazy" /></picture>
     </a>
     <nav aria-label="Principal">
       <ul class="nav-links">
@@ -904,7 +922,7 @@
 
 <div id="mob-menu" role="dialog" aria-modal="true" aria-label="Menú">
   <div class="mob-top">
-    <img src="/logohotel.png" alt="Hotel Dei Templi" width="146" height="42" style="filter:brightness(0) invert(1);" />
+    <picture><source type="image/webp" srcset="/logo-blanco-360.webp" /><img src="/logo-blanco-360.png" alt="Hotel Dei Templi" width="134" height="42" loading="lazy" /></picture>
     <button class="mob-close" id="mob-close" aria-label="Cerrar menú"><svg class="icon"><use href="#i-x"/></svg></button>
   </div>
   <a class="mob-link" style="--i:0" href="#tarifas">Tarifas</a>
@@ -926,7 +944,9 @@
   <div class="hero-media">
     <picture>
       <!-- Celular: recorte vertical propio (nítido y liviano) -->
+      <source media="(max-width: 767px)" type="image/webp" srcset="/images/portada-mar-movil-800.webp 748w, /images/portada-mar-movil.webp 1208w" sizes="100vw" width="1208" height="2149" />
       <source media="(max-width: 767px)" srcset="/images/portada-mar-movil-800.jpg 748w, /images/portada-mar-movil.jpg 1208w" sizes="100vw" width="1208" height="2149" />
+      <source type="image/webp" srcset="/images/portada-mar-1280.webp 1280w, /images/portada-mar-1920.webp 1920w, /images/portada-mar-2560.webp 2560w" sizes="(max-aspect-ratio: 16/9) 178vh, 100vw" width="2560" height="1439" />
       <img data-foto="hero" src="/images/portada-mar-1920.jpg" srcset="/images/portada-mar-1280.jpg 1280w, /images/portada-mar-1920.jpg 1920w, /images/portada-mar-2560.jpg 2560w" sizes="(max-aspect-ratio: 16/9) 178vh, 100vw" alt="Balcón de Hotel Dei Templi con vista panorámica al océano Pacífico en Reñaca" width="2560" height="1439" fetchpriority="high" />
     </picture>
   </div>
@@ -1424,7 +1444,7 @@
   <div class="container">
     <div class="foot-grid">
       <div class="foot-brand">
-        <img src="/logohotel.png" alt="Hotel Dei Templi" width="174" height="50" style="filter:brightness(0) invert(1);" loading="lazy" />
+        <picture><source type="image/webp" srcset="/logo-blanco-360.webp" /><img src="/logo-blanco-360.png" alt="Hotel Dei Templi" width="159" height="50" loading="lazy" /></picture>
         <p>Hotel boutique en Reñaca alto, Viña del Mar. Habitaciones y departamentos con vista al Pacífico, desayuno en tu habitación, Dei Bar 24 horas, piscina y estacionamiento gratis.</p>
         <div class="foot-social">
           <a href="https://www.instagram.com/deitempli" target="_blank" rel="noopener" aria-label="Instagram de Dei Templi"><svg class="icon"><use href="#i-instagram"/></svg></a>
@@ -1506,7 +1526,7 @@
   }
   (function flushMetaQueue(tries) {
     if (typeof window.fbq === 'function') { while (metaQueue.length) { const [e, p] = metaQueue.shift(); window.fbq('track', e, p); } }
-    if (tries < 40) setTimeout(() => flushMetaQueue(tries + 1), 500);
+    if (tries < 120) setTimeout(() => flushMetaQueue(tries + 1), 500);
   })(0);
   function ga4Track(eventName, params) {
     if (window.DT_MEDIR && typeof window.gtag === 'function') window.gtag('event', eventName, params || {});
