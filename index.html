@@ -159,7 +159,7 @@
         "url": "https://www.deitempli.cl/",
         "name": "Hotel Dei Templi Reñaca | Vista al mar a 90 min de Santiago",
         "inLanguage": "es-CL",
-        "dateModified": "2026-09-23",
+        "dateModified": "2026-09-24",
         "about": { "@id": "https://www.deitempli.cl/#hotel" },
         "isPartOf": { "@id": "https://www.deitempli.cl/#website" }
       },
@@ -462,31 +462,41 @@
     .hero-media picture { display: block; width: 100%; height: 100%; }
     .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: center 55%; }
     @media (max-width: 767px) { .hero-media img { object-position: center 30%; } }
+    /* Velos mínimos: arriba para el menú, abajo para el texto sobre la baranda. La franja de mar queda limpia. */
     .hero-media::after {
       content: ''; position: absolute; inset: 0;
       background:
-        linear-gradient(90deg, rgba(8,28,37,.55) 0%, rgba(8,28,37,.25) 45%, rgba(8,28,37,0) 70%),
-        linear-gradient(180deg, rgba(8,28,37,.62) 0%, rgba(8,28,37,.18) 28%, rgba(8,28,37,.10) 45%, rgba(8,28,37,.70) 78%, rgba(8,28,37,.88) 100%);
+        linear-gradient(180deg, rgba(8,28,37,.50) 0%, rgba(8,28,37,0) 17%),
+        linear-gradient(0deg, rgba(14,47,61,1) 0%, rgba(14,47,61,.86) 14%, rgba(8,28,37,.45) 30%, rgba(8,28,37,0) 44%);
     }
-    .hero-content { position: relative; z-index: 1; padding-top: 150px; padding-bottom: 36px; }
-    .hero-tag { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; letter-spacing: .02em; color: #fff; background: rgba(14,47,61,.45); border: 1px solid rgba(255,255,255,.25); padding: 8px 14px; border-radius: 999px; margin-bottom: 26px; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
-    h1.hero-tag { font-family: var(--fb, inherit); line-height: 1.3; letter-spacing: .02em; }
-    .hero-h1 { font-family: var(--fh); }
-    .hero-tag .icon { width: 16px; height: 16px; color: var(--gold); }
-    .hero-h1 { font-size: clamp(46px, 7.4vw, 96px); color: #fff; font-weight: 400; line-height: 1.02; letter-spacing: -.025em; max-width: 12ch; text-shadow: 0 2px 30px rgba(0,0,0,.25); }
+    .hero-content { padding-top: 120px; padding-bottom: 116px; }
+    .hero-h1 { font-family: var(--fh); font-size: clamp(50px, 6.3vw, 96px); color: #fff; font-weight: 400; line-height: 1.02; letter-spacing: -.03em; text-shadow: 0 2px 24px rgba(8,28,37,.35); text-wrap: balance; }
     .hero-h1 em { color: var(--gold); font-style: italic; }
-    .hero-sub { font-size: clamp(17px, 1.6vw, 20px); color: rgba(255,255,255,.92); max-width: 600px; margin: 26px 0 30px; line-height: 1.6; }
-    .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 30px; }
-    .hero-proof { display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center; }
-    .proof-chip { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: rgba(255,255,255,.95); }
-    .proof-chip strong { font-size: 15px; color: #fff; }
-    .proof-chip .stars { display: inline-flex; gap: 1px; color: var(--gold); }
-    .proof-chip .stars .icon { width: 14px; height: 14px; }
+    @media (min-width: 900px) { .hero-h1 br { display: none; } .hero-h1 em { margin-left: .22em; } }
+    h1.hero-tag { display: flex; align-items: center; gap: 10px; margin-top: 18px; font-family: var(--fb); font-size: clamp(16px, 1.35vw, 19px); font-weight: 500; line-height: 1.35; letter-spacing: .005em; color: rgba(255,255,255,.94); text-wrap: balance; }
+    .hero-tag .icon { flex: none; width: 18px; height: 18px; color: var(--gold); }
+    .hero-row { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; margin-top: 30px; }
+    .hero-cta .icon { width: 18px; height: 18px; transition: transform 300ms var(--ease-out); }
+    .hero-cta:hover .icon { transform: translateY(3px) rotate(90deg); }
+    .hero-proof { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; margin: 0; }
+    .proof-chip { display: inline-flex; align-items: center; gap: 6px; font-size: 15px; color: rgba(255,255,255,.92); }
+    .proof-chip strong { font-size: 17px; font-weight: 700; color: #fff; }
+    .proof-chip .star1 { width: 15px; height: 15px; color: var(--gold); }
     .proof-sep { width: 1px; height: 18px; background: rgba(255,255,255,.35); }
+
+    /* Franja del buscador: continúa el azul noche de la portada; en escritorio la tarjeta asoma sobre la foto */
+    #buscar { background: var(--navy); color: #fff; padding: 0 0 8px; }
+    @media (min-width: 1024px) { #buscar .search-card { margin-top: -76px; } }
+    .buscar-proof { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 30px; margin: 22px 0 0; padding: 0; font-size: 14.5px; color: rgba(255,255,255,.86); }
+    .buscar-proof li { display: inline-flex; align-items: center; gap: 8px; }
+    .buscar-proof strong { color: #fff; }
+    .buscar-proof .icon { width: 17px; height: 17px; color: var(--gold); }
+    .buscar-proof a { display: inline-flex; align-items: center; gap: 8px; color: inherit; text-decoration: underline; text-decoration-color: rgba(217,169,63,.6); text-underline-offset: 4px; }
+    .buscar-proof a:hover { color: #fff; text-decoration-color: var(--gold); }
 
     /* Buscador Pxsol dentro del hero */
     /* El buscador (y su calendario desplegable) queda sobre todas las secciones siguientes */
-    #buscar { position: relative; z-index: 60; padding-bottom: 40px; }
+    #buscar { position: relative; z-index: 60; }
     /* Con el calendario o los viajeros abiertos, el buscador sube sobre el menú fijo y la barra inferior
        (en celular Pxsol lo abre como ventana fija arriba de la pantalla) */
     #buscar.panel-abierto, #buscar:has(.pxsol-search-panel) { z-index: 150; }
@@ -525,7 +535,7 @@
     .search-note .icon { width: 16px; height: 16px; color: var(--ok); }
 
     /* ────────────── STRIP DE VALOR ────────────── */
-    #precio-directo { background: var(--navy); color: #fff; padding: 44px 0 52px; }
+    #precio-directo { background: var(--navy); color: #fff; padding: 36px 0 52px; }
     .strip-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
     .strip-item { display: flex; gap: 16px; align-items: flex-start; }
     .strip-icon { width: 48px; height: 48px; border-radius: 14px; background: rgba(217,169,63,.14); color: var(--gold); display: flex; align-items: center; justify-content: center; flex: 0 0 auto; }
@@ -816,11 +826,10 @@
     @keyframes horizonte { from { opacity: 0; transform: translateY(.45em); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: none; clip-path: inset(0 0 -20% 0); } }
     @keyframes aparece { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
     .hero-media img { animation: ventanal 1100ms var(--ease-out) both, respira 2400ms var(--ease-out) both; }
-    .hero-tag { animation: aparece 600ms var(--ease-out) 380ms both; }
     .hero-h1 { animation: horizonte 900ms var(--ease-out) 480ms both; }
     .hero-h1 em { display: inline-block; animation: horizonte 900ms var(--ease-out) 700ms both; }
-    .hero-sub { animation: aparece 700ms var(--ease-out) 820ms both; }
-    .hero-ctas, .hero-proof { animation: aparece 700ms var(--ease-out) 920ms both; }
+    .hero-tag { animation: aparece 700ms var(--ease-out) 860ms both; }
+    .hero-row { animation: aparece 700ms var(--ease-out) 980ms both; }
     /* 'backwards' y no 'both': al terminar no deja transform aplicado. Un transform en la tarjeta
        encerraría el calendario de Pxsol (position: fixed en celular) dentro de ella */
     #buscar .search-card { animation: aparece 800ms var(--ease-out) 1000ms backwards; }
@@ -833,7 +842,7 @@
       html { scroll-behavior: auto; }
       /* Menos movimiento, no cero: se conservan los fundidos que confirman estados */
       .hero-media img { animation: none; }
-      .hero-tag, .hero-h1, .hero-h1 em, .hero-sub, .hero-ctas, .hero-proof, #buscar .search-card { animation: fundido 400ms ease-out both; }
+      .hero-tag, .hero-h1, .hero-h1 em, .hero-row, #buscar .search-card { animation: fundido 400ms ease-out both; }
       @keyframes fundido { from { opacity: 0; } to { opacity: 1; } }
       .js .reveal { transform: none; filter: none; transition: opacity 300ms ease-out; transition-delay: 0ms; }
       #mob-menu, #mob-menu.open { clip-path: none; transition: opacity 200ms ease-out, visibility 0s linear 200ms; opacity: 0; }
@@ -843,7 +852,7 @@
       .rate-card:hover, .room-card:hover { transform: none; }
       .gallery figure:hover img { transform: none; }
     }
-    @media print { .js .reveal { opacity: 1; transform: none; filter: none; } .hero-media img, .hero-h1, .hero-sub, #buscar .search-card { animation: none; } }
+    @media print { .js .reveal { opacity: 1; transform: none; filter: none; } .hero-media img, .hero-h1, .hero-tag, .hero-row, #buscar .search-card { animation: none; } }
 
     /* ────────────── RESPONSIVE ────────────── */
     @media (max-width: 1080px) {
@@ -881,14 +890,16 @@
       body { padding-bottom: 76px; }
       .nav-logo img { height: 40px; }
       .nav-cta .btn-wa-nav { display: none; }
-      .hero-content { padding-top: 112px; padding-bottom: 24px; }
-      .hero-tag { font-size: 13px; padding: 7px 12px; margin-bottom: 20px; }
-      .hero-h1 { font-size: 48px; }
-      .hero-sub { margin: 18px 0 22px; font-size: 16.5px; }
-      .hero-ctas { display: none; }
-      .proof-sep { display: none; }
-      .hero-proof { gap: 8px 14px; }
-      .proof-chip { font-size: 13px; }
+      #inicio { min-height: calc(100svh - 52px); }
+      .hero-content { padding-top: 100px; padding-bottom: 26px; }
+      .hero-h1 { font-size: 46px; }
+      h1.hero-tag { font-size: 15.5px; margin-top: 14px; align-items: flex-start; }
+      .hero-tag .icon { margin-top: 2px; }
+      .hero-row { margin-top: 22px; gap: 14px 18px; }
+      .proof-chip { font-size: 14px; }
+      .proof-chip strong { font-size: 16px; }
+      #buscar { padding-top: 16px; }
+      .buscar-proof { justify-content: flex-start; flex-direction: column; gap: 10px; font-size: 14px; margin-top: 18px; }
       .search-card { padding: 18px 14px 14px; border-radius: 18px; }
       .btn { white-space: normal; text-align: center; }
       .search-card-title { font-size: 18px; }
@@ -1025,24 +1036,22 @@
     </picture>
   </div>
   <div class="container hero-content">
-    <h1 class="hero-tag"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span data-texto="hero_tag">Hotel boutique en Reñaca, Viña del Mar</span></h1>
     <p class="hero-h1" data-texto="hero_h1">El mar te está<br><em>esperando.</em></p>
-    <p class="hero-sub" data-texto="hero_sub">A 90 minutos de Santiago: una habitación frente al Pacífico, el desayuno que llega a tu puerta a la hora que pidas y un bar que no cierra. Estás en el sitio oficial del hotel.</p>
-    <div class="hero-ctas">
-      <a href="#tarifas" class="btn btn-ghost-light">Ver las tarifas</a>
-    </div>
-    <div class="hero-proof" aria-label="Calificaciones de huéspedes">
-      <span class="proof-chip"><strong>9,1</strong> Booking.com</span>
-      <span class="proof-sep" aria-hidden="true"></span>
-      <span class="proof-chip"><span class="stars" aria-hidden="true"><svg class="icon icon-fill"><use href="#i-star"/></svg><svg class="icon icon-fill"><use href="#i-star"/></svg><svg class="icon icon-fill"><use href="#i-star"/></svg><svg class="icon icon-fill"><use href="#i-star"/></svg><svg class="icon icon-fill"><use href="#i-star"/></svg></span><strong>4,6</strong> Google</span>
-      <span class="proof-sep" aria-hidden="true"></span>
-      <span class="proof-chip"><strong>Top 5</strong> de 63 hoteles en Viña (TripAdvisor)</span>
-      <span class="proof-sep" aria-hidden="true"></span>
-      <a class="proof-chip proof-pet" href="#mascotas"><svg class="icon"><use href="#i-paw"/></svg><strong>Pet friendly</strong></a>
+    <h1 class="hero-tag"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span data-texto="hero_tag">Hotel boutique en Reñaca, Viña del Mar · a 90 minutos de Santiago</span></h1>
+    <div class="hero-row">
+      <a href="#buscar" class="btn btn-gold hero-cta">Ver disponibilidad <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <p class="hero-proof" aria-label="Calificaciones de huéspedes">
+        <span class="proof-chip"><strong>9,1</strong> en Booking.com</span>
+        <span class="proof-sep" aria-hidden="true"></span>
+        <span class="proof-chip"><strong>4,6</strong><svg class="icon icon-fill star1" aria-hidden="true"><use href="#i-star"/></svg> en Google</span>
+      </p>
     </div>
   </div>
+</section>
 
-  <div id="buscar" class="container">
+<!-- ═══════════════ BUSCADOR (justo bajo la portada; en escritorio asoma sobre la foto) ═══════════════ -->
+<section id="buscar" aria-label="Buscar disponibilidad">
+  <div class="container">
     <div class="search-card">
       <div class="search-card-head">
         <p class="search-card-title"><svg class="icon"><use href="#i-calendar"/></svg><span data-texto="buscador_titulo">Revisa disponibilidad para tus fechas</span></p>
@@ -1062,6 +1071,11 @@
       </div>
       <p class="search-note"><svg class="icon"><use href="#i-check"/></svg><span data-texto="buscador_nota">Estás reservando directo con el hotel, con nuestra mejor tarifa disponible para tus fechas.</span></p>
     </div>
+    <ul class="buscar-proof">
+      <li><strong>Top 5</strong> de 63 hoteles en Viña del Mar (TripAdvisor)</li>
+      <li><a href="#mascotas"><svg class="icon" aria-hidden="true"><use href="#i-paw"/></svg>Pet friendly</a></li>
+      <li><svg class="icon" aria-hidden="true"><use href="#i-coffee"/></svg>Desayuno en tu habitación</li>
+    </ul>
   </div>
 </section>
 
@@ -1607,7 +1621,7 @@
     </div>
     <div class="foot-bottom">
       <p style="color:inherit;">© <span id="year">2026</span> Hotel Dei Templi · Reñaca, Viña del Mar, Chile</p>
-      <p style="color:inherit;">Información actualizada en <time datetime="2026-09-23">septiembre de 2026</time></p>
+      <p style="color:inherit;">Información actualizada en <time datetime="2026-09-24">septiembre de 2026</time></p>
     </div>
   </div>
 </footer>

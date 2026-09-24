@@ -127,10 +127,6 @@ collections:
             widget: text
             hint: "Puedes usar <strong>negrita</strong>, <em>dorado en cursiva</em> y <br> para salto de línea."
 
-          - label: "hero sub"
-            name: hero_sub
-            widget: text
-
           - label: "buscador titulo"
             name: buscador_titulo
             widget: string
