@@ -672,7 +672,22 @@
     .score-num small { font-size: 16px; color: var(--ink-3); }
     .score-txt strong { display: block; font-size: 15px; color: var(--ink); }
     .score-txt span { font-size: 13.5px; color: var(--ink-2); }
-    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .reviews-marquee {
+      overflow-x: auto; overflow-y: hidden; scrollbar-width: none; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain;
+      padding: 6px 0 14px;
+      -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+              mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+    }
+    .reviews-marquee::-webkit-scrollbar { display: none; }
+    .reviews-marquee:focus-visible { outline: 2px solid var(--gold-2); outline-offset: 4px; border-radius: var(--r-lg); }
+    .reviews-track { display: flex; gap: 22px; width: max-content; padding: 0 22px; }
+    .reviews-track .review { flex: none; width: 380px; transition: border-color .3s var(--ease-out), box-shadow .3s var(--ease-out); }
+    .reviews-marquee.pausado .review:hover { border-color: var(--gold); box-shadow: var(--shadow-1); }
+    /* Sin movimiento automático: fila que se desliza a mano, con imán en cada tarjeta */
+    @media (prefers-reduced-motion: reduce) {
+      .reviews-marquee { scroll-snap-type: x mandatory; }
+      .reviews-track .review { scroll-snap-align: center; }
+    }
     .review { background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 28px 26px 24px; display: flex; flex-direction: column; gap: 18px; }
     .review .stars { display: flex; gap: 2px; color: var(--gold); }
     .review .stars .icon { width: 16px; height: 16px; }
@@ -877,7 +892,9 @@
       .rate-card { padding: 34px 22px 24px; }
       .rate-badge { left: 20px; }
       .score-row { grid-template-columns: 1fr; gap: 12px; }
-      .reviews-grid { grid-template-columns: 1fr; }
+      .reviews-track { gap: 14px; padding: 0 16px; }
+      .reviews-track .review { width: min(82vw, 330px); padding: 24px 20px 20px; }
+      .reviews-marquee { -webkit-mask-image: none; mask-image: none; }
       .carabela { grid-template-columns: 1fr; }
       .carabela-media { min-height: 260px; }
       .carabela-body { padding: 32px 24px; }
@@ -1329,33 +1346,36 @@
         <span class="score-txt"><strong>TripAdvisor</strong><span>N°5 de 63 hoteles en Viña del Mar</span></span>
       </a>
     </div>
-    <div class="reviews-grid">
-      <article class="review reveal">
+  </div>
+  <!-- Opiniones en movimiento: avanzan solas; se detienen con el mouse, el dedo o el teclado. En celular también se deslizan a mano. -->
+  <div class="reviews-marquee reveal" role="region" aria-label="Opiniones de huéspedes" tabindex="0">
+    <div class="reviews-track">
+      <article class="review">
         <div class="stars" aria-label="Calificación 10/10"><svg class="icon icon-fill"><use href="#i-star"/></svg><svg class="icon icon-fill"><use href="#i-star"/></svg><svg class="icon icon-fill"><use href="#i-star"/></svg><svg class="icon icon-fill"><use href="#i-star"/></svg><svg class="icon icon-fill"><use href="#i-star"/></svg></div>
         <blockquote data-texto="rv1_texto">Plan perfecto para desconectarse, relajarse y pasar un rico día con tu persona especial. La vista maravillosa, todo muy limpio, y la atención del personal excelente, preocupados</blockquote>
         <footer><span class="avatar" aria-hidden="true">V</span><div><cite data-texto="rv1_nombre">Vania</cite><span class="src" data-texto="rv1_fuente">Booking.com · 10/10 · julio 2026</span></div></footer>
       </article>
-      <article class="review reveal">
+      <article class="review">
         <div class="stars" aria-label="Calificación 9/10"><svg class="icon icon-fill"><use href="#i-star"/></svg><svg class="icon icon-fill"><use href="#i-star"/></svg><svg class="icon icon-fill"><use href="#i-star"/></svg><svg class="icon icon-fill"><use href="#i-star"/></svg></div>
         <blockquote data-texto="rv2_texto">Destacó el uso de room service a través de la aplicación, permitiendo agregar ricas tablas y cuidados cócteles a la habitación. ¡Muy cómodo!</blockquote>
         <footer><span class="avatar" aria-hidden="true">W</span><div><cite data-texto="rv2_nombre">Weissmann</cite><span class="src" data-texto="rv2_fuente">Booking.com · 9/10 · julio 2026</span></div></footer>
       </article>
-      <article class="review reveal">
+      <article class="review">
         <div class="stars" aria-label="Calificación 5/5"><svg class="icon icon-fill"><use href="#i-star"/></svg><svg class="icon icon-fill"><use href="#i-star"/></svg><svg class="icon icon-fill"><use href="#i-star"/></svg><svg class="icon icon-fill"><use href="#i-star"/></svg><svg class="icon icon-fill"><use href="#i-star"/></svg></div>
         <blockquote data-texto="rv3_texto">Celebramos nuestro aniversario en el hotel, destaco toda la ayuda del personal, al llegar nos esperaban con cócteles, una tabla riquísima, tuvimos la suerte de ver una puesta de sol increíble. Recomendado al 100%, volveremos.</blockquote>
         <footer><span class="avatar" aria-hidden="true">P</span><div><cite data-texto="rv3_nombre">Paradise39156276989</cite><span class="src" data-texto="rv3_fuente">TripAdvisor · 5/5 · octubre 2025</span></div></footer>
       </article>
-      <article class="review reveal">
+      <article class="review">
         <div class="stars" aria-label="Calificación 9/10"><svg class="icon icon-fill"><use href="#i-star"/></svg><svg class="icon icon-fill"><use href="#i-star"/></svg><svg class="icon icon-fill"><use href="#i-star"/></svg><svg class="icon icon-fill"><use href="#i-star"/></svg></div>
         <blockquote data-texto="rv4_texto">El servicio de desayuno es excelente, demasiado rico y contundente. Cama super cómoda con buenas almohadas y una vista maravillosa al mar</blockquote>
         <footer><span class="avatar" aria-hidden="true">N</span><div><cite data-texto="rv4_nombre">Nicolas</cite><span class="src" data-texto="rv4_fuente">Booking.com · 9/10 · mayo 2026</span></div></footer>
       </article>
-      <article class="review reveal">
+      <article class="review">
         <div class="stars" aria-label="Calificación 10/10"><svg class="icon icon-fill"><use href="#i-star"/></svg><svg class="icon icon-fill"><use href="#i-star"/></svg><svg class="icon icon-fill"><use href="#i-star"/></svg><svg class="icon icon-fill"><use href="#i-star"/></svg><svg class="icon icon-fill"><use href="#i-star"/></svg></div>
         <blockquote data-texto="rv5_texto">Dei Templi una elección segura. Excelente conectividad, habitación equipada, vista fabulosa y servicio excelente</blockquote>
         <footer><span class="avatar" aria-hidden="true">J</span><div><cite data-texto="rv5_nombre">José</cite><span class="src" data-texto="rv5_fuente">Booking.com · 10/10 · julio 2026</span></div></footer>
       </article>
-      <article class="review reveal">
+      <article class="review">
         <div class="stars" aria-label="Calificación 5/5"><svg class="icon icon-fill"><use href="#i-star"/></svg><svg class="icon icon-fill"><use href="#i-star"/></svg><svg class="icon icon-fill"><use href="#i-star"/></svg><svg class="icon icon-fill"><use href="#i-star"/></svg><svg class="icon icon-fill"><use href="#i-star"/></svg></div>
         <blockquote data-texto="rv6_texto">Fui con mi pareja y nos encantó el lugar. Todos muy agradables y dispuestos para ayudar... El unico punto a mejorar seria el lugar (solo porque queda algo lejos de la playa), pero sinceramente es lo de menos considerando las vistas de las habitaciones</blockquote>
         <footer><span class="avatar" aria-hidden="true">G</span><div><cite data-texto="rv6_nombre">Gustavo Palma Guerra</cite><span class="src" data-texto="rv6_fuente">Google · 5/5 · febrero 2026</span></div></footer>
@@ -1741,6 +1761,59 @@
   })();
 
   /* ── BARRA INFERIOR (celular): aparece cuando el buscador ya no está a la vista ── */
+  (function opinionesEnMovimiento() {
+    const wrap = document.querySelector('.reviews-marquee');
+    const track = wrap && wrap.querySelector('.reviews-track');
+    if (!track) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    /* Copia de las tarjetas para que la fila no tenga fin (oculta a lectores de pantalla y al teclado) */
+    Array.from(track.children).forEach(card => {
+      const copia = card.cloneNode(true);
+      copia.setAttribute('aria-hidden', 'true');
+      copia.setAttribute('inert', '');
+      copia.querySelectorAll('[data-texto]').forEach(el => el.removeAttribute('data-texto'));
+      track.appendChild(copia);
+    });
+    const VELOCIDAD = window.matchMedia('(max-width: 640px)').matches ? 26 : 34; // px por segundo
+    let pos = 0, ultimo = 0, enPantalla = false, raf = null, reanudar = null;
+    const motivo = { mouse: false, dedo: false, teclado: false };
+    const detenido = () => motivo.mouse || motivo.dedo || motivo.teclado;
+    const mitad = () => track.scrollWidth / 2;
+    const paso = (t) => {
+      raf = null;
+      if (!enPantalla || detenido() || document.hidden) { ultimo = 0; return; }
+      if (ultimo) {
+        pos += VELOCIDAD * Math.min(t - ultimo, 64) / 1000;
+        if (pos >= mitad()) pos -= mitad();
+        wrap.scrollLeft = Math.round(pos);
+      }
+      ultimo = t;
+      raf = requestAnimationFrame(paso);
+    };
+    const arrancar = () => { if (!raf && enPantalla && !detenido()) { pos = wrap.scrollLeft; ultimo = 0; raf = requestAnimationFrame(paso); } };
+    const marcar = (k, v) => { motivo[k] = v; wrap.classList.toggle('pausado', detenido()); if (!detenido()) arrancar(); };
+    /* Mouse encima: se detiene; al salir, sigue */
+    wrap.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') marcar('mouse', true); });
+    wrap.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') marcar('mouse', false); });
+    /* Dedo: se detiene al tocar; se puede deslizar a mano y retoma a los 3 segundos de soltar */
+    wrap.addEventListener('touchstart', () => { clearTimeout(reanudar); marcar('dedo', true); }, { passive: true });
+    const soltarDedo = () => { clearTimeout(reanudar); reanudar = setTimeout(() => marcar('dedo', false), 3000); };
+    wrap.addEventListener('touchend', soltarDedo, { passive: true });
+    wrap.addEventListener('touchcancel', soltarDedo, { passive: true });
+    /* Teclado */
+    wrap.addEventListener('focusin', () => marcar('teclado', true));
+    wrap.addEventListener('focusout', () => marcar('teclado', false));
+    /* Si deslizan a mano más allá de la copia, vuelve al inicio sin salto visible */
+    wrap.addEventListener('scroll', () => {
+      if (detenido()) { if (wrap.scrollLeft >= mitad()) wrap.scrollLeft -= mitad(); pos = wrap.scrollLeft; }
+    }, { passive: true });
+    /* Solo se mueve cuando está a la vista */
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(([e]) => { enPantalla = e.isIntersecting; enPantalla ? arrancar() : null; }).observe(wrap);
+    } else { enPantalla = true; arrancar(); }
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) arrancar(); });
+  })();
+
   (function mobileBar() {
     const bar = document.querySelector('.mobile-bar');
     const search = document.getElementById('buscar');
