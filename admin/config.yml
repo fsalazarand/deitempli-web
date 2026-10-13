@@ -399,7 +399,7 @@ collections:
 
           - label: "pets cond 3"
             name: pets_cond_3
-            widget: string
+            widget: text
 
           - label: "─────────── 🌅 La estadía y Dei Bar ───────────"
             name: _sep_6
@@ -799,6 +799,22 @@ collections:
 
           - label: "faq 13 a"
             name: faq_13_a
+            widget: text
+
+          - label: "faq 14 q"
+            name: faq_14_q
+            widget: string
+
+          - label: "faq 14 a"
+            name: faq_14_a
+            widget: text
+
+          - label: "faq 15 q"
+            name: faq_15_q
+            widget: string
+
+          - label: "faq 15 a"
+            name: faq_15_a
             widget: text
 
           - label: "─────────── 📣 Llamado final ───────────"
