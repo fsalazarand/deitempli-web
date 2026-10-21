@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Datos para transferir · Dei Templi Hotel</title>
+<meta name="description" content="Datos bancarios oficiales de Dei Templi Hotel para pagar tu reserva por transferencia.">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap">
+<style>
+:root{--navy:#0E2F3D;--gold:#D9A93F;--gold-ink:#8A6414;--cream:#FBF8F2;--sand:#F5EFE4;--ink:#1D2A2F;--ink3:#5E6A6E;--line:#E6DDCC;--ok:#2E7555;
+--serif:"Fraunces",Georgia,serif;--sans:"Plus Jakarta Sans","Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--sand);color:var(--ink);font:16px/1.55 var(--sans);padding:24px max(16px,env(safe-area-inset-right)) 40px max(16px,env(safe-area-inset-left))}
+::selection{background:var(--gold);color:var(--navy)}
+main{max-width:520px;margin:0 auto;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(14,47,61,.10)}
+.top{background:var(--navy);padding:22px;text-align:center;border-bottom:3px solid var(--gold)}
+.top img{width:170px;max-width:60%;height:auto;display:inline-block}
+.body{padding:28px 24px 26px}
+h1{font-family:var(--serif);font-weight:500;font-size:1.7rem;line-height:1.2;color:var(--navy);margin:0 0 8px;text-wrap:balance}
+p{margin:0 0 16px}
+.muted{color:var(--ink3);font-size:.92rem}
+.data{border:1px solid var(--line);background:var(--cream);border-radius:12px;margin:0 0 16px;padding:4px 0}
+.f{display:flex;align-items:center;gap:12px;padding:10px 14px;border-top:1px solid var(--line)}
+.f:first-child{border-top:0}
+.f div{flex:1;min-width:0}
+.k{display:block;font-size:.8rem;color:var(--ink3)}
+.v{display:block;font-weight:700;font-size:1.02rem;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.mini{font:600 .82rem var(--sans);color:var(--navy);background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 12px;min-height:40px;cursor:pointer}
+.big{display:block;width:100%;font:700 1.05rem var(--sans);color:#fff;background:var(--navy);border:0;border-radius:12px;padding:17px 18px;min-height:54px;cursor:pointer}
+.big:active,.mini:active{transform:scale(.98)}
+.big:focus-visible,.mini:focus-visible,.wa:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.status{min-height:1.5em;margin:10px 0 18px;text-align:center;font-weight:700;color:var(--ok)}
+.ref{background:var(--sand);border-radius:12px;padding:14px 16px;margin:0 0 18px;font-size:.95rem}
+.wa{display:block;text-align:center;text-decoration:none;font-weight:700;color:var(--navy);border:1px solid var(--line);border-radius:12px;padding:15px;min-height:52px}
+.safe{border-top:1px solid var(--line);margin-top:20px;padding-top:16px;font-size:.85rem;color:var(--ink3)}
+.safe a{color:var(--navy)}
+@media (prefers-reduced-motion:reduce){.big:active,.mini:active{transform:none}}
+</style>
+</head>
+<body>
+<main>
+  <div class="top"><a href="/"><img src="/logo-blanco-360.png" alt="Dei Templi Hotel" width="170" height="53"></a></div>
+  <div class="body">
+    <h1>Datos para transferir</h1>
+    <p class="muted">Cópialos de una vez y pégalos en la app de tu banco: la mayoría reconoce estos datos y crea el destinatario sola.</p>
+
+    <div class="data" id="datos">
+      <div class="f"><div><span class="k">Nombre</span><span class="v">Del Alto Ltda.</span></div><button class="mini" type="button" data-copy="Del Alto Ltda.">Copiar</button></div>
+      <div class="f"><div><span class="k">RUT</span><span class="v">79.910.670-1</span></div><button class="mini" type="button" data-copy="79.910.670-1">Copiar</button></div>
+      <div class="f"><div><span class="k">Banco</span><span class="v">Banco de Chile</span></div><button class="mini" type="button" data-copy="Banco de Chile">Copiar</button></div>
+      <div class="f"><div><span class="k">Tipo de cuenta</span><span class="v">Cuenta Corriente</span></div><button class="mini" type="button" data-copy="Cuenta Corriente">Copiar</button></div>
+      <div class="f"><div><span class="k">Número de cuenta</span><span class="v">1490041205</span></div><button class="mini" type="button" data-copy="1490041205">Copiar</button></div>
+      <div class="f"><div><span class="k">Correo</span><span class="v">info@deitempli.cl</span></div><button class="mini" type="button" data-copy="info@deitempli.cl">Copiar</button></div>
+    </div>
+
+    <button class="big" type="button" id="todo">Copiar todos los datos</button>
+    <div class="status" id="st" role="status" aria-live="polite"></div>
+
+    <div class="ref"><strong>En el comentario de la transferencia</strong> escribe tu número de reserva. Lo encuentras en el correo que te enviamos.</div>
+
+    <a class="wa" href="https://wa.me/56966130676?text=Hola%2C%20les%20env%C3%ADo%20el%20comprobante%20de%20pago%20de%20mi%20reserva">Enviar comprobante por WhatsApp</a>
+
+    <p class="safe"><strong>Cuenta única y verificada.</strong> Solo recibimos transferencias en esta cuenta de Del Alto Ltda. Si alguien te pide transferir a otra cuenta, no lo hagas y llámanos al <a href="tel:+56966130676">+56 9 6613 0676</a>.</p>
+  </div>
+</main>
+<script>
+(function(){
+  var TODO = "Del Alto Ltda.\n79.910.670-1\nBanco de Chile\nCuenta Corriente\n1490041205\ninfo@deitempli.cl";
+  var st = document.getElementById('st'), t;
+  function say(msg){ st.textContent = msg; clearTimeout(t); t = setTimeout(function(){ st.textContent = ''; }, 3000); }
+  function fallback(text){
+    var ta = document.createElement('textarea'); ta.value = text; ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed'; ta.style.top = '0'; ta.style.opacity = '0'; document.body.appendChild(ta);
+    ta.select(); ta.setSelectionRange(0, text.length); var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta); return ok;
+  }
+  function copy(text, msg){
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(function(){ say(msg); }, function(){ say(fallback(text) ? msg : 'Mantén presionado un dato para copiarlo'); });
+    } else { say(fallback(text) ? msg : 'Mantén presionado un dato para copiarlo'); }
+  }
+  document.getElementById('todo').addEventListener('click', function(){ copy(TODO, 'Datos copiados. Pégalos en tu banco.'); });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-copy]'), function(b){
+    b.addEventListener('click', function(){ copy(b.getAttribute('data-copy'), 'Copiado: ' + b.getAttribute('data-copy')); });
+  });
+})();
+</script>
+</body>
+</html>
